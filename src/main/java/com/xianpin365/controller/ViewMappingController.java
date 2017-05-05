@@ -34,19 +34,37 @@ public class ViewMappingController {
 		return reqUri;
 	}
 	
-	@RequestMapping("pro_detail_1")
-	public String getProduct(HttpServletRequest request, Model model) {
-		model.addAttribute("spec", "xxxxx");
-		String reqUri = request.getRequestURI();
-		return reqUri;
+	@RequestMapping("/product/{productId}")
+	public String getProductDetail(@PathVariable String productId, Model model) {
+		Integer id = Integer.parseInt(productId);
+		Product product = productService.getById(id);
+		model.addAttribute("product", product);
+		return "product_detail";
 	}
 	
+/*	
 	@RequestMapping("/product/camelliaoil/{productId}")
-	public String getProduct(@PathVariable String productId, Model model) {
+	public String getCamelliaOilProductDetail(@PathVariable String productId, Model model) {
 		
 		Product product = productService.getById(1);
 		model.addAttribute("product", product);
 		return "product_detail";
 	}
 	
+	@RequestMapping("/product/camelliaseed/{productId}")
+	public String getCamelliaSeedProductDetail(@PathVariable String productId, Model model) {
+		Integer id = Integer.getInteger(productId);
+		Product product = productService.getById(id);
+		model.addAttribute("product", product);
+		return "product_detail";
+	}
+	
+	@RequestMapping("/product/camelliaseedcake/{productId}")
+	public String getCamelliaSeedCakeProductDetail(@PathVariable String productId, Model model) {
+		Integer id = Integer.getInteger(productId);
+		Product product = productService.getById(id);
+		model.addAttribute("product", product);
+		return "product_detail";
+	}
+	*/
 }

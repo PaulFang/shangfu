@@ -117,8 +117,7 @@
                 </a>
             </li>
 			</ul>
-		<div class="pages">
-                    </div>
+		<div class="pages"></div>
     </div>
 </div>
 <div class="footer">
