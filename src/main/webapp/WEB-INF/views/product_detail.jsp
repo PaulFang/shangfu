@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/base.css" />"  />
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/product.css"/>" />
 <script type="text/javascript" src="<c:url value="/js/jquery-1.7.2.min.js" />"></script>
@@ -12,7 +13,9 @@
 
 <title>尚孚·厨韵-茶油-产品展示-尚孚茶油</title>
 </head>
+
 <body>
+
 <script type="text/javascript">
     var loads=document.getElementById("ioad").getElementsByTagName("span");
     var loadIndex=0;
@@ -28,6 +31,8 @@
         }
     },40);
 </script>
+
+
 <div class="header">
     <div class="main">
         <div class="logo"><a href="index"></a></div>
@@ -44,6 +49,7 @@
         <div class="slogan" > <img src="<c:url value="/images/slogan.png" />" style="width:280px;height:59px;"> </div>
     </div>
 </div>
+
 <div class="wrapper">
     <div class="banner" style="background-image: url(<c:url value='${product.neckBanner}' />)">
     </div>
@@ -104,6 +110,8 @@
                 </div>
                
             </div>
+            
+            
             <div class="info">
                 <h2>${product.name}</h2>
                 <table>
@@ -148,16 +156,19 @@
         </div>
     </div>
 </div>
+
+
 <div class="footer">
     <div class="main">
         <div class="tel">0713-8533399 17771339998</div>
         <div class="right">
-            <ul class="menu-foot">
-                <li><a href="about"   >关于尚孚</a></li>
-                <li><a href="product" >产品展示</a></li>
-                <li><a href="honor"   >荣誉资质</a></li>
-                <li><a href="news"    >新闻资讯</a></li>
-                <li><a href="contact" >联系我们</a></li>
+            <ul class="menu-foot">                
+                <li><a href="<c:url value='/about' />" >关于尚孚</a></li>
+				<li><a href="<c:url value='/product' />">产品展示</a></li>
+				<li><a href="<c:url value='/honor' />" >荣誉资质</a></li>
+				<li><a href="<c:url value='/news' />"  >新闻资讯</a></li>
+				<li><a href="<c:url value='/contact' />" >联系我们</a></li>
+                
             </ul>
             <div class="copyright">
                 <strong>Copyright © 2017 www.xianpin365.com 粤ICP备15001240号 All Rights Reserved</strong>
@@ -165,26 +176,11 @@
         </div>
     </div>
 </div>
+
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
-<script type="text/javascript" src="js/function.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<!-- 
-<script type="text/javascript">
-    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-	
-	
-	/*$(function(){
-	    $(document).on("click", "a", function () {
-            var _l=$("#la").val();
-            var _url=$(this).attr("href");
-            if(_l=="en-us"){
-			   $(this).attr("href",_url+'?l=en-us');
-			}			
-			
-		});
-	})*/
-</script>
- -->
+<script type="text/javascript" src="<c:url value="/js/function.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/public.js" />"></script>
+
 <script type="text/javascript">
     $(function(){
         $(".photoList").custoersWheel({time: -1});

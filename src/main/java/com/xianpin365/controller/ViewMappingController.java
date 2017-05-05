@@ -20,18 +20,36 @@ public class ViewMappingController {
 	private IProductService productService;
 	
 	
-	@RequestMapping(value={"/index","/about","/product","/honor","/contact"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/index","/about","/product1","/honor","/contact"}, method=RequestMethod.GET)
 	public String doDirectRequest(HttpServletResponse response,
             HttpServletRequest request) {
 		String reqUri = request.getRequestURI();
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		return reqUri;
 	}
+	
+	@RequestMapping("/product")
+	public String getProducts(HttpServletResponse response,
+            HttpServletRequest request) {
+		String reqUri = request.getRequestURI();
+		
+		if(reqUri.endsWith("/")){
+			int length = reqUri.length();
+			reqUri = reqUri.substring(0, length-1);
+		}
+		
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		return reqUri;
+	}
+	
+	
 	
 	@RequestMapping("/product/{productId}")
 	public String getProductDetail(@PathVariable String productId, Model model) {
 		Integer id = Integer.parseInt(productId);
 		Product product = productService.getById(id);
 		model.addAttribute("product", product);
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBB");
 		return "product_detail";
 	}
 	

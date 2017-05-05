@@ -334,7 +334,7 @@
         this.each(function () {
 			var	relOpts, opts;
 			// Hmm...eval...slap on wrist.
-			eval('var	a = {' + $(this).attr('rel') + '}');
+			eval('var	a = {' + $(this).attr('rel') + '}');// !!!
 			relOpts = a;
             if ($(this).is('.cloud-zoom')) {
                 $(this).css({

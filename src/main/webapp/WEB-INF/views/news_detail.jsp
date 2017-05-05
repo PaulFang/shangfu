@@ -34,11 +34,11 @@
         <div class="logo"><a href="index"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
-				<li><a href="about"   >关于尚孚</a></li>
-				<li><a href="product" >产品展示</a></li>
-				<li><a href="honor"   >荣誉资质</a></li>
-				<li><a href="news"    >新闻资讯</a></li>
-				<li><a href="contact" >联系我们</a></li>
+				<li><a href="<c:url value='/about' />" >关于尚孚</a></li>
+				<li><a href="<c:url value='/product' />" >产品展示</a></li>
+				<li><a href="<c:url value='/honor' />" >荣誉资质</a></li>
+				<li><a href="<c:url value='/news' />"  class="current">新闻资讯</a></li>
+				<li><a href="<c:url value='/contact' />" >联系我们</a></li>
 			</ul>
 		</div>
         
