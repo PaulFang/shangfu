@@ -1,0 +1,2 @@
+standard : 86C225 （深）
+other    : B8DB7C （浅）

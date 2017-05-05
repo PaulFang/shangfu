@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- http://www.cnblogs.com/dongying/p/4048828.html -->
+<mapper namespace="com.xianpin365.dao.IProductDao">
+
+	<resultMap id="productMap" type="com.xianpin365.pojo.Product">
+		<id column="ID" property="id" />
+		<result column="NAME" property="name" />
+		<result column="PACKAING" property="packaging" />
+		<result column="SERIES_NAME" property="seriesName" />
+		<result column="CATLOG_NAME" property="catlogName"/>
+		<result column="DESCRIPTION" property="description"/>
+		<result column="SPECIFICATIONS" property="specifications"/>
+		<result column="PURCHASE_LINK" property="purchaseLink"/>
+		<result column="PROD_PICTURE1" property="prodPicture1"/>
+		<result column="PROD_PICTURE2" property="prodPicture2"/>
+		<result column="PROD_PICTURE3" property="prodPicture3"/>
+		<result column="PROD_PICTURE4" property="prodPicture4"/>
+		<result column="PROD_PICTURE5" property="prodPicture5"/>
+		<result column="ISSUED_TIME" property="issuedTime"/>
+		<result column="ACTIVED" property="actived"/>
+		<result column="DISPLAY_ORDER" property="dispalyOrder"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID,NAME,SERIES_NAME,CATLOG_NAME,DESCRIPTION,SPECIFICATIONS,PURCHASE_LINK,PROD_PICTURE1,
+		PROD_PICTURE2,PROD_PICTURE3,PROD_PICTURE4,PROD_PICTURE5,ISSUED_TIME,ACTIVED,DISPLAY_ORDER
+	</sql>
+
+
+	<!-- 1. id （必须配置） id是命名空间中的唯一标识符，可被用来代表这条语句。 一个命名空间（namespace） 对应一个dao接口, 
+		这个id也应该对应dao里面的某个方法（相当于方法的实现），因此id 应该与方法名一致 -->
+
+	<!-- 2. parameterType （可选配置, 默认为mybatis自动选择处理） 将要传入语句的参数的完全限定类名或别名， 如果不配置，
+		mybatis会通过ParameterHandler 根据参数类型默认选择合适的typeHandler进行处理 parameterType 主要指定参数类型，
+		可以是int, short, long, string等类型，也可以是复杂类型（如对象） -->
+
+	<!-- 3. flushCache （可选配置，默认配置为true） 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都
+		会被清空，默认值：true（对应插入、更新和删除语句） -->
+
+	<!-- 4. statementType （可选配置，默认配置为PREPARED） STATEMENT，PREPARED 或 CALLABLE 
+		的一个。这会让 MyBatis 分别使用 Statement，PreparedStatement 或 CallableStatement，默认值：PREPARED。 -->
+
+	<!-- 5. keyProperty (可选配置， 默认为unset) （仅对 insert 和 update 有用）唯一标记一个属性，MyBatis 
+		会通过 getGeneratedKeys 的返回值或者通过 insert 语句的 selectKey 子元素设置它的键值，默认：unset。
+		如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表。 -->
+
+	<!-- 6. keyColumn (可选配置) （仅对 insert 和 update 有用）通过生成的键值设置表中的列名，这个设置仅在某些数据库（像 
+		PostgreSQL）是必须的，当主键列不是表中的第一列的时候需要设置。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表。 -->
+
+	<!-- 7. useGeneratedKeys (可选配置， 默认为false) （仅对 insert 和 update 有用）这会令 MyBatis 
+		使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键（比如：像 MySQL 和 SQL Server 这样的关系数据库管理系统的
+		自动递增字段），默认值：false。 -->
+
+	<!-- 8. timeout (可选配置， 默认为unset, 依赖驱动) 这个设置是在抛出异常之前，驱动程序等待数据库返回请求结果的秒数。默认值为 
+		unset（依赖驱动）。 -->
+
+	<insert id="insert" parameterType="com.xianpin365.pojo.Product"
+		flushCache="true" statementType="PREPARED" keyProperty="" keyColumn=""
+		useGeneratedKeys="false" timeout="20">
+		INSERT INTO T_PRODUCT_INFO(ID,NAME,SERIES_NAME,CATLOG_NAME,DESCRIPTION,SPECIFICATIONS,PURCHASE_LINK,PROD_PICTURE1,
+		PROD_PICTURE2,PROD_PICTURE3,PROD_PICTURE4,PROD_PICTURE5,ISSUED_TIME,ACTIVED,DISPLAY_ORDER) 
+		VALUES(#{id},#{name},#{seriesName},#{catlogName},#{description},#{specifications},#{purchaseLink},
+		#{prodPicture1},#{prodPicture2},#{prodPicture3},#{prodPicture4},#{prodPicture5},#{issuedTime},#{actived},#{displayOrder})
+	</insert>
+
+	<!-- 若设置为 resultType="com.xianpin365.pojo.Product" 将会导致字段名称与属性名称不一致的数据均为null -->
+	<select id="getById" parameterType="java.lang.Integer" resultMap="productMap">
+		SELECT *
+		FROM T_PRODUCT_INFO
+		WHERE ID = #{id}
+	</select>
+
+	<!-- 产品页面信息 -->
+	<!-- <select id="getProducts" parameterType="int" resultType="com.xianpin365.pojo.Product">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM T_PRODUCT_INFO WHERE ACTIVED = '1' ORDER BY DISPLAY_ORDER DESC;
+	</select> -->
+	
+	<!-- <update id="updateProduct" parameterType="com.xianpin365.pojo.Product" flushCache="true" 
+		statementType="PREPARED" timeout="20" />
+
+    <delete
+      id="deleteProduct"
+      parameterType="com.xianpin365.pojo.Product"
+      flushCache="true"
+      statementType="PREPARED"
+      timeout="20" />
+ 	-->
+</mapper>
