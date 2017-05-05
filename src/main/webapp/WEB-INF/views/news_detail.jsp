@@ -1,15 +1,19 @@
-﻿<!DOCTYPE HTML>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="css/base.css" rel="stylesheet" type="text/css">
 
-<link href="css/other.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<title>你还不知道茶油是万能的吧！-公司新闻-新闻资讯-尚孚茶油</title>
+<link rel="stylesheet" type="text/css" href="<c:url value="/css/base.css" />"  />
+<link rel="stylesheet" type="text/css" href="<c:url value="/css/other.css" />"  >
+
+<script type="text/javascript" src="<c:url value="/js/jquery-1.9.1.min.js" />"></script>
+
+<title>${news.title}-公司新闻-新闻资讯-尚孚茶油</title>
+
 </head>
 <body>
-<div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div>
+<!-- <div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div> -->
 <script type="text/javascript">
     var loads=document.getElementById("ioad").getElementsByTagName("span");
     var loadIndex=0;
@@ -30,25 +34,26 @@
         <div class="logo"><a href="index"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
-				<li><a href="about" >关于尚孚</a></li>
+				<li><a href="about"   >关于尚孚</a></li>
 				<li><a href="product" >产品展示</a></li>
-				<li><a href="honor" >荣誉资质</a></li>
-				<li><a href="news" class="current">新闻资讯</a></li>
+				<li><a href="honor"   >荣誉资质</a></li>
+				<li><a href="news"    >新闻资讯</a></li>
 				<li><a href="contact" >联系我们</a></li>
 			</ul>
 		</div>
         
-        <div class="slogan" > <img src="images/slogan.png" style="width:280px;height:59px;"> </div>
+        <div class="slogan" > <img src="<c:url value="/images/slogan.png" />" style="width:280px;height:59px;"> </div>
+        
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(images/news_banner.jpg)">
+    <div class="banner" style="background-image: url(<c:url value='${news.neckBanner}' />)">
     </div>
     <div class="main">
         <div class="location">
-            <a href="index">首页</a>
+            <a href="<c:url value="/index" />">首页</a>
 			<em>&gt;</em>
-			<span><a href="news">新闻资讯</a></span>
+			<span><a href="<c:url value="/news" />">新闻资讯</a></span>
 			<em>&gt;</em>
 			
 			<em>&gt;</em>
@@ -84,7 +89,8 @@
 			
             <div class="attention">本文源于<a href="#" target="_blank">${news.from}</a>,转载请注明出处。</div>
             <div class="near">
-			    <p><strong>上一篇：</strong><a href="#">${news.lastNewsTitle}</a></p>				            </div>
+			    <p><strong>上一篇：</strong><a href="#">${news.lastNewsTitle}</a></p>				            
+			</div>
         </div>
     </div>
 </div>

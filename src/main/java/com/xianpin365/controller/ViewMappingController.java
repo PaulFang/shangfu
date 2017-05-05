@@ -20,13 +20,10 @@ public class ViewMappingController {
 	private IProductService productService;
 	
 	
-	@RequestMapping(value={"/index","/about","/product","/honor","/news","/contact","new*"}, method=RequestMethod.GET)
-	public String doAbout(HttpServletResponse response,
+	@RequestMapping(value={"/index","/about","/product","/honor","/contact"}, method=RequestMethod.GET)
+	public String doDirectRequest(HttpServletResponse response,
             HttpServletRequest request) {
-		String reqUri = request.getRequestURI(); 
-		
-		Product obj = productService.getById(1);
-		System.out.print(obj);
+		String reqUri = request.getRequestURI();
 		return reqUri;
 	}
 	

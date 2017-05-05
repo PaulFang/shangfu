@@ -16,6 +16,7 @@ public class News {
 	private String nextNewsTitle;
 	private Integer lastNewsId;
 	private String lastNewsTitle;
+	private String neckBanner;
 
 	public Integer getId() {
 		return id;
@@ -111,6 +112,14 @@ public class News {
 
 	public void setLastNewsTitle(String lastNewsTitle) {
 		this.lastNewsTitle = lastNewsTitle;
+	}
+
+	public String getNeckBanner() {
+		return neckBanner;
+	}
+
+	public void setNeckBanner(String neckBanner) {
+		this.neckBanner = neckBanner;
 	}
 
 }
