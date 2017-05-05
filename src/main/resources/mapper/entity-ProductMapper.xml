@@ -12,6 +12,7 @@
 		<result column="DESCRIPTION" property="description"/>
 		<result column="SPECIFICATIONS" property="specifications"/>
 		<result column="PURCHASE_LINK" property="purchaseLink"/>
+		<result column="MAIN_PICTURE" property="mainPicture"/>
 		<result column="PROD_PICTURE1" property="prodPicture1"/>
 		<result column="PROD_PICTURE2" property="prodPicture2"/>
 		<result column="PROD_PICTURE3" property="prodPicture3"/>

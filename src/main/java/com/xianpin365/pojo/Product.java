@@ -20,6 +20,8 @@ public class Product {
 
 	private String purchaseLink;
 
+	private String mainPicture;
+
 	private String prodPicture1;
 
 	private String prodPicture2;
@@ -31,11 +33,11 @@ public class Product {
 	private String prodPicture5;
 
 	private Date issuedTime;
-	
+
 	private boolean actived;
-	
+
 	private String neckBanner;
-	
+
 	private Integer dispalyOrder;
 
 	public Integer getId() {
@@ -102,6 +104,14 @@ public class Product {
 		this.purchaseLink = purchaseLink;
 	}
 
+	public String getMainPicture() {
+		return mainPicture;
+	}
+
+	public void setMainPicture(String mainPicture) {
+		this.mainPicture = mainPicture;
+	}
+
 	public String getProdPicture1() {
 		return prodPicture1;
 	}
@@ -165,7 +175,7 @@ public class Product {
 	public void setDispalyOrder(Integer dispalyOrder) {
 		this.dispalyOrder = dispalyOrder;
 	}
-	
+
 	public String getNeckBanner() {
 		return neckBanner;
 	}

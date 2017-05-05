@@ -12,13 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.xianpin365.pojo.Product;
 import com.xianpin365.service.IProductService;
-import com.xianpin365.service.IUserService;
 
 @Controller
 public class ViewMappingController {
-	
-	@Resource
-	private IUserService userService;
 	
 	@Resource
 	private IProductService productService;
