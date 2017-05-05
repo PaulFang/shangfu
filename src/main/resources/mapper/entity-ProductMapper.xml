@@ -20,6 +20,7 @@
 		<result column="ISSUED_TIME" property="issuedTime"/>
 		<result column="ACTIVED" property="actived"/>
 		<result column="DISPLAY_ORDER" property="dispalyOrder"/>
+		<result column="NECK_BANNER" property="neckBanner"/>
 	</resultMap>
 
 	<sql id="Base_Column_List">

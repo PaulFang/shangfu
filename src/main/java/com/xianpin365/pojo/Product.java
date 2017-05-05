@@ -34,6 +34,8 @@ public class Product {
 	
 	private boolean actived;
 	
+	private String neckBanner;
+	
 	private Integer dispalyOrder;
 
 	public Integer getId() {
@@ -162,6 +164,14 @@ public class Product {
 
 	public void setDispalyOrder(Integer dispalyOrder) {
 		this.dispalyOrder = dispalyOrder;
+	}
+	
+	public String getNeckBanner() {
+		return neckBanner;
+	}
+
+	public void setNeckBanner(String neckBanner) {
+		this.neckBanner = neckBanner;
 	}
 
 	@Override

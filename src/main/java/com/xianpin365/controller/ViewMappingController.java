@@ -44,10 +44,9 @@ public class ViewMappingController {
 	@RequestMapping("/product/camelliaoil/{productId}")
 	public String getProduct(@PathVariable String productId, Model model) {
 		
-		System.out.println("productId = " + productId);
-		
-//		String reqUri = request.getRequestURI();
-		return "pro_detail_1";
+		Product product = productService.getById(1);
+		model.addAttribute("product", product);
+		return "product_detail";
 	}
 	
 }

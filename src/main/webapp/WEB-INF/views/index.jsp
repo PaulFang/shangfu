@@ -1,16 +1,10 @@
-﻿<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+﻿<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- hello -->
-<%-- <link href="<c:url value="css/base.css" />" rel="stylesheet"  type="text/css" /> --%>
-
-<!-- hello -->
-
+<link href="css/base.css" rel="stylesheet" type="text/css">
 <link href="css/index.css" rel="stylesheet" type="text/css">
-<link href='<spring:url value="/css/base.css" htmlEscape="true" rel="stylesheet"  type="text/css"/>
 <link href="css/colorbox.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -20,7 +14,7 @@
 <script type="text/javascript" src="js/mobile.js"></script>
 <script type="text/javascript">uaredirect("http://m.1688.com/winport/b2b-2579243528kynpa");</script>
 
-<title>尚孚庄园 茶油世家-----</title>
+<title>尚孚庄园 茶油世家</title>
 <meta name="keywords" content="尚孚，尚孚生态农业科技，有机茶油，有机油茶籽，茶枯饼"/>
 <meta name="description" content="尚孚，尚孚生态农业科技，尚孚茶油，麻城尚孚，茶油，广州尚孚食品有限公司"/>
 </head>
