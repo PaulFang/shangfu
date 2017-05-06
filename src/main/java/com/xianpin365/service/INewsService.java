@@ -2,7 +2,7 @@ package com.xianpin365.service;
 
 import java.util.List;
 
-import com.xianpin365.pojo.News;
+import com.xianpin365.entity.News;
 
 public interface INewsService {
 

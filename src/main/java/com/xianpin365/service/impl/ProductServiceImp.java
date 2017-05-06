@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.xianpin365.dao.IProductDao;
-import com.xianpin365.pojo.Product;
+import com.xianpin365.entity.Product;
 import com.xianpin365.service.IProductService;
 
 @Service("productService")

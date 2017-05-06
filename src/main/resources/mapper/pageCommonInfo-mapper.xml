@@ -3,7 +3,7 @@
 <!-- http://www.cnblogs.com/dongying/p/4048828.html -->
 <mapper namespace="com.xianpin365.dao.IPageCommonInfoDao">
 
-	<resultMap id="pageCommonInfoMap" type="com.xianpin365.pojo.PageCommonInfo">
+	<resultMap id="pageCommonInfoMap" type="com.xianpin365.entity.PageCommonInfo">
 		<id column="ID" property="id" />
 		<result column="TITLE" property="title" />
 		<result column="LANGUAGE" property="language" />

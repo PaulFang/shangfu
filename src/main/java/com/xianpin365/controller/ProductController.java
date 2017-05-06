@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.xianpin365.pojo.Product;
+import com.xianpin365.entity.Product;
 import com.xianpin365.service.IProductService;
 
 @Controller

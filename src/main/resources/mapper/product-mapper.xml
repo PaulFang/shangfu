@@ -3,7 +3,7 @@
 <!-- http://www.cnblogs.com/dongying/p/4048828.html -->
 <mapper namespace="com.xianpin365.dao.IProductDao">
 
-	<resultMap id="productMap" type="com.xianpin365.pojo.Product">
+	<resultMap id="productMap" type="com.xianpin365.entity.Product">
 		<id column="ID" property="id" />
 		<result column="NAME" property="name" />
 		<result column="PACKAING" property="packaging" />
@@ -57,7 +57,7 @@
 	<!-- 8. timeout (可选配置， 默认为unset, 依赖驱动) 这个设置是在抛出异常之前，驱动程序等待数据库返回请求结果的秒数。默认值为 
 		unset（依赖驱动）。 -->
 
-	<insert id="insert" parameterType="com.xianpin365.pojo.Product"
+	<insert id="insert" parameterType="com.xianpin365.entity.Product"
 		flushCache="true" statementType="PREPARED" keyProperty="" keyColumn=""
 		useGeneratedKeys="false" timeout="20">
 		INSERT INTO T_PRODUCT_INFO(ID,NAME,SERIES_NAME,CATLOG_NAME,DESCRIPTION,SPECIFICATIONS,PURCHASE_LINK,PROD_PICTURE1,
@@ -66,7 +66,7 @@
 		#{prodPicture1},#{prodPicture2},#{prodPicture3},#{prodPicture4},#{prodPicture5},#{issuedTime},#{actived},#{displayOrder})
 	</insert>
 
-	<!-- 若设置为 resultType="com.xianpin365.pojo.Product" 将会导致字段名称与属性名称不一致的数据均为null -->
+	<!-- 若设置为 resultType="com.xianpin365.entity.Product" 将会导致字段名称与属性名称不一致的数据均为null -->
 	<select id="getById" parameterType="java.lang.Integer" resultMap="productMap">
 		SELECT *
 		FROM T_PRODUCT_INFO
@@ -80,18 +80,18 @@
     </select>
 
 	<!-- 产品页面信息 -->
-	<!-- <select id="getProducts" parameterType="int" resultType="com.xianpin365.pojo.Product">
+	<!-- <select id="getProducts" parameterType="int" resultType="com.xianpin365.entity.Product">
 		SELECT
 		<include refid="Base_Column_List" />
 		FROM T_PRODUCT_INFO WHERE ACTIVED = '1' ORDER BY DISPLAY_ORDER DESC;
 	</select> -->
 	
-	<!-- <update id="updateProduct" parameterType="com.xianpin365.pojo.Product" flushCache="true" 
+	<!-- <update id="updateProduct" parameterType="com.xianpin365.entity.Product" flushCache="true" 
 		statementType="PREPARED" timeout="20" />
 
     <delete
       id="deleteProduct"
-      parameterType="com.xianpin365.pojo.Product"
+      parameterType="com.xianpin365.entity.Product"
       flushCache="true"
       statementType="PREPARED"
       timeout="20" />

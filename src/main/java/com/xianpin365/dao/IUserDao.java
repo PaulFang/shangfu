@@ -1,6 +1,6 @@
 package com.xianpin365.dao;
 
-import com.xianpin365.pojo.User;
+import com.xianpin365.entity.User;
 
 public interface IUserDao {
 

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.xianpin365.domain.Language;
-import com.xianpin365.pojo.PageCommonInfo;
+import com.xianpin365.entity.PageCommonInfo;
 import com.xianpin365.service.IPageCommonInfoService;
 
 public class GlobalInterceptor extends HandlerInterceptorAdapter {

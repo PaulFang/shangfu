@@ -1,4 +1,4 @@
-package com.xianpin365.pojo;
+package com.xianpin365.entity;
 
 import java.util.Date;
 

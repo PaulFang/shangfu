@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.xianpin365.dao.IPageCommonInfoDao;
-import com.xianpin365.pojo.PageCommonInfo;
+import com.xianpin365.entity.PageCommonInfo;
 import com.xianpin365.service.IPageCommonInfoService;
 
 @Service("pageCommonInfoService")

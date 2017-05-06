@@ -3,7 +3,7 @@
 <!-- http://www.cnblogs.com/dongying/p/4048828.html -->
 <mapper namespace="com.xianpin365.dao.INewsDao">
 
-	<resultMap id="newsMap" type="com.xianpin365.pojo.News">
+	<resultMap id="newsMap" type="com.xianpin365.entity.News">
 		<id column="ID" property="id" />
 		<result column="TITLE" property="title" />
 		<result column="ACTIVED" property="actived" />
@@ -26,7 +26,7 @@
 		NEXT_NEWS_ID,NEXT_NEWS_TITLE,LAST_NEWS_ID,LAST_NEWS_TITLE,NECK_BANNER
 	</sql>	
 
-	<insert id="insert" parameterType="com.xianpin365.pojo.News"
+	<insert id="insert" parameterType="com.xianpin365.entity.News"
 		flushCache="true" statementType="PREPARED" keyProperty="" keyColumn=""
 		useGeneratedKeys="false" timeout="20">
 		INSERT INTO T_NEWS_INFO(ID,ACTIVED,TITLE,PREVIEW_PIC,ISSUED_TIME,FROM,PV_CNT,CONTENT,KEYWORDS,
@@ -47,7 +47,7 @@
 		WHERE ACTIVED =#{actived} ORDER BY ISSUED_TIME
 	</select>
 	
-	<!-- <update id="updateProduct" parameterType="com.xianpin365.pojo.Product" flushCache="true" 
+	<!-- <update id="updateProduct" parameterType="com.xianpin365.entity.Product" flushCache="true" 
 		statementType="PREPARED" timeout="20" /> -->
 
 </mapper>

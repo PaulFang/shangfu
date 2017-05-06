@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.xianpin365.pojo.News;
+import com.xianpin365.entity.News;
 import com.xianpin365.service.INewsService;
 
 @Controller

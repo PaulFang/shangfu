@@ -2,7 +2,7 @@ package com.xianpin365.dao;
 
 import java.util.List;
 
-import com.xianpin365.pojo.News;
+import com.xianpin365.entity.News;
 
 public interface INewsDao {
 	

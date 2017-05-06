@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.xianpin365.dao.INewsDao;
-import com.xianpin365.pojo.News;
+import com.xianpin365.entity.News;
 import com.xianpin365.service.INewsService;
 
 @Service("newsService")
