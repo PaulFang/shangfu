@@ -45,19 +45,15 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(images/neck_banner/about_banner.jpg)">
-        <!--<div class="title-bj">
-            <div class="main">
-                <div class="title"><strong>关于尚孚</strong></div>
-            </div>
-        </div> -->
-    </div>
+    <div class="banner" style="background-image: url(images/neck_banner/about_banner.jpg)"></div>
+    <br/><br/>
     <div class="main">
         <div class="location">
             <a href="index">首页</a>
             <em>&gt;</em>
             <span>${info.menuItem1}</span>
         </div>
+        <br/><br/>
         <div class="con">
             <!-- old src="picture/548823e55c2fe.jpg" -->
             <!--<p><img src="images/about.jpg" class="fr ml20" title="null"/></p> -->
@@ -92,22 +88,6 @@
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
 <script type="text/javascript" src="js/function.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
-<!--
-<script type="text/javascript">
-    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-	
-	
-	/*$(function(){
-	    $(document).on("click", "a", function () {
-            var _l=$("#la").val();
-            var _url=$(this).attr("href");
-            if(_l=="en-us"){
-			   $(this).attr("href",_url+'?l=en-us');
-			}			
-			
-		});
-	})*/
-</script> -->
 
 <script>
    $(function(){

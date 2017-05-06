@@ -51,8 +51,8 @@
 </div>
 
 <div class="wrapper">
-    <div class="banner" style="background-image: url(<c:url value='${product.neckBanner}' />)">
-    </div>
+    <div class="banner" style="background-image: url(<c:url value='${product.neckBanner}' />)"></div>
+    <br/><br/>
     <div class="main">
         <div class="location">
             <a href="index">首页</a>

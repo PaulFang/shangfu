@@ -54,13 +54,8 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(${info.contactBanner})">
-        <!--<div class="title-bj">
-            <div class="main">
-                <div class="title"><strong>联系我们</strong></div>
-            </div>
-        </div> -->
-    </div>
+    <div class="banner" style="background-image: url(${info.contactBanner})"></div>
+    <br/><br/>
     <div class="main">
         <div class="location">
             <a href="/">首页</a>

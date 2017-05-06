@@ -35,7 +35,7 @@
 				<li><a href="product" >${info.menuItem2}</a></li>
 				<li><a href="honor" >${info.menuItem3}</a></li>
 				<li><a href="news" class="current">${info.menuItem4}</a></li>
-				<li><a href="contact" >${info.menuItem4}</a></li>
+				<li><a href="contact" >${info.menuItem5}</a></li>
 			</ul>
 		</div>
         
@@ -50,6 +50,7 @@
             </div>
         </div> -->
     </div>
+    <br/><br/>
     <div class="main">
         <div class="location">
 		    <a href="index">首页</a>

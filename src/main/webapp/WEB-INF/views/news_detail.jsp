@@ -47,8 +47,8 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(<c:url value='${news.neckBanner}' />)">
-    </div>
+    <div class="banner" style="background-image: url(<c:url value='${news.neckBanner}' />)"></div>
+    <br/><br/>
     <div class="main">
         <div class="location">
             <a href="<c:url value="/index" />">首页</a>

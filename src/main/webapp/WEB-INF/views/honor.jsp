@@ -44,14 +44,8 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(images/neck_banner/honor_banner.jpg)">
-        <!--
-        <div class="title-bj">
-            <div class="main">
-                <div class="title"><strong>荣誉资质</strong></div>
-            </div>
-        </div> -->
-    </div>
+    <div class="banner" style="background-image: url(images/neck_banner/honor_banner.jpg)"></div>
+    <br/><br/>
     <div class="main">
         <div class="location">
             <a href="index">首页</a>
