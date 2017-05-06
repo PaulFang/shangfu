@@ -193,11 +193,11 @@ public class PageCommonInfo {
 		this.footerTelNum = footerTelNum;
 	}
 
-	public String getFeeterCopyright() {
+	public String getFooterCopyright() {
 		return footerCopyright;
 	}
 
-	public void setFeeterCopyright(String footerCopyright) {
+	public void setFooterCopyright(String footerCopyright) {
 		this.footerCopyright = footerCopyright;
 	}
 
