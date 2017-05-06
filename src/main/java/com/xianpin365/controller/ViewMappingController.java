@@ -29,32 +29,6 @@ public class ViewMappingController {
 		return reqUri;
 	}
 	
-	@RequestMapping("/product")
-	public String getProducts(HttpServletResponse response,
-            HttpServletRequest request) {
-		String reqUri = request.getRequestURI();
-		
-//		if(reqUri.endsWith("/")){
-//			int length = reqUri.length();
-//			reqUri = reqUri.substring(0, length-1);
-//		}
-		
-		return reqUri;
-	}
-	
-	@RequestMapping("/product/{productId}")
-	public String getProductDetail(@PathVariable String productId, Model model) {
-		Integer id = Integer.parseInt(productId);
-		Product product = productService.getById(id);
-		
-		List<Product> products = productService.getActivedProducts();
-		System.out.println(products);
-		
-		model.addAttribute("product", product);
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBB");
-		return "product_detail";
-	}
-	
 /*	
 	@RequestMapping("/product/camelliaoil/{productId}")
 	public String getCamelliaOilProductDetail(@PathVariable String productId, Model model) {

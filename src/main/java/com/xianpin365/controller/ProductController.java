@@ -27,8 +27,16 @@ public class ProductController {
 		return reqUri;
 	}
 	
+	@RequestMapping("/product-dev")
+	public String getProductsPreview(HttpServletRequest request, Model model) {
+		String reqUri = request.getRequestURI();
+		List<Product> products = productService.getActivedProducts();
+		model.addAttribute("products", products);
+		return reqUri;
+	}
+	
 	@RequestMapping("/product/{productId}")
-	public String getNewsDetail(@PathVariable String productId, Model model) {
+	public String getProductDetail(@PathVariable String productId, Model model) {
 		Integer id = Integer.parseInt(productId);
 		Product product = productService.getById(id);
 		model.addAttribute("product", product);

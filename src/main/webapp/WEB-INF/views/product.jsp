@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -44,13 +45,7 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(images/neck_banner/product_banner.jpg)">
-        <!--
-        <div class="title-bj">
-            <div class="main">
-                <div class="title"><strong>产品展示</strong></div>
-            </div>
-        </div> -->
+    <div class="banner" style="background-image: url(<c:url value='${product.neckBanner}' />)">
     </div>
     <div class="main">
         <div class="location">
@@ -61,7 +56,17 @@
 			<span>有机茶油·有机油茶籽·枯茶饼</span>
         </div>
         <ul class="productList">
-		    <li class="first">
+        	
+        	<c:forEach items="${products}" var="product" varStatus="status">  
+        		<li <c:if test="${status.index==0 || status.index%3==0}">class="first"</c:if>  >
+        			<a href="product/${product.id}">
+        				<div class="imgs"><img src="${product.mainPicture}"></div>
+        				<p><i></i><strong>${product.name}</strong></p>
+        			</a>
+        		</li>
+        	</c:forEach>
+        
+		   <!--  <li class="first">
                 <a href="pro_detail_1">
                     <div class="imgs"><img src="product_img/yuzhihe/main.jpg"></div>
                     <p><i></i><strong>尚孚·瑜之和</strong></p>
@@ -80,7 +85,7 @@
                     <p><i></i><strong>尚孚·宜厨</strong></p>
                 </a> 
             </li>
-            <div id="prod_list_locationer"></div><!-- 用于调整到页面的中心位置便于查看产品 -->
+            <div id="prod_list_locationer"></div>用于调整到页面的中心位置便于查看产品
 			<li class="first">
                 <a href="pro_detail_4">
                     <div class="imgs"><img src="product_img/shijiazhijiao/main.jpg"></div>
@@ -115,7 +120,7 @@
                     <div class="imgs"><img src="product_img/youchazi/main.jpg"></div>
                     <p><i></i><strong>尚孚·有机油茶籽</strong></p>
                 </a>
-            </li>
+            </li> -->
 			</ul>
 		<div class="pages"></div>
     </div>
