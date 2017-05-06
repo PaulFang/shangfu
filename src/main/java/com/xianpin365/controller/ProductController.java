@@ -26,12 +26,11 @@ public class ProductController {
 	private IPageCommonInfoService pageCommonInfoService;
 
 	@RequestMapping("/product")
-	public String doAbout(HttpServletRequest request, Model model) {
+	public String getProductsPreview(HttpServletRequest request, Model model) {
 		String reqUri = request.getRequestURI();
 		List<Product> products = productService.getActivedProducts();
-		
-		PageCommonInfo comInfo = pageCommonInfoService.getByLanguage(Language.ZH_CN.getLanguage());
-		
+		PageCommonInfo info = pageCommonInfoService.getByLanguage(Language.ZH_CN.getLanguage());
+		model.addAttribute("info", info);
 		model.addAttribute("products", products);
 		return reqUri;
 	}

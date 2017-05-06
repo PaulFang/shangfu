@@ -45,7 +45,7 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(<c:url value='${product.neckBanner}' />)">
+    <div class="banner" style="background-image: url(<c:url value='${info.productBanner}' />)">
     </div>
     <div class="main">
         <div class="location">
