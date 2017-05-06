@@ -83,7 +83,7 @@
                 <li><a href="contact" >${info.menuItem5}</a></li>
             </ul>
             <div class="copyright">
-                <strong>Copyright © 2017 www.xianpin365.com 粤ICP备15001240号 All Rights Reserved</strong>
+                <strong>${info.footerCopyright}</strong>
             </div>
         </div>
     </div>
