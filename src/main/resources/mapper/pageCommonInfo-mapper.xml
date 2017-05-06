@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- http://www.cnblogs.com/dongying/p/4048828.html -->
+<mapper namespace="com.xianpin365.dao.IPageCommonInfoDao">
+
+	<resultMap id="pageCommonInfoMap" type="com.xianpin365.pojo.PageCommonInfo">
+		<id column="ID" property="id" />
+		<result column="TITLE" property="title" />
+		<result column="LANGUAGE" property="language" />
+		<result column="MENU_ITEM_1" property="menuItem1" />
+		<result column="MENU_ITEM_2" property="menuItem2" />
+		<result column="MENU_ITEM_3" property="menuItem3"/>
+		<result column="MENU_ITEM_4" property="menuItem4"/>
+		<result column="MENU_ITEM_5" property="menuItem5"/>
+		<result column="ABOUT_BANNER" property="aboutBanner"/>
+		<result column="PRODUCT_BANNER" property="productBanner"/>
+		<result column="HONOR_BANNER" property="honorBanner"/>
+		<result column="NEWS_BANNER" property="newsBanner"/>
+		<result column="CONTACT_BANNER" property="contactBanner"/>
+		<result column="MENU_SLOGAN" property="menuSlogan"/>
+		<result column="COMPANY_NAME" property="companyName"/>
+		<result column="TEL_NUM" property="telNum"/>
+		<result column="HOME_PAGE" property="homePage"/>
+		<result column="QQ" property="qq"/>
+		<result column="EMAIL" property="eMail"/>
+		<result column="ADDR" property="addr"/>
+		<result column="WECHAT" property="wechat"/>
+		<result column="FEETER_TEL_NO" property="feeterTelNum"/>
+		<result column="FEETER_COPYRIGHT" property="feeterCopyright"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID,ACTIVED,TITLE,PREVIEW_PIC,ISSUED_TIME,FROM,PV_CNT,CONTENT,KEYWORDS,
+		NEXT_NEWS_ID,NEXT_NEWS_TITLE,LAST_NEWS_ID,LAST_NEWS_TITLE,NECK_BANNER
+	</sql>	
+
+	<select id="getByLanguage" parameterType="java.lang.String" resultMap="pageCommonInfoMap">
+		SELECT *
+		FROM T_PAGE_COMMON_INFO
+		WHERE LANGUAGE = #{language}
+	</select>
+
+</mapper>

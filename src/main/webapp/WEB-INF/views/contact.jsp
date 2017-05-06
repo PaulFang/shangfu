@@ -54,7 +54,7 @@
     </div>
 </div>
 <div class="wrapper">
-    <div class="banner" style="background-image: url(images/neck_banner/contact_banner.jpg)">
+    <div class="banner" style="background-image: url(${info.contactBanner})">
         <!--<div class="title-bj">
             <div class="main">
                 <div class="title"><strong>联系我们</strong></div>
@@ -75,11 +75,11 @@
             <div class="info">
                 <div style="font-weight:bold;font-size:17px">麻城市尚孚生态农业科技有限公司</div>
                 <div>----------------------------------------------------</div>
-                <p class="tel">0713-8533399  　177－7133－9998</p>
-                <p class="web">www.xianpin365.com</a></p>
-                <p class="qq">2962053874 （企业QQ）</p>
-                <p class="email">yuandp_sf@163.com</p>
-                <p class="add">湖北•黄冈•麻城市宋埠镇道仕岭村</p>
+                <p class="tel">${info.telNum}</p>
+                <p class="web">${info.homePage}</a></p>
+                <p class="qq">${info.qq}</p>
+                <p class="email">${info.eMail}</p>
+                <p class="add">${info.addr}</p>
                 <div class="weixin code2d">
                     <!--<div class="code2d"><img src="picture/shangfu_wechat.jpg" style="width:140px;"> </div>-->
                 </div>

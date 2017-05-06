@@ -9,11 +9,10 @@
 
 <script type="text/javascript" src="<c:url value="/js/jquery-1.9.1.min.js" />"></script>
 
-<title>${news.title}-公司新闻-新闻资讯-尚孚茶油</title>
+<title>${news.title}-新闻资讯-尚孚茶油</title>
 
 </head>
 <body>
-<!-- <div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div> -->
 <script type="text/javascript">
     var loads=document.getElementById("ioad").getElementsByTagName("span");
     var loadIndex=0;
@@ -114,20 +113,5 @@
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
 <script type="text/javascript" src="js/function.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
-<!-- <script type="text/javascript">
-    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-	
-	
-	/*$(function(){
-	    $(document).on("click", "a", function () {
-            var _l=$("#la").val();
-            var _url=$(this).attr("href");
-            if(_l=="en-us"){
-			   $(this).attr("href",_url+'?l=en-us');
-			}			
-			
-		});
-	})*/
-</script> -->
 </body>
 </html>
