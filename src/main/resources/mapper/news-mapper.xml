@@ -8,6 +8,7 @@
 		<result column="TITLE" property="title" />
 		<result column="ACTIVED" property="actived" />
 		<result column="PREVIEW_PIC" property="previewPic" />
+		<result column="CONTENT_ABSTRACT" property="contentAbstract" />
 		<result column="ISSUED_TIME" property="issuedTime" />
 		<result column="FROM" property="from"/>
 		<result column="PV_CNT" property="pvCount"/>

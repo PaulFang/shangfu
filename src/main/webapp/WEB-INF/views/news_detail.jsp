@@ -1,4 +1,5 @@
 ﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -61,24 +62,9 @@
         </div>
         <div class="newsDetail">
             <h1>${news.title}</h1>
-            <h3><span>时间：${news.issuedTime}</span><span>来源：${news.from}</span><span>阅读：${news.pvCount}人</span></h3>
+            <h3><span>时间：<fmt:formatDate value="${news.issuedTime}"  pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span><span>来源：${news.from}</span><span>阅读：${news.pvCount}人</span></h3>
             <div class="newsContent">
-				<p><img src="picture/news20150629001.jpg"/></p>
-                <p>一、孕妇在孕期食用茶油不仅可以增加母乳，而且对胎儿的正常发育十分有益。</p>
-                <p>二、婴幼儿及儿童食用茶油可利气、通便、消火、助消化，对促进骨髂等身体发育很有帮助。</p>
-                <p>三、老年人食用茶油可以去火、养颜、明目、乌发、抑制衰老，对慢性咽炎和预防人体高血压、动脉硬化、心血管系统疾病有很好的疗效。</p>
-                <p>四、茶油又能抗紫外光，防止晒斑及去皱纹。云南是著名的产茶区，当地的女士常用茶油作梳头、搽面及用茶籽洗头。所以，虽地处高原，紫外光强烈的地区，很奇怪，当地的妇女皮肤却能保持雪白娇嫩，而邻近的西藏妇女的皮肤却粗糙不堪。</p>
-				<p>五、用一毫升桃仁油( Peach Kernel)，十滴山茶油(Ti-tree)，五滴薰衣草油(Lavender)，混和后搽面部，对暗疮有显著疗效。因山茶有杀菌及增强免疫作用。而薰衣草又有消炎及收缩孔作用。此外，对黄褐斑、晒斑，都很有效果。</p>
-				<p>六、茶籽杀虫效果很好，可以治癣疥。可作洗发剂及护发素使用。茶油能抗菌、抗病毒及杀微菌。能防止头癣、脱发、皮屑(Dandruff)及止痒。</p>
-				<p>七、茶油也可直接搽用以防治蚊虫叮咬，有很好的止痒效果，浓的茶油可以去除疣(Virus)。</p>
-				<p>八、茶与桉混合使用，可以治疗感冒及咽喉『卡他』症(Catarrh)，顺气除痰。</p>
-				<p>九、在中国传统的中药方中常以茶油调制各种药膏、药丸。</p>
-				<p><img src="picture/news20150629002.jpg"/></p>
-				
-				<p>1.预防妊娠纹：<br />
-　　					孕期5-7个月是妊娠纹的高发期，经常会有肚皮痒胀的感觉，有的还会出现小红点，这是妊娠纹的征兆。请睡前清洗皮肤后，用2-4滴茶油涂匀皮肤，轻轻按摩5-15分钟。一般用一次痒、胀感觉就会消失，情况严重者请每天多用1-2次。孕期体重过快增长是产生妊娠纹的主要原因，一方面请坚持使用茶油滋润皮肤外，请一定注意控制体重过快增长，同时使用托腹带，减少肚肚的拉伸负荷。</p>            
-			</div>
-            
+				<p>${news.content}</p>
             <div class="crux">
                 <span>本文关键字：</span>
 				<a href="#" target="_blank">世家之交</a>

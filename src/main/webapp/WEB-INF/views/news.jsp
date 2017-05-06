@@ -64,15 +64,14 @@
         			<div class="texts">
         				<h3><a href="news/${news.id}">${news.title}</a></h3>
         				<h4><fmt:formatDate value="${news.issuedTime}"  pattern="yyyy-MM-dd" type="date" dateStyle="long" /> </h4>
-        				<p>${news.content}</p>
-        				<p>${news.content}</p>
+        				<p>${news.contentAbstract}</p>
         				<h6><a href="news/${news.id}" target="_blank">MORE</a></h6>
         			</div>
         		</li>
         	</c:forEach>
           </ul>
           
-        <div class="pages"></div>
+        <!-- <div class="pages"></div> -->
     </div>
 </div>
 <div class="footer">

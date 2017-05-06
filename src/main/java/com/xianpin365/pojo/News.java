@@ -8,6 +8,7 @@ public class News {
 	private boolean actived;
 	private String title;
 	private String previewPic;
+	private String contentAbstract;
 	private Date issuedTime;
 	private String from;
 	private String pvCount;
@@ -49,6 +50,14 @@ public class News {
 
 	public void setPreviewPic(String previewPic) {
 		this.previewPic = previewPic;
+	}
+
+	public String getContentAbstract() {
+		return contentAbstract;
+	}
+
+	public void setContentAbstract(String contentAbstract) {
+		this.contentAbstract = contentAbstract;
 	}
 
 	public Date getIssuedTime() {
