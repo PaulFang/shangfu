@@ -38,11 +38,11 @@
         <div class="logo"><a href="index"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
-				<li><a href="<c:url value='/about' />" >关于尚孚</a></li>
-				<li><a href="<c:url value='/product' />" class="current">产品展示</a></li>
-				<li><a href="<c:url value='/honor' />" >荣誉资质</a></li>
-				<li><a href="<c:url value='/news' />" >新闻资讯</a></li>
-				<li><a href="<c:url value='/contact' />" >联系我们</a></li>
+				<li><a href="<c:url value='/about' />" >${info.menuItem1}</a></li>
+				<li><a href="<c:url value='/product' />" class="current">${info.menuItem2}</a></li>
+				<li><a href="<c:url value='/honor' />" >${info.menuItem3}</a></li>
+				<li><a href="<c:url value='/news' />" >${info.menuItem4}</a></li>
+				<li><a href="<c:url value='/contact' />" >${info.menuItem5}</a></li>
 			</ul>
 		</div>
         
@@ -163,11 +163,11 @@
         <div class="tel">0713-8533399 17771339998</div>
         <div class="right">
             <ul class="menu-foot">                
-                <li><a href="<c:url value='/about' />" >关于尚孚</a></li>
-				<li><a href="<c:url value='/product' />">产品展示</a></li>
-				<li><a href="<c:url value='/honor' />" >荣誉资质</a></li>
-				<li><a href="<c:url value='/news' />"  >新闻资讯</a></li>
-				<li><a href="<c:url value='/contact' />" >联系我们</a></li>
+                <li><a href="<c:url value='/about' />" >${info.menuItem1}</a></li>
+				<li><a href="<c:url value='/product' />">${info.menuItem2}</a></li>
+				<li><a href="<c:url value='/honor' />" >${info.menuItem3}</a></li>
+				<li><a href="<c:url value='/news' />"  >${info.menuItem4}</a></li>
+				<li><a href="<c:url value='/contact' />" >${info.menuItem5}</a></li>
                 
             </ul>
             <div class="copyright">

@@ -10,10 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.xianpin365.domain.Language;
-import com.xianpin365.pojo.PageCommonInfo;
 import com.xianpin365.pojo.Product;
-import com.xianpin365.service.IPageCommonInfoService;
 import com.xianpin365.service.IProductService;
 
 @Controller
@@ -21,16 +18,11 @@ public class ProductController {
 
 	@Resource
 	private IProductService productService;
-	
-	@Resource
-	private IPageCommonInfoService pageCommonInfoService;
 
 	@RequestMapping("/product")
 	public String getProductsPreview(HttpServletRequest request, Model model) {
 		String reqUri = request.getRequestURI();
 		List<Product> products = productService.getActivedProducts();
-		PageCommonInfo info = pageCommonInfoService.getByLanguage(Language.ZH_CN.getLanguage());
-		model.addAttribute("info", info);
 		model.addAttribute("products", products);
 		return reqUri;
 	}

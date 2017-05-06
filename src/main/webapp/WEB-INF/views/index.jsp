@@ -25,11 +25,11 @@
         <div class="logo"><a href="index"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
-				<li><a href="about" >关于尚孚</a></li>
-				<li><a href="product" >产品展示</a></li>
-				<li><a href="honor" >荣誉资质</a></li>
-				<li><a href="news" >新闻资讯</a></li>
-				<li><a href="contact" >联系我们</a></li>
+				<li><a href="about" >${info.menuItem1}</a></li>
+				<li><a href="product" >${info.menuItem2}</a></li>
+				<li><a href="honor" >${info.menuItem3}</a></li>
+				<li><a href="news" >${info.menuItem4}</a></li>
+				<li><a href="contact" >${info.menuItem5}</a></li>
 			</ul>
 		</div>
         
@@ -148,15 +148,6 @@
                 <em class="line-right4"></em>
             </div>
             <div class="honor">
-                <!-- <ul class="tab">
-                    <li class="aquatic on">
-                        <a href="javascript:void(0)">
-                            <h3>AQUATIC</h3>
-                            <h4>相关行业认证 </h4>
-                        </a>
-                    </li>
-                   
-                </ul> -->
                 <div class="contents">
                     <ul class="certificate">
             <li><div align="center"><a href="honor_img/9001.png" rel="honor" title="9001认证"><img src="honor_img/9001.png" style="width:241px;height:171px;"><span></span><em></em></a></div></li>
@@ -239,12 +230,11 @@
         <div class="right">
             <ul class="menu-foot">
                 <li><span><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261854141'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261854141%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></span></li>
-                <li><a href="about" class="current">关于尚孚</a></li>
-                <li><a href="product" >产品展示</a></li>
-                <li><a href="honor" >荣誉资质</a></li>
-                <li><a href="news" >新闻资讯</a></li>                
-                <!-- <li><a href="service" >客服中心</a></li> -->
-                <li><a href="contact" >联系我们</a></li>
+                <li><a href="about" >${info.menuItem1}</a></li>
+                <li><a href="product" >${info.menuItem2}</a></li>
+                <li><a href="honor" >${info.menuItem3}</a></li>
+                <li><a href="news" >${info.menuItem4}</a></li>                
+                <li><a href="contact" >${info.menuItem5}</a></li>
             </ul>
             <div class="copyright">
                 <strong>Copyright © 2017 www.xianpin365.com 粤ICP备15001240号 All Rights Reserved</strong>
