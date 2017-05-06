@@ -1,5 +1,7 @@
 package com.xianpin365.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -22,6 +24,14 @@ public class ProductServiceImp implements IProductService{
 		return productDao.getById(id);
 	}
 
+	@Override
+	public List<Product> getActivedProducts() {
+		return productDao.getByStatus(true);
+	}
 	
+	@Override
+	public List<Product> getUnactivedProducts(){
+		return productDao.getByStatus(false);
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.xianpin365.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,11 +22,10 @@ public class ViewMappingController {
 	private IProductService productService;
 	
 	
-	@RequestMapping(value={"/index","/about","/product1","/honor","/contact"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/index","/about","/honor","/contact", "/managerlogin","/managerlogin1"}, method=RequestMethod.GET)
 	public String doDirectRequest(HttpServletResponse response,
             HttpServletRequest request) {
 		String reqUri = request.getRequestURI();
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		return reqUri;
 	}
 	
@@ -33,21 +34,22 @@ public class ViewMappingController {
             HttpServletRequest request) {
 		String reqUri = request.getRequestURI();
 		
-		if(reqUri.endsWith("/")){
-			int length = reqUri.length();
-			reqUri = reqUri.substring(0, length-1);
-		}
+//		if(reqUri.endsWith("/")){
+//			int length = reqUri.length();
+//			reqUri = reqUri.substring(0, length-1);
+//		}
 		
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		return reqUri;
 	}
-	
-	
 	
 	@RequestMapping("/product/{productId}")
 	public String getProductDetail(@PathVariable String productId, Model model) {
 		Integer id = Integer.parseInt(productId);
 		Product product = productService.getById(id);
+		
+		List<Product> products = productService.getActivedProducts();
+		System.out.println(products);
+		
 		model.addAttribute("product", product);
 		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBB");
 		return "product_detail";

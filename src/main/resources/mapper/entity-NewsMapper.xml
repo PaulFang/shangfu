@@ -6,6 +6,7 @@
 	<resultMap id="newsMap" type="com.xianpin365.pojo.News">
 		<id column="ID" property="id" />
 		<result column="TITLE" property="title" />
+		<result column="ACTIVED" property="actived" />
 		<result column="PREVIEW_PIC" property="previewPic" />
 		<result column="ISSUED_TIME" property="issuedTime" />
 		<result column="FROM" property="from"/>
@@ -20,16 +21,16 @@
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		ID,TITLE,PREVIEW_PIC,ISSUED_TIME,FROM,PV_CNT,CONTENT,KEYWORDS,
+		ID,ACTIVED,TITLE,PREVIEW_PIC,ISSUED_TIME,FROM,PV_CNT,CONTENT,KEYWORDS,
 		NEXT_NEWS_ID,NEXT_NEWS_TITLE,LAST_NEWS_ID,LAST_NEWS_TITLE,NECK_BANNER
 	</sql>	
 
 	<insert id="insert" parameterType="com.xianpin365.pojo.News"
 		flushCache="true" statementType="PREPARED" keyProperty="" keyColumn=""
 		useGeneratedKeys="false" timeout="20">
-		INSERT INTO T_NEWS_INFO(ID,TITLE,PREVIEW_PIC,ISSUED_TIME,FROM,PV_CNT,CONTENT,KEYWORDS,
+		INSERT INTO T_NEWS_INFO(ID,ACTIVED,TITLE,PREVIEW_PIC,ISSUED_TIME,FROM,PV_CNT,CONTENT,KEYWORDS,
 		NEXT_NEWS_ID,NEXT_NEWS_TITLE,LAST_NEWS_ID,LAST_NEWS_TITLE,NECK_BANNER) 
-		VALUES(#{id},#{title},#{previewPic},#{issuedTime},#{from},#{pvCount},#{content},
+		VALUES(#{id},#{actived},#{title},#{previewPic},#{issuedTime},#{from},#{pvCount},#{content},
 		#{keywords},#{nextNewsId},#{nextNewsTitle},#{lastNewsId},#{lastNewsTitle},#{neckBanner})
 	</insert>
 
@@ -37,6 +38,12 @@
 		SELECT *
 		FROM T_NEWS_INFO
 		WHERE ID = #{id}
+	</select>
+	
+	<select id="getByStatus" parameterType="boolean" resultMap="newsMap">
+		SELECT *
+		FROM T_NEWS_INFO
+		WHERE ACTIVED =#{actived} ORDER BY ISSUED_TIME
 	</select>
 	
 	<!-- <update id="updateProduct" parameterType="com.xianpin365.pojo.Product" flushCache="true" 

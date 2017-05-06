@@ -8,6 +8,8 @@ public interface IProductDao {
 	
 	Product getById(Integer id);
 	
+	List<Product> getByStatus(boolean actived);
+	
 	int deleteByPrimaryKey(Integer id);
 
 	int insert(Product record);

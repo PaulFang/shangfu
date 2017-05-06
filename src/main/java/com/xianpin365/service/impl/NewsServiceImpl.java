@@ -1,5 +1,7 @@
 package com.xianpin365.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -16,12 +18,16 @@ public class NewsServiceImpl implements INewsService {
 	
 	@Override
 	public void insertNews(News record) {
-
 	}
 
 	@Override
 	public News getById(int id) {
 		return newsDao.getById(id);
+	}
+
+	@Override
+	public List<News> getActivedNews() {
+		return newsDao.getByStatus(true);
 	}
 
 }

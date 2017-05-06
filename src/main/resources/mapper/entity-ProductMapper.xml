@@ -72,6 +72,12 @@
 		FROM T_PRODUCT_INFO
 		WHERE ID = #{id}
 	</select>
+	
+	  <!-- 返回一个list的写法 -->
+    <select id="getByStatus" parameterType="boolean" resultMap="productMap" >
+        SELECT * FROM T_PRODUCT_INFO 
+        WHERE ACTIVED = #{actived} ORDER BY DISPLAY_ORDER
+    </select>
 
 	<!-- 产品页面信息 -->
 	<!-- <select id="getProducts" parameterType="int" resultType="com.xianpin365.pojo.Product">

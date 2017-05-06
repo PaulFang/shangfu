@@ -5,6 +5,7 @@ import java.util.Date;
 public class News {
 
 	private Integer id;
+	private boolean actived;
 	private String title;
 	private String previewPic;
 	private Date issuedTime;
@@ -24,6 +25,14 @@ public class News {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public boolean isActived() {
+		return actived;
+	}
+
+	public void setActived(boolean actived) {
+		this.actived = actived;
 	}
 
 	public String getTitle() {
