@@ -51,7 +51,7 @@
         <div class="location">
             <a href="index">首页</a>
             <em>&gt;</em>
-            <span><a href="product">产品展示</a></span>
+            <span><a href="product">${info.menuItem2}</a></span>
 			<em>&gt;</em>
 			<span>有机茶油·有机油茶籽·枯茶饼</span>
         </div>
@@ -66,68 +66,14 @@
         		</li>
         	</c:forEach>
         
-		   <!--  <li class="first">
-                <a href="pro_detail_1">
-                    <div class="imgs"><img src="product_img/yuzhihe/main.jpg"></div>
-                    <p><i></i><strong>尚孚·瑜之和</strong></p>
-                </a>
-                
-            </li>
-            <li >
-                <a href="pro_detail_2">
-                    <div class="imgs"><img src="product_img/shiyuejiaren/main.jpg"></div>
-                    <p><i></i><strong>尚孚·十月佳人</strong></p>
-                </a>
-            </li>
-            <li >
-                <a href="pro_detail_3">
-                    <div class="imgs"><img src="product_img/yichu/main.jpg"></div>
-                    <p><i></i><strong>尚孚·宜厨</strong></p>
-                </a> 
-            </li>
-            <div id="prod_list_locationer"></div>用于调整到页面的中心位置便于查看产品
-			<li class="first">
-                <a href="pro_detail_4">
-                    <div class="imgs"><img src="product_img/shijiazhijiao/main.jpg"></div>
-                    <p><i></i><strong>尚孚·世家之交</strong></p>
-                </a>
-                
-            </li>
-            <li>
-                <a href="pro_detail_5">
-                    <div class="imgs"><img src="product_img/junjian/main.jpg"></div>
-                    <p><i></i><strong>尚孚·君鉴</strong></p>
-                </a>
-            </li>
-            <span id="kuchabing_locationer">
-            <li>
-                <a href="pro_detail_6">
-                    <div class="imgs"><img src="product_img/chuyun/main.jpg"></div>
-                    <p><i></i><strong>尚孚·厨韵</strong></p>
-                </a>
-            </li>
-            
-            <li class="first">
-            <div ></div>
-                <a href="pro_detail_7">
-                    <div class="imgs"><img src="product_img/chakubin/main.jpg"></div>
-                    <p><i></i><strong>尚孚·枯茶饼</strong></p>
-                </a>
-                
-            </li>
-            <li>
-                <a href="pro_detail_8">
-                    <div class="imgs"><img src="product_img/youchazi/main.jpg"></div>
-                    <p><i></i><strong>尚孚·有机油茶籽</strong></p>
-                </a>
-            </li> -->
+		   
 			</ul>
 		<div class="pages"></div>
     </div>
 </div>
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">
                 <li><a href="about" class="current">${info.menuItem1}</a></li>

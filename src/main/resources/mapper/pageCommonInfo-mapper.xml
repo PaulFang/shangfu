@@ -25,8 +25,8 @@
 		<result column="EMAIL" property="eMail"/>
 		<result column="ADDR" property="addr"/>
 		<result column="WECHAT" property="wechat"/>
-		<result column="FEETER_TEL_NO" property="feeterTelNum"/>
-		<result column="FEETER_COPYRIGHT" property="feeterCopyright"/>
+		<result column="FEETER_TEL_NO" property="footerTelNum"/>
+		<result column="FEETER_COPYRIGHT" property="footerCopyright"/>
 	</resultMap>
 
 	<sql id="Base_Column_List">

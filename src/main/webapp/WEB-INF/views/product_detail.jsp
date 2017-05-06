@@ -160,7 +160,7 @@
 
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">                
                 <li><a href="<c:url value='/about' />" >${info.menuItem1}</a></li>

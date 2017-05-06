@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <link href="css/colorbox.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.colorbox.js"></script>
-<title>荣誉资质-尚孚茶油</title>
+<title>${info.menuItem3}-尚孚茶油</title>
 </head>
 <body>
 <!-- <div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div> -->
@@ -56,7 +56,7 @@
         <div class="location">
             <a href="index">首页</a>
             <em>&gt;</em>
-            <span>荣誉资质</span>
+            <span>${info.menuItem3}</span>
         </div>
         
         
@@ -94,10 +94,10 @@
 </div>
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">
-                <li><a href="about" class="current">${info.menuItem1}</a></li>
+                <li><a href="about" >${info.menuItem1}</a></li>
                 <li><a href="product" >${info.menuItem2}</a></li>
                 <li><a href="honor" >${info.menuItem3}</a></li>
                 <li><a href="news" >${info.menuItem4}</a></li>

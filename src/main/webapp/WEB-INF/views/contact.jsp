@@ -65,7 +65,7 @@
         <div class="location">
             <a href="/">首页</a>
             <em>&gt;</em>
-            <span>联系我们</span>
+            <span>${info.menuItem5}</span>
         </div>
         <div class="contac">
             <!-- <div class="map"><img src="picture/map.jpg"/></div> -->
@@ -73,7 +73,7 @@
             <!--style="width:503px;height:321px;border:#ccc solid 1px;" -->
             <div class="map" style="width:550px;height:380px;border:#ccc solid 1px;" id="dituContent"></div>
             <div class="info">
-                <div style="font-weight:bold;font-size:17px">麻城市尚孚生态农业科技有限公司</div>
+                <div style="font-weight:bold;font-size:17px">${info.companyName}</div>
                 <div>----------------------------------------------------</div>
                 <p class="tel">${info.telNum}</p>
                 <p class="web">${info.homePage}</a></p>
@@ -89,7 +89,7 @@
 </div>
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">
                 <li><a href="about" class="current">${info.menuItem1}</a></li>

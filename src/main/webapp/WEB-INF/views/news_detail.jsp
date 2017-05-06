@@ -9,7 +9,7 @@
 
 <script type="text/javascript" src="<c:url value="/js/jquery-1.9.1.min.js" />"></script>
 
-<title>${news.title}-新闻资讯-尚孚茶油</title>
+<title>${news.title}-${info.menuItem4}-尚孚茶油</title>
 
 </head>
 <body>
@@ -52,7 +52,7 @@
         <div class="location">
             <a href="<c:url value="/index" />">首页</a>
 			<em>&gt;</em>
-			<span><a href="<c:url value="/news" />">新闻资讯</a></span>
+			<span><a href="<c:url value="/news" />">${info.menuItem4}</a></span>
 			<em>&gt;</em>
 			
 			<em>&gt;</em>
@@ -95,7 +95,7 @@
 </div>
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">
                 <li><a href="about"   >${info.menuItem1}</a></li>

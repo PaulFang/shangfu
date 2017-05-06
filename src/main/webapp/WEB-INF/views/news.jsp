@@ -8,7 +8,7 @@
 
 <link href="css/other.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<title>新闻资讯-尚孚茶油</title>
+<title>${info.menuItem4}-尚孚茶油</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -54,7 +54,7 @@
         <div class="location">
 		    <a href="index">首页</a>
 			<em>&gt;</em>
-		    <span><a href="news">新闻资讯</a></span>
+		    <span><a href="news">${info.menuItem4}</a></span>
         </div>
         
         <ul class="newsList">
@@ -77,7 +77,7 @@
 </div>
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">
                 <li><a href="about" >${info.menuItem1}</a></li>

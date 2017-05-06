@@ -22,8 +22,8 @@ public class PageCommonInfo {
 	private String eMail;
 	private String addr;
 	private String wechat;
-	private String feeterTelNum;
-	private String feeterCopyright;
+	private String footerTelNum;
+	private String footerCopyright;
 
 	public Integer getId() {
 		return id;
@@ -185,20 +185,20 @@ public class PageCommonInfo {
 		this.wechat = wechat;
 	}
 
-	public String getFeeterTelNum() {
-		return feeterTelNum;
+	public String getFooterTelNum() {
+		return footerTelNum;
 	}
 
-	public void setFeeterTelNum(String feeterTelNum) {
-		this.feeterTelNum = feeterTelNum;
+	public void setFeeterTelNum(String footerTelNum) {
+		this.footerTelNum = footerTelNum;
 	}
 
 	public String getFeeterCopyright() {
-		return feeterCopyright;
+		return footerCopyright;
 	}
 
-	public void setFeeterCopyright(String feeterCopyright) {
-		this.feeterCopyright = feeterCopyright;
+	public void setFeeterCopyright(String footerCopyright) {
+		this.footerCopyright = footerCopyright;
 	}
 
 }

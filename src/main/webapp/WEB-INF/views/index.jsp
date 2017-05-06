@@ -165,7 +165,7 @@
         <div class="page page5">
             <div class="pageTitle">
                 <div class="logo">
-                    <h3>联系我们</h3>
+                    <h3>${info.menuItem5}</h3>
                     <h4>CONTACT US</h4>
                 </div>
                 <em class="line-left1"></em>
@@ -184,7 +184,7 @@
 				<div class="contac">
 					<div class="map" style="width:550px;height:380px;border:#ccc solid 1px;" id="dituContent"><a href="contact" target="_blank"><img src="images/map/map.png"></a></div>
 					<div class="info">
-						<div style="font-weight:bold;font-size:17px">麻城市尚孚生态农业科技有限公司</div>
+						<div style="font-weight:bold;font-size:17px">${info.companyName}</div>
 						<div>----------------------------------------------------</div>
 						<p class="tel">0713-8533399  　177－7133－9998</p>
 						<p class="web">www.xianpin365.com</a></p>
@@ -219,14 +219,14 @@
 <div class="pageSum">
     <a href="javascript:void(0)" class="toTop"></a>
     <em class="on"><span>尚孚食品</span></em>
-    <em><span>关于尚孚</span></em>
-    <em><span>产品展示</span></em>
-    <em><span>荣誉资质</span></em>
-    <em><span>联系我们</span></em>
+    <em><span>${info.menuItem1}</span></em>
+    <em><span>${info.menuItem2}</span></em>
+    <em><span>${info.menuItem3}</span></em>
+    <em><span>${info.menuItem5}</span></em>
 </div>
 <div class="footer">
     <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
+        <div class="tel">${info.footerTelNum}</div>
         <div class="right">
             <ul class="menu-foot">
                 <li><span><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261854141'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261854141%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></span></li>
