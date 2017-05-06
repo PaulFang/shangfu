@@ -2,7 +2,7 @@ package com.xianpin365.domain;
 
 public enum Language {
 
-	ZH_CN("zh-cn"), EN_US("en-us");
+	ZH_CN("zh-CN"), EN_US("en-US");
 
 	private String language;
 

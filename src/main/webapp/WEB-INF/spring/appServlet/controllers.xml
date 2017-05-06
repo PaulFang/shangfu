@@ -3,12 +3,33 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- Maps '/' requests to the 'home' view -->
 	<mvc:view-controller path="/" view-name="index"/>
+	
+	<mvc:interceptors>
+    <!-- 直接定义拦截所有请求 -->
+    	<bean class="com.xianpin365.interceptor.GlobalInterceptor"></bean>
+    </mvc:interceptors>
+	
+	<!-- 
+	<mvc:interceptors>
+        对所有的请求记性拦截
+        <beans:bean class="com.xianpin365.interceptor.GlobalInterceptor"/>
+        对特定的请求进行拦截
+        <mvc:interceptor>
+            <mapping path="/kfc/brands/brand1/*"/>
+            <beans:bean class="com.sunp.common.interceptor.Myinterceptor"/>
+        </mvc:interceptor>
+	</mvc:interceptors> -->
 	
 	<!-- <context:component-scan base-package="org.springframework.samples.mvc" /> -->
 	<context:component-scan base-package="com.xianpin365" />
