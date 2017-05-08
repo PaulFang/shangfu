@@ -22,5 +22,11 @@ public class ViewMappingController {
 		String reqUri = request.getRequestURI();
 		return reqUri;
 	}
+	
+	@RequestMapping(value = { "/ueditor" }, method = RequestMethod.GET)
+	public String get(HttpServletResponse response, HttpServletRequest request) {
+		String reqUri = request.getRequestURI();
+		return reqUri;
+	}
 
 }

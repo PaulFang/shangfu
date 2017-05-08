@@ -7,6 +7,9 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <listener>
+    <listener-class>com.xianpin365.listener.PageViewRecordListener</listener-class>
+  </listener>
   <filter>
     <filter-name>csrfFilter</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

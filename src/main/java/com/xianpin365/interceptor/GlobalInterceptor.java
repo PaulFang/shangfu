@@ -1,16 +1,21 @@
 package com.xianpin365.interceptor;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.xianpin365.constant.Constant;
+import com.xianpin365.domain.Action;
 import com.xianpin365.domain.Language;
+import com.xianpin365.domain.VistorAction;
 import com.xianpin365.entity.PageCommonInfo;
 import com.xianpin365.service.IPageCommonInfoService;
 
@@ -23,8 +28,7 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object controller) {
-		String accessorHost = getAccessorHost(req);
-		System.out.println(accessorHost);
+		setVistorAction(req);
 		return true;
 	}
 
@@ -42,7 +46,7 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		}
 	}
 
-	private String getAccessorHost(HttpServletRequest request) {
+	private String getVistorHost(HttpServletRequest request) {
 		if (request.getHeader("x-forwarded-for") == null) {
 			return request.getRemoteAddr();
 		}
@@ -57,6 +61,44 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 			return Language.ZH_CN;
 		}
 		return language;
+	}
+	
+	private void setVistorAction(HttpServletRequest req){
+		
+		String url = req.getRequestURL().toString();
+		if(isStaticResourceRequest(url)){
+			return;
+		}
+		
+		HttpSession session = req.getSession(true);
+		Object obj = session.getAttribute(Constant.VISTOR_ACTION_TRACE_KEY);
+		
+		if(obj==null){
+			VistorAction action = new VistorAction();
+			action.setVistorHost(getVistorHost(req));
+			action.setLanguage(getAccessorLanguage(req));
+			action.setUserAgent(req.getHeader("User-Agent"));
+			Action item = new Action();
+			item.setRequestURL(url);
+			item.setReferer(req.getHeader("Referer"));
+			item.setTime(new Date());
+			action.getActions().add(item);
+			session.setAttribute(Constant.VISTOR_ACTION_TRACE_KEY, action);
+		}else{
+			VistorAction action = (VistorAction)obj;
+			Action item = new Action();
+			item.setRequestURL(url);
+			item.setReferer(req.getHeader("Referer"));
+			item.setTime(new Date());
+			action.getActions().add(item);
+		}
+		
+	}
+	
+	private boolean isStaticResourceRequest(String url){
+		return (url.contains("/css") || url.contains("/js") || 
+				url.contains("/picture")|| url.contains("/product_img") ||
+				url.contains("/honor_img") || url.contains("/images"));
 	}
 	
 }

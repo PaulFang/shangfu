@@ -35,7 +35,7 @@
 
 <div class="header">
     <div class="main">
-        <div class="logo"><a href="index"></a></div>
+        <div class="logo"><a href="<c:url value="index" />"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
 				<li><a href="<c:url value='/about' />" >${info.menuItem1}</a></li>
@@ -149,7 +149,7 @@
                 <p>尚孚.瑜之和有机山茶油，好礼品，自有真情。</p>
                 
                 <div class="cartBox">
-                    <a href="${product.purchaseLink}" target="_blank" class="cart" style=" margin-left:30px;"><i></i>立即订购</a>
+                    <a href="${product.purchaseLink}" target="_blank" class="cart" style=" margin-left:30px;"><i></i>${info.orderLabel}</a>
                 </div>
                 
             </div>

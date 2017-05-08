@@ -31,7 +31,7 @@
 </script>
 <div class="header">
     <div class="main">
-        <div class="logo"><a href="index"></a></div>
+        <div class="logo"><a href="<c:url value="index" />"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
 				<li><a href="<c:url value='/about' />" >${info.menuItem1}</a></li>
@@ -97,7 +97,7 @@
     </div>
 </div>
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
-<script type="text/javascript" src="js/function.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="<c:url value="/js/function.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/public.js" />"></script>
 </body>
 </html>

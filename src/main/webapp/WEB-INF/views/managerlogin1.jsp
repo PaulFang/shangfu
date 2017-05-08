@@ -13,25 +13,9 @@
 
 </head>
 <body>
-<!-- <div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div> -->
-<script type="text/javascript">
-    var loads=document.getElementById("ioad").getElementsByTagName("span");
-    var loadIndex=0;
-    var loadLen=loads.length;
-    setInterval(function(){
-        loadIndex++;
-        loadIndex=loadIndex>9?0:loadIndex;
-        for(var i=0;i<loadLen;i++){
-            var dom=loads[i];
-            if(dom){
-                dom.style.backgroundPosition="center -"+(40*loadIndex)+"px";
-            }
-        }
-    },40);
-</script>
 <div class="header">
     <div class="main">
-        <div class="logo"><a href="index"></a></div>
+        <div class="logo"><a href="<c:url value="index" />"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
 				<li><a href="<c:url value='/about' />" >关于尚孚</a></li>

@@ -1,4 +1,4 @@
-﻿<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -22,7 +22,7 @@
 <!-- <div class="load" id="ioad"></div> -->
 <div class="header">
     <div class="main">
-        <div class="logo"><a href="index"></a></div>
+        <div class="logo"><a href="<c:url value="index" />"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
 				<li><a href="about" >${info.menuItem1}</a></li>
@@ -186,11 +186,11 @@
 					<div class="info">
 						<div style="font-weight:bold;font-size:17px">${info.companyName}</div>
 						<div>----------------------------------------------------</div>
-						<p class="tel">0713-8533399  　177－7133－9998</p>
-						<p class="web">www.xianpin365.com</a></p>
-						<p class="qq">2962053874 （企业QQ）</p>
-						<p class="email">yuandp_sf@163.com</p>
-						<p class="add">湖北•黄冈•麻城市宋埠镇道仕岭村</p>
+						<p class="tel">${info.telNum}</p>
+						<p class="web">${info.homePage}</a></p>
+						<p class="qq">${info.qq}</p>
+						<p class="email">${info.eMail}</p>
+						<p class="add">${info.addr}</p>
 						<div class="weixin code2d" style="margin-top:20px;">
 							<img src="images/bj-weixin.png">
 						</div>

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -39,7 +40,7 @@
 </script>
 <div class="header">
     <div class="main">
-        <div class="logo"><a href="index"></a></div>
+        <div class="logo"><a href="<c:url value="index" />"></a></div>
 		<div style="width:650px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
 				<li><a href="about" >${info.menuItem1}</a></li>

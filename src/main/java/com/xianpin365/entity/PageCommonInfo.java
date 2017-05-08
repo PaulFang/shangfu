@@ -22,6 +22,7 @@ public class PageCommonInfo {
 	private String eMail;
 	private String addr;
 	private String wechat;
+	private String orderLabel;
 	private String footerTelNum;
 	private String footerCopyright;
 
@@ -185,11 +186,19 @@ public class PageCommonInfo {
 		this.wechat = wechat;
 	}
 
+	public String getOrderLabel() {
+		return orderLabel;
+	}
+
+	public void setOrderLabel(String orderLabel) {
+		this.orderLabel = orderLabel;
+	}
+
 	public String getFooterTelNum() {
 		return footerTelNum;
 	}
 
-	public void setFeeterTelNum(String footerTelNum) {
+	public void setFooterTelNum(String footerTelNum) {
 		this.footerTelNum = footerTelNum;
 	}
 
