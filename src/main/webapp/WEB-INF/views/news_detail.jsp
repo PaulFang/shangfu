@@ -55,8 +55,6 @@
 			<em>&gt;</em>
 			<span><a href="<c:url value="/news" />">${info.menuItem4}</a></span>
 			<em>&gt;</em>
-			
-			<em>&gt;</em>
 			<span>${news.title}</span>
             
         </div>

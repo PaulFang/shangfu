@@ -53,7 +53,7 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		return request.getHeader("x-forwarded-for");
 	}
 
-	private Language getAccessorLanguage(HttpServletRequest request){
+	public static Language getAccessorLanguage(HttpServletRequest request){
 		String lang = request.getHeader("Accept-Language");
 		int commaIndex = lang.indexOf(",");
 		Language language = Language.parse(lang.substring(0, commaIndex));

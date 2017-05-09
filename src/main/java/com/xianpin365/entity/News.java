@@ -11,7 +11,7 @@ public class News {
 	private String contentAbstract;
 	private Date issuedTime;
 	private String from;
-	private String pvCount;
+	private Integer pvCount;
 	private String content;
 	private String keywords;
 	private Integer nextNewsId;
@@ -76,11 +76,11 @@ public class News {
 		this.from = from;
 	}
 
-	public String getPvCount() {
+	public Integer getPvCount() {
 		return pvCount;
 	}
 
-	public void setPvCount(String pvCount) {
+	public void setPvCount(Integer pvCount) {
 		this.pvCount = pvCount;
 	}
 

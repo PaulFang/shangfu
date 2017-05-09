@@ -10,7 +10,7 @@ import com.xianpin365.domain.VistorAction;
 public class PageViewRecordListener implements HttpSessionListener {
 	
     public void sessionCreated(HttpSessionEvent event) {
-    	event.getSession().setMaxInactiveInterval(10);
+    	event.getSession().setMaxInactiveInterval(3000);
     }
 
     // 当session 销毁时记录下用户访问的踪迹

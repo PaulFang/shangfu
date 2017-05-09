@@ -210,4 +210,15 @@ public class PageCommonInfo {
 		this.footerCopyright = footerCopyright;
 	}
 
+	@Override
+	public String toString() {
+		return "PageCommonInfo [id=" + id + ", language=" + language + ", menuItem1=" + menuItem1 + ", menuItem2="
+				+ menuItem2 + ", menuItem3=" + menuItem3 + ", menuItem4=" + menuItem4 + ", menuItem5=" + menuItem5
+				+ ", aboutBanner=" + aboutBanner + ", productBanner=" + productBanner + ", honorBanner=" + honorBanner
+				+ ", newsBanner=" + newsBanner + ", contactBanner=" + contactBanner + ", menuSlogan=" + menuSlogan
+				+ ", companyName=" + companyName + ", telNum=" + telNum + ", homePage=" + homePage + ", qq=" + qq
+				+ ", eMail=" + eMail + ", addr=" + addr + ", wechat=" + wechat + ", orderLabel=" + orderLabel
+				+ ", footerTelNum=" + footerTelNum + ", footerCopyright=" + footerCopyright + "]";
+	}
+
 }

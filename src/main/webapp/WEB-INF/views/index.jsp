@@ -218,7 +218,7 @@
 </div>
 <div class="pageSum">
     <a href="javascript:void(0)" class="toTop"></a>
-    <em class="on"><span>尚孚食品</span></em>
+    <em class="on"><span>产品预览</span></em>
     <em><span>${info.menuItem1}</span></em>
     <em><span>${info.menuItem2}</span></em>
     <em><span>${info.menuItem3}</span></em>
