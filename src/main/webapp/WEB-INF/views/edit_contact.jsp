@@ -46,11 +46,11 @@
 
 	<form>
 		<table style="width: 1000px; " border="1">
-		  	<tr>
-		    	<th>属性</th>
-		    	<th>属性说明</th>
-		    	<th>修改后的值</th>
-		    	<th>当前值</th>
+		  	<tr height=25px>
+		    	<td width="80">属性</td>
+		    	<td width="250">属性说明</td>
+		    	<td width="350">修改后的值</td>
+		    	<td>当前值</td>
 		  	</tr>
 		  	<tr style="display:none">
 		    	<td>ID</td>
@@ -74,7 +74,7 @@
 		  	<tr>
 		    	<td>公司电话</td>
 		    	<td>公司电话（index/cotact中的联系电话）</td>
-		    	<td><input name="telNum" id="telNum" type="text" value=${info.telNum}></td>
+		    	<td width="300"><input name="telNum" id="telNum" type="text" value="${info.telNum}"></td>
 		    	<td>${info.telNum}</td>
 		  	</tr>
 		  	<tr>

@@ -29,7 +29,10 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object controller) {
 		setVistorAction(req);
-		return true;
+		if(checkEditPermission(req)){
+			return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -73,6 +76,10 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = req.getSession(true);
 		Object obj = session.getAttribute(Constant.VISTOR_ACTION_TRACE_KEY);
 		
+		if(url.contains("managerlogin")){
+			session.setAttribute("admin", true);
+		}
+		
 		if(obj==null){
 			VistorAction action = new VistorAction();
 			action.setVistorHost(getVistorHost(req));
@@ -99,6 +106,17 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		return (url.contains("/css") || url.contains("/js") || 
 				url.contains("/picture")|| url.contains("/product_img") ||
 				url.contains("/honor_img") || url.contains("/images"));
+	}
+	
+	private boolean checkEditPermission(HttpServletRequest req){
+		if(req.getRequestURL().toString().contains("/edit")){
+			HttpSession session = req.getSession();
+			if(session.getAttribute("admin")!=null){
+				return true;
+			}
+			return false;
+		}
+		return true;
 	}
 	
 }
