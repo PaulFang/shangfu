@@ -11,9 +11,9 @@
 <script type="text/javascript" src="<c:url value="js/ueditor/ueditor.config.js" />" ></script>  
 <!-- 编辑器源码文件 -->  
 <script type="text/javascript" src="<c:url value="js/ueditor/ueditor.all.min.js"/>" ></script>  
-
-
-<script type="text/javascript" src="<c:url value="/js/jquery-1.9.1.min.js" />"></script>
+<script type="text/javascript">window.UEDITOR_HOME_URL="/resources/js/ueditor/"; </script>
+<%-- 
+<script type="text/javascript" src="<c:url value="/js/jquery-1.9.1.min.js" />"></script> --%>
 
 <title>管理员登录</title>
 
@@ -54,6 +54,16 @@
     <!-- 实例化编辑器 -->
 	<script type="text/javascript">
 	    var ue = UE.getEditor('container');
+	    
+	    UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;  
+	    UE.Editor.prototype.getActionUrl = function(action) {  
+	        if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadvideo') {  
+	            return '${ctx}/fileupload';  
+	        } else {  
+	            return this._bkGetActionUrl.call(this, action);  
+	        }  
+	    } 
+	    
 	</script>
 </div>
 
@@ -79,8 +89,8 @@
     </div>
 </div>
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
-<script type="text/javascript" src="js/function.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<!-- <script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/public.js"></script> -->
 
 </body>
 </html>
