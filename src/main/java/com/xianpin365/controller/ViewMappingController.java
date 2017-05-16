@@ -52,7 +52,7 @@ public class ViewMappingController {
 	}
 	
 	@RequestMapping(value="/fileupload", method=RequestMethod.POST)
-	@ResponseBody Map processUpload(@RequestParam MultipartFile fileupload, Model model) throws IOException {
+	@ResponseBody Map<String, String> processUpload(@RequestParam MultipartFile fileupload, Model model) throws IOException {
 		
 		InputStream is = fileupload.getInputStream();
 		File f = new File("C:\\Temp\\0.jpg");
