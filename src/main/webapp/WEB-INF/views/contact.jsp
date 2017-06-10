@@ -48,6 +48,7 @@
 				<li><a href="honor" >${info.menuItem3}</a></li>
 				<li><a href="news" >${info.menuItem4}</a></li>
 				<li><a href="contact" class="current">${info.menuItem5}</a></li>
+				<li><a href="">English</a></li>
 			</ul>
 		</div>
         

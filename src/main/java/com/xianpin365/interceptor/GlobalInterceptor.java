@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.xianpin365.constant.Constant;
+import com.xianpin365.constant.Consts;
 import com.xianpin365.domain.Action;
 import com.xianpin365.domain.Language;
 import com.xianpin365.domain.VistorAction;
@@ -74,7 +74,7 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		}
 		
 		HttpSession session = req.getSession(true);
-		Object obj = session.getAttribute(Constant.VISTOR_ACTION_TRACE_KEY);
+		Object obj = session.getAttribute(Consts.VISTOR_ACTION_TRACE_KEY);
 		
 		if(url.contains("managerlogin")){
 			session.setAttribute("admin", true);
@@ -90,7 +90,7 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 			item.setReferer(req.getHeader("Referer"));
 			item.setTime(new Date());
 			action.getActions().add(item);
-			session.setAttribute(Constant.VISTOR_ACTION_TRACE_KEY, action);
+			session.setAttribute(Consts.VISTOR_ACTION_TRACE_KEY, action);
 		}else{
 			VistorAction action = (VistorAction)obj;
 			Action item = new Action();

@@ -23,13 +23,14 @@
 <div class="header">
     <div class="main">
         <div class="logo"><a href="<c:url value="index" />"></a></div>
-		<div style="width:650px;float:left;">
+		<div style="width:78px;float:left;">
 			<ul class="nav" style="margin-top: 14px;">
 				<li><a href="about" >${info.menuItem1}</a></li>
 				<li><a href="product" >${info.menuItem2}</a></li>
 				<li><a href="honor" >${info.menuItem3}</a></li>
 				<li><a href="news" >${info.menuItem4}</a></li>
 				<li><a href="contact" >${info.menuItem5}</a></li>
+				<li><a href="">English</a></li>
 			</ul>
 		</div>
         

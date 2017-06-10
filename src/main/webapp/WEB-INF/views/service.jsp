@@ -35,6 +35,7 @@
             <li><a href="news" >${info.menuItem4}</a></li>
             <li><a href="service" class="current">客服中心</a></li>
             <li><a href="contact" >${info.menuItem5}</a></li>
+            <li><a href="">English</a></li>
         </ul>
         <div class="slogan"> <a href="index"><img src="images/slogan.png" style="width:280px;height:40px;"></a> </div>
     </div>

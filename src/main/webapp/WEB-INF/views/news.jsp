@@ -36,6 +36,7 @@
 				<li><a href="honor" >${info.menuItem3}</a></li>
 				<li><a href="news" class="current">${info.menuItem4}</a></li>
 				<li><a href="contact" >${info.menuItem5}</a></li>
+				<li><a href="">English</a></li>
 			</ul>
 		</div>
         

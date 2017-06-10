@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.xianpin365.constant.Constant;
+import com.xianpin365.constant.Consts;
 import com.xianpin365.entity.News;
 import com.xianpin365.service.INewsService;
 
@@ -25,7 +25,7 @@ public class NewsController {
 		String reqUri = request.getRequestURI();
 		List<News> newsList = newsService.getActivedNews();
 		if(newsList==null || newsList.size()==0){
-			return Constant.PAGE_NOT_FOUND;
+			return Consts.PAGE_NOT_FOUND;
 		}
 		model.addAttribute("newsList", newsList);
 		return reqUri;
@@ -36,7 +36,7 @@ public class NewsController {
 		Integer id = Integer.parseInt(newsId);
 		News news = newsService.getById(id);
 		if(news==null){
-			return Constant.PAGE_NOT_FOUND;
+			return Consts.PAGE_NOT_FOUND;
 		}
 		model.addAttribute("news", news);
 		return "news_detail";

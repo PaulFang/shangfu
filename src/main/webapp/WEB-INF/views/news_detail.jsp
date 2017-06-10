@@ -39,6 +39,7 @@
 				<li><a href="<c:url value='/honor' />" >${info.menuItem3}</a></li>
 				<li><a href="<c:url value='/news' />"  class="current">${info.menuItem4}</a></li>
 				<li><a href="<c:url value='/contact' />" >${info.menuItem5}</a></li>
+				<li><a href="">English</a></li>
 			</ul>
 		</div>
         
