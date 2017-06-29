@@ -27,7 +27,7 @@ public class ViewMappingController {
 	@Resource
 	private IProductService productService;
 
-	@RequestMapping(value = { "/index", "/about", "/honor", "/managerlogin","/controller"
+	@RequestMapping(value = { "/index", "/aboutAAA", "/honor", "/managerlogin","/controller"
 			 })
 	public String doDirectRequest(HttpServletResponse response, HttpServletRequest request) {
 		String reqUri = request.getRequestURI();
