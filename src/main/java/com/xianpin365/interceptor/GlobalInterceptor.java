@@ -91,6 +91,11 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = req.getSession(true);
 		Object obj = session.getAttribute(Consts.VISTOR_ACTION_TRACE_KEY);
 		
+		if(session.getAttribute(Consts.VISTOR_LANGUAGE)==null){
+			Language language = getAccessorLanguage(req);
+			session.setAttribute(Consts.VISTOR_LANGUAGE, language);
+		}
+		
 		if(url.contains("managerlogin")){
 			session.setAttribute("admin", true);
 		}
