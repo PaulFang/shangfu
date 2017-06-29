@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xianpin365.constant.Consts;
+import com.xianpin365.domain.Language;
 import com.xianpin365.entity.News;
 import com.xianpin365.service.INewsService;
 
@@ -23,7 +24,11 @@ public class NewsController {
 	@RequestMapping("/news")
 	public String getNewsList(HttpServletRequest request, Model model) {
 		String reqUri = request.getRequestURI();
-		List<News> newsList = newsService.getActivedNews();
+		
+		Language lang = (Language)request.getSession().getAttribute(Consts.VISTOR_LANGUAGE);
+		String language = lang.getLanguage();
+		
+		List<News> newsList = newsService.getActivedNews(language);
 		if(newsList==null || newsList.size()==0){
 			return Consts.PAGE_NOT_FOUND;
 		}

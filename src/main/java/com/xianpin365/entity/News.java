@@ -6,6 +6,7 @@ public class News {
 
 	private Integer id;
 	private boolean actived;
+	private String language;
 	private String title;
 	private String previewPic;
 	private String contentAbstract;
@@ -34,6 +35,14 @@ public class News {
 
 	public void setActived(boolean actived) {
 		this.actived = actived;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 	public String getTitle() {

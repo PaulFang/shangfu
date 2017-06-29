@@ -7,6 +7,7 @@
 		<id column="ID" property="id" />
 		<result column="TITLE" property="title" />
 		<result column="ACTIVED" property="actived" />
+		<result column="LANGUAGE" property="language" />
 		<result column="PREVIEW_PIC" property="previewPic" />
 		<result column="CONTENT_ABSTRACT" property="contentAbstract" />
 		<result column="ISSUED_TIME" property="issuedTime" />
@@ -41,13 +42,10 @@
 		WHERE ID = #{id}
 	</select>
 	
-	<select id="getByStatus" parameterType="boolean" resultMap="newsMap">
+	<select id="getByStatus" resultMap="newsMap">
 		SELECT *
 		FROM T_NEWS_INFO
-		WHERE ACTIVED =#{actived} ORDER BY ISSUED_TIME
+		WHERE ACTIVED =#{actived} AND LANGUAGE = #{language} ORDER BY ISSUED_TIME
 	</select>
-	
-	<!-- <update id="updateProduct" parameterType="com.xianpin365.entity.Product" flushCache="true" 
-		statementType="PREPARED" timeout="20" /> -->
 
 </mapper>

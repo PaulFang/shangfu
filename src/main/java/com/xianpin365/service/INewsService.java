@@ -10,6 +10,6 @@ public interface INewsService {
 	
 	News getById(int id);
 	
-	List<News> getActivedNews();
+	List<News> getActivedNews(String language);
 	
 }

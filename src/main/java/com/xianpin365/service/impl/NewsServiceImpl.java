@@ -26,8 +26,8 @@ public class NewsServiceImpl implements INewsService {
 	}
 
 	@Override
-	public List<News> getActivedNews() {
-		return newsDao.getByStatus(true);
+	public List<News> getActivedNews(String language) {
+		return newsDao.getByStatus(true, language);
 	}
 
 }
