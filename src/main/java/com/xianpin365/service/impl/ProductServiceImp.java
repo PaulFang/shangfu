@@ -25,8 +25,8 @@ public class ProductServiceImp implements IProductService{
 	}
 
 	@Override
-	public List<Product> getActivedProducts() {
-		return productDao.getByStatus(true);
+	public List<Product> getProducts(boolean actived, String language) {
+		return productDao.getProducts(actived, language);
 	}
 	
 	@Override

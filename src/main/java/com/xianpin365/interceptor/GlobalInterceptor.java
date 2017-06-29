@@ -39,7 +39,16 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView mv) {
 		if(mv!=null && mv.getModel()!=null && mv.getModel().get("info")==null){
-			Language language = getAccessorLanguage(request);
+			
+			Language language = null;
+			HttpSession session = request.getSession();
+			if(session.getAttribute(Consts.VISTOR_LANGUAGE)==null){
+				language = getAccessorLanguage(request);
+				session.setAttribute(Consts.VISTOR_LANGUAGE, language);
+			}else{
+				language = (Language)(session.getAttribute(Consts.VISTOR_LANGUAGE));
+			}
+			
 			if(LANG_PAGE_COMMON_INFO_MAP.get(language)==null){
 				PageCommonInfo comInfo = pageCommonInfoService.getByLanguage(language.getLanguage());
 				LANG_PAGE_COMMON_INFO_MAP.put(language, comInfo);
@@ -59,7 +68,13 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 	public static Language getAccessorLanguage(HttpServletRequest request){
 		String lang = request.getHeader("Accept-Language");
 		int commaIndex = lang.indexOf(",");
-		Language language = Language.parse(lang.substring(0, commaIndex));
+		Language language = null;
+		if(commaIndex > -1){
+			language = Language.parse(lang.substring(0, commaIndex));
+		}else{
+			language = Language.parse(lang);
+		}
+		
 		if(language==null){
 			return Language.ZH_CN;
 		}

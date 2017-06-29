@@ -13,3 +13,25 @@ $(window).load(function(){
         $(".logo a").addClass("on");
     },500);
 });
+
+$(function(){
+    $('#language').click(function(){
+    	switchToLang = "";
+    	lang = $('#language').text();
+    	if("English"==lang){
+    		switchToLang = "en-US";
+    	}else{
+    		switchToLang = "zh-CN";
+    	}
+         $.ajax({
+             type: "GET",
+             url: "switchLanguage",
+             data: {language:switchToLang},
+             dataType: "json",
+             success: function(data){
+                        // 刷新整个页面
+                        window.location.reload();
+                      }
+         });
+    });
+});

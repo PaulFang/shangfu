@@ -4,6 +4,7 @@ public class PageCommonInfo {
 
 	private Integer id;
 	private String language;
+	private String menuItem0;
 	private String menuItem1;
 	private String menuItem2;
 	private String menuItem3;
@@ -40,6 +41,14 @@ public class PageCommonInfo {
 
 	public void setLanguage(String language) {
 		this.language = language;
+	}
+
+	public String getMenuItem0() {
+		return menuItem0;
+	}
+
+	public void setMenuItem0(String menuItem0) {
+		this.menuItem0 = menuItem0;
 	}
 
 	public String getMenuItem1() {

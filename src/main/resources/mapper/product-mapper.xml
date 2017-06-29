@@ -6,6 +6,7 @@
 	<resultMap id="productMap" type="com.xianpin365.entity.Product">
 		<id column="ID" property="id" />
 		<result column="NAME" property="name" />
+		<result column="LANGUAGE" property="language" />
 		<result column="PACKAING" property="packaging" />
 		<result column="SERIES_NAME" property="seriesName" />
 		<result column="CATLOG_NAME" property="catlogName"/>
@@ -25,7 +26,7 @@
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		ID,NAME,SERIES_NAME,CATLOG_NAME,DESCRIPTION,SPECIFICATIONS,PURCHASE_LINK,PROD_PICTURE1,
+		ID,LANGUAGE,NAME,SERIES_NAME,CATLOG_NAME,DESCRIPTION,SPECIFICATIONS,PURCHASE_LINK,PROD_PICTURE1,
 		PROD_PICTURE2,PROD_PICTURE3,PROD_PICTURE4,PROD_PICTURE5,ISSUED_TIME,ACTIVED,DISPLAY_ORDER
 	</sql>
 
@@ -74,9 +75,9 @@
 	</select>
 	
 	  <!-- 返回一个list的写法 -->
-    <select id="getByStatus" parameterType="boolean" resultMap="productMap" >
+    <select id="getProducts" resultMap="productMap" >
         SELECT * FROM T_PRODUCT_INFO 
-        WHERE ACTIVED = #{actived} ORDER BY DISPLAY_ORDER
+        WHERE ACTIVED = #{actived} AND LANGUAGE = #{language} ORDER BY DISPLAY_ORDER
     </select>
 
 	<!-- 产品页面信息 -->

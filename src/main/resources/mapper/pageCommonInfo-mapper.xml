@@ -7,6 +7,7 @@
 		<id column="ID" property="id" />
 		<result column="TITLE" property="title" />
 		<result column="LANGUAGE" property="language" />
+		<result column="MENU_ITEM_0" property="menuItem0" />
 		<result column="MENU_ITEM_1" property="menuItem1" />
 		<result column="MENU_ITEM_2" property="menuItem2" />
 		<result column="MENU_ITEM_3" property="menuItem3"/>

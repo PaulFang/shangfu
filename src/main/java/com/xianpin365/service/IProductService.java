@@ -11,7 +11,7 @@ public interface IProductService {
 	Product getById(int id);
 	
 	// 返回激活的产品并按 displayOrder大小升序排列
-	List<Product> getActivedProducts();
+	List<Product> getProducts(boolean actived, String language);
 	
 	// 返回未激活的产品并按 displayOrder大小升序排列
 	List<Product> getUnactivedProducts();

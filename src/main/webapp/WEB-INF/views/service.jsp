@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -35,7 +36,16 @@
             <li><a href="news" >${info.menuItem4}</a></li>
             <li><a href="service" class="current">客服中心</a></li>
             <li><a href="contact" >${info.menuItem5}</a></li>
-            <li><a href="">English</a></li>
+            <li>
+				<c:choose>
+					<c:when test="${\"zh-CN\".equals(info.language)}"> 
+     					<a id="language" href="">English</a>     
+					</c:when>
+					<c:otherwise>
+ 						<a id="language" href="">中文</a>
+					</c:otherwise>
+				</c:choose>
+			</li>
         </ul>
         <div class="slogan"> <a href="index"><img src="images/slogan.png" style="width:280px;height:40px;"></a> </div>
     </div>

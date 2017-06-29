@@ -30,7 +30,16 @@
 				<li><a href="<c:url value='/honor' />" >荣誉资质</a></li>
 				<li><a href="<c:url value='/news' />"  >新闻资讯</a></li>
 				<li><a href="<c:url value='/contact' />" >联系我们</a></li>
-				<li><a href="">English</a></li>
+				<li>
+					<c:choose>
+   						<c:when test="${\"zh-CN\".equals(info.language)}"> 
+         					<a id="language" href="">English</a>     
+   						</c:when>
+   						<c:otherwise>
+     						<a id="language" href="">中文</a>
+   						</c:otherwise>
+					</c:choose>
+				</li>
 			</ul>
 		</div>
         
