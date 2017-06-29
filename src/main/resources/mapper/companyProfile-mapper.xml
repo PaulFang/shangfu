@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- http://www.cnblogs.com/dongying/p/4048828.html -->
+<mapper namespace="com.xianpin365.dao.ICompanyProfileDao">
+
+	<resultMap id="companyProfileMap" type="com.xianpin365.entity.CompanyProfile">
+		<id column="ID" property="id" />
+		<result column="LANGUAGE" property="language" />
+		<result column="NECK_BANNER" property="neckBanner" />
+		<result column="PROFILE_TXT" property="profileTxt" />
+	</resultMap>
+
+	<select id="getByLanguage" parameterType="java.lang.String" resultMap="companyProfileMap">
+		SELECT *
+		FROM T_COMPANY_PROFILE
+		WHERE LANGUAGE = #{language}
+	</select>
+
+</mapper>

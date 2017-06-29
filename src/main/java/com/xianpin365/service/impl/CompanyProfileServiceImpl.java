@@ -11,19 +11,16 @@ import com.xianpin365.service.ICompanyProfileService;
 @Service("companyProfileService")
 public class CompanyProfileServiceImpl implements ICompanyProfileService {
 
-//	@Resource
-//	private ICompanyProfileDao companyProfileDao;
+	@Resource
+	private ICompanyProfileDao companyProfileDao;
 
-	@Override public CompanyProfile get(String language) {
-	
+	@Override
+	public CompanyProfile get(String language) {
+
 		CompanyProfile profile = new CompanyProfile();
 		profile.setLanguage("");
 		profile.setProfileTxt("test.......");
-		return profile;
-	}
-
-	@Override
-	public void insert(CompanyProfile record) {
+		return companyProfileDao.getByLanguage(language);
 	}
 
 }
