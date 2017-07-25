@@ -23,8 +23,6 @@ import com.xianpin365.service.IPageCommonInfoService;
 @Controller
 public class EditController {
 	
-	private PageCommonInfo info;
-	
 	@Resource
 	private IPageCommonInfoService pageCommonInfoService;
 	
