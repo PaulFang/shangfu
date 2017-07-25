@@ -27,6 +27,13 @@
 		<result column="ADDR" property="addr"/>
 		<result column="WECHAT" property="wechat"/>
 		<result column="ORDER_LABEL" property="orderLabel"/>
+		<result column="HOME_LABEL" property="homeLabel"/>
+		<result column="TIME_LABEL" property="timeLabel"/>
+		<result column="FROM_LABEL" property="fromLabel"/>
+		<result column="COMPANY_LABEL" property="companyLabel"/>
+		<result column="SERIES_LABEL" property="seriesLabel"/>
+		<result column="PACKAGING_LABEL" property="packagingLabel"/>
+		<result column="SPECIFICATIONS_LABEL" property="specificationsLabel"/>
 		<result column="FEETER_TEL_NO" property="footerTelNum"/>
 		<result column="FEETER_COPYRIGHT" property="footerCopyright"/>
 	</resultMap>

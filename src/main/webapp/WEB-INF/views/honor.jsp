@@ -9,7 +9,7 @@
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <link href="css/colorbox.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.colorbox.js"></script>
-<title>${info.menuItem3}-尚孚茶油</title>
+<title>${info.menuItem3}-${info.companyLabel}</title>
 </head>
 <body>
 <!-- <div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div> -->
@@ -59,7 +59,7 @@
     <br/><br/>
     <div class="main">
         <div class="location">
-            <a href="index">首页</a>
+            <a href="index">${info.homeLabel}</a>
             <em>&gt;</em>
             <span>${info.menuItem3}</span>
         </div>

@@ -21,6 +21,8 @@ import com.xianpin365.service.IPageCommonInfoService;
 
 public class GlobalInterceptor extends HandlerInterceptorAdapter {
 
+	public static final String COMMON_INFO_KEY = "info";
+	
 	@Resource
 	private IPageCommonInfoService pageCommonInfoService;
 	
@@ -54,7 +56,7 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 				LANG_PAGE_COMMON_INFO_MAP.put(language, comInfo);
 			}
 			PageCommonInfo info = LANG_PAGE_COMMON_INFO_MAP.get(language);
-			mv.getModel().put("info", info);
+			mv.getModel().put(COMMON_INFO_KEY, info);
 		}
 	}
 

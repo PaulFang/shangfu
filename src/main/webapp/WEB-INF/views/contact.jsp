@@ -19,7 +19,7 @@
 </style>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 
-<title>荣誉资质-尚孚茶油</title>
+<title>${info.menuItem5}-${info.companyLabel}</title>
 </head>
 <body>
 <!-- <div class="load" id="ioad"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div> -->
@@ -69,7 +69,7 @@
     <br/><br/>
     <div class="main">
         <div class="location">
-            <a href="/">首页</a>
+            <a href="/">${info.homeLabel}</a>
             <em>&gt;</em>
             <span>${info.menuItem5}</span>
         </div>

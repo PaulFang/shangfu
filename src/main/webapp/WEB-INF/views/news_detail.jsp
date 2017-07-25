@@ -61,7 +61,7 @@
     <br/><br/>
     <div class="main">
         <div class="location">
-            <a href="<c:url value="/index" />">首页</a>
+            <a href="<c:url value="/index" />">${info.homeLabel}</a>
 			<em>&gt;</em>
 			<span><a href="<c:url value="/news" />">${info.menuItem4}</a></span>
 			<em>&gt;</em>
@@ -70,10 +70,10 @@
         </div>
         <div class="newsDetail">
             <h1>${news.title}</h1>
-            <h3><span>时间：<fmt:formatDate value="${news.issuedTime}"  pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span><span>来源：${news.from}</span><span>阅读：${news.pvCount}人</span></h3>
+            <h3><span>${info.timeLabel}：<fmt:formatDate value="${news.issuedTime}"  pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span><span>${info.fromLabel}：${news.from}<%-- </span><span>阅读：${news.pvCount}人</span> --%></h3>
             <div class="newsContent">
 				<p>${news.content}</p>
-            <div class="crux">
+            <%-- <div class="crux">
                 <span>本文关键字：</span>
 				<a href="#" target="_blank">世家之交</a>
 				<a href="#" target="_blank">一品生活</a>
@@ -83,7 +83,7 @@
             <div class="attention">本文源于<a href="#" target="_blank">${news.from}</a>,转载请注明出处。</div>
             <div class="near">
 			    <p><strong>上一篇：</strong><a href="#">${news.lastNewsTitle}</a></p>				            
-			</div>
+			</div> --%>
         </div>
     </div>
 </div>

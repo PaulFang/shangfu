@@ -60,7 +60,7 @@
     </div>
     <div class="main">
         <div class="location">
-            <a href="index">首页</a>
+            <a href="index">${info.homeLabel}</a>
             <em>&gt;</em>
             <span>客服中心</span>
         </div>

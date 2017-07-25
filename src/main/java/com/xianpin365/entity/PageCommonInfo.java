@@ -24,6 +24,13 @@ public class PageCommonInfo {
 	private String addr;
 	private String wechat;
 	private String orderLabel;
+	private String homeLabel;
+	private String timeLabel;
+	private String fromLabel;
+	private String companyLabel;
+	private String seriesLabel;
+	private String packagingLabel;
+	private String specificationsLabel;
 	private String footerTelNum;
 	private String footerCopyright;
 
@@ -203,6 +210,62 @@ public class PageCommonInfo {
 		this.orderLabel = orderLabel;
 	}
 
+	public String getHomeLabel() {
+		return homeLabel;
+	}
+
+	public void setHomeLabel(String homeLabel) {
+		this.homeLabel = homeLabel;
+	}
+
+	public String getTimeLabel() {
+		return timeLabel;
+	}
+
+	public void setTimeLabel(String timeLabel) {
+		this.timeLabel = timeLabel;
+	}
+
+	public String getFromLabel() {
+		return fromLabel;
+	}
+
+	public void setFromLabel(String fromLabel) {
+		this.fromLabel = fromLabel;
+	}
+
+	public String getCompanyLabel() {
+		return companyLabel;
+	}
+
+	public void setCompanyLabel(String companyLabel) {
+		this.companyLabel = companyLabel;
+	}
+
+	public String getSeriesLabel() {
+		return seriesLabel;
+	}
+
+	public void setSeriesLabel(String seriesLabel) {
+		this.seriesLabel = seriesLabel;
+	}
+
+	public String getPackagingLabel() {
+		return packagingLabel;
+	}
+
+	public void setPackagingLabel(String packagingLabel) {
+		this.packagingLabel = packagingLabel;
+	}
+
+	public String getSpecificationsLabel() {
+		return specificationsLabel;
+	}
+
+	public void setSpecificationsLabel(String specificationsLabel) {
+		this.specificationsLabel = specificationsLabel;
+	}
+
 	public String getFooterTelNum() {
 		return footerTelNum;
 	}
@@ -221,12 +284,15 @@ public class PageCommonInfo {
 
 	@Override
 	public String toString() {
-		return "PageCommonInfo [id=" + id + ", language=" + language + ", menuItem1=" + menuItem1 + ", menuItem2="
-				+ menuItem2 + ", menuItem3=" + menuItem3 + ", menuItem4=" + menuItem4 + ", menuItem5=" + menuItem5
-				+ ", aboutBanner=" + aboutBanner + ", productBanner=" + productBanner + ", honorBanner=" + honorBanner
-				+ ", newsBanner=" + newsBanner + ", contactBanner=" + contactBanner + ", menuSlogan=" + menuSlogan
-				+ ", companyName=" + companyName + ", telNum=" + telNum + ", homePage=" + homePage + ", qq=" + qq
-				+ ", eMail=" + eMail + ", addr=" + addr + ", wechat=" + wechat + ", orderLabel=" + orderLabel
+		return "PageCommonInfo [id=" + id + ", language=" + language + ", menuItem0=" + menuItem0 + ", menuItem1="
+				+ menuItem1 + ", menuItem2=" + menuItem2 + ", menuItem3=" + menuItem3 + ", menuItem4=" + menuItem4
+				+ ", menuItem5=" + menuItem5 + ", aboutBanner=" + aboutBanner + ", productBanner=" + productBanner
+				+ ", honorBanner=" + honorBanner + ", newsBanner=" + newsBanner + ", contactBanner=" + contactBanner
+				+ ", menuSlogan=" + menuSlogan + ", companyName=" + companyName + ", telNum=" + telNum + ", homePage="
+				+ homePage + ", qq=" + qq + ", eMail=" + eMail + ", addr=" + addr + ", wechat=" + wechat
+				+ ", orderLabel=" + orderLabel + ", homeLabel=" + homeLabel + ", timeLabel=" + timeLabel
+				+ ", fromLabel=" + fromLabel + ", companyLabel=" + companyLabel + ", seriesLabel=" + seriesLabel
+				+ ", packagingLabel=" + packagingLabel + ", specificationsLabel=" + specificationsLabel
 				+ ", footerTelNum=" + footerTelNum + ", footerCopyright=" + footerCopyright + "]";
 	}
 

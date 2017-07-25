@@ -8,7 +8,7 @@
 
 <link href="css/other.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<title>${info.menuItem4}-尚孚茶油</title>
+<title>${info.menuItem4}-${info.companyLabel}</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -63,7 +63,7 @@
     <br/><br/>
     <div class="main">
         <div class="location">
-		    <a href="index">首页</a>
+		    <a href="index">${info.homeLabel}</a>
 			<em>&gt;</em>
 		    <span><a href="news">${info.menuItem4}</a></span>
         </div>

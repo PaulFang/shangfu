@@ -65,12 +65,12 @@
     <br/><br/>
     <div class="main">
         <div class="location">
-            <a href="index">首页</a>
+            <a href="index">${info.homeLabel}</a>
             <em>&gt;</em>
-            <span><a href="/product">产品展示</a></span>
+            <span><a href="/product">${info.menuItem0}</a></span>
 			
 			<em>&gt;</em>
-			<span>厨韵</span>
+			<span>${product.seriesName}</span>
         </div>
         <div class="product-detail">
             
@@ -136,27 +136,26 @@
 
 					<tr>
                         <td><i></i></td>
-                        <th>系列：</th>
+                        <th>${info.seriesLabel}：</th>
                         <th>${product.seriesName}</th>
                     </tr>  
 
 					<tr>
                         <td><i></i></td>
-                        <th>包装：</th>
+                        <th>${info.packagingLabel}：</th>
                         <th>${product.packaging}</th>
                     </tr>
                     
                     <tr>
                         <td><i></i></td>
-                        <th>规格：</th>
+                        <th>${info.specificationsLabel}：</th>
                         <th>${product.specifications}</th>
                     </tr>
                     
                     </tbody>
                 </table>
                 
-                <p>若水之交，如瑾瑜自显品质；<br>雅士名流，有和谐自显情怀。</p>
-                <p>尚孚.瑜之和有机山茶油，好礼品，自有真情。</p>
+                <p>${product.description}</p>
                 
                 <div class="cartBox">
                     <a href="${product.purchaseLink}" target="_blank" class="cart" style=" margin-left:30px;"><i></i>${info.orderLabel}</a>
