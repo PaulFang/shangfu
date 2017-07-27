@@ -52,94 +52,94 @@
 
 <div style="height:100px;"></div>
 
-<div style="margin:0 auto; height:500px; width:700px; ">
+<div style="margin:0 auto; height:500px; width:1000px; ">
 
 	<form>
-		<table style="width: 1000px; " border="1">
-		  	<tr height=25px>
+		<table style="width: 1000px; " border="5">
+		  	<tr height=35px>
 		    	<td width="80">属性</td>
-		    	<td width="250">属性说明</td>
-		    	<td width="350">修改后的值</td>
+		    	<td width="300">属性说明</td>
+		    	<td width="350">修改为</td>
 		    	<td>当前值</td>
 		  	</tr>
 		  	<tr style="display:none">
 		    	<td>ID</td>
 		    	<td>ID</td>
-		    	<td><input name="id" id="id" type="hidden" value=${info.id}></td>
+		    	<td><input name="id" id="id" type="hidden" value=${info.id}  style="width:250px;"></td>
 		    	<td>${info.id}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>资源语言</td>
-		    	<td>语言版本(不可修改)</td>
-		    	<td><input name="langugae" id="langugae" type="text" disabled=true value=${info.language}></td>
+		    	<td>此项不可修改</td>
+		    	<td><input name="langugae" id="langugae" type="text" disabled=true value=${info.language} style="width:250px;"></td>
 		    	<td>${info.language}</td>
 		  	</tr>
 		  	
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司名称</td>
-		    	<td>公司名称（index/cotact中的公司名称）</td>
-		    	<td><input name="companyName" id="companyName" type="text" value=${info.companyName}></td>
+		    	<td>index/contact中的公司名称</td>
+		    	<td><input name="companyName" id="companyName" type="text" value=${info.companyName} style="width:250px;"></td>
 		    	<td>${info.companyName}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司电话</td>
-		    	<td>公司电话（index/cotact中的联系电话）</td>
-		    	<td width="300"><input name="telNum" id="telNum" type="text" value="${info.telNum}"></td>
+		    	<td>index/contact中的联系电话</td>
+		    	<td width="300"><input name="telNum" id="telNum" type="text" value="${info.telNum}" style="width:250px;"></td>
 		    	<td>${info.telNum}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司主页</td>
-		    	<td>公司主页（index/cotact中的公司网站）</td>
-		    	<td><input name="homePage" id="homePage" type="text" value=${info.homePage}></td>
+		    	<td>index/contact中的公司网站</td>
+		    	<td><input name="homePage" id="homePage" type="text" value=${info.homePage} style="width:250px;"></td>
 		    	<td>${info.homePage}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司QQ</td>
-		    	<td>公司QQ（index/cotact中的公司QQ）</td>
-		    	<td><input name="qq" id="qq" type="text" value=${info.qq}></td>
+		    	<td>index/contact中的公司QQ</td>
+		    	<td><input name="qq" id="qq" type="text" value=${info.qq} style="width:250px;"></td>
 		    	<td>${info.qq}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司邮箱</td>
-		    	<td>公司邮箱（index/cotact中的公司Email）</td>
-		    	<td><input name="eMail" id="eMail" type="text" value=${info.eMail}></td>
+		    	<td>index/contact中的公司Email</td>
+		    	<td><input name="eMail" id="eMail" type="text" value=${info.eMail} style="width:250px;"></td>
 		    	<td>${info.eMail}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司地址</td>
-		    	<td>公司地址（index/cotact中的公司地址）</td>
-		    	<td><input name="addr" id="addr" type="text" value=${info.addr}></td>
+		    	<td>index/contact中的公司地址</td>
+		    	<td><input name="addr" id="addr" type="text" value=${info.addr} style="width:250px;"></td>
 		    	<td>${info.addr}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>公司微信</td>
-		    	<td>公司微信（index/cotact中的微信图片）</td>
-		    	<td><input name="wechat" id="wechat" type="text" value=${info.wechat}></td>
+		    	<td>index/contact中的微信图片(大小 302x171 px)</td>
+		    	<td><input name="wechat" id="wechat" type="text" value=${info.wechat} style="width:250px;"></td>
 		    	<td>${info.wechat}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>购买标签</td>
-		    	<td>购买标签（产品页中的点击购买标签）</td>
-		    	<td><input name="orderLabel" id="orderLabel" type="text" value=${info.orderLabel}></td>
+		    	<td>产品页中的点击购买标签</td>
+		    	<td><input name="orderLabel" id="orderLabel" type="text" value=${info.orderLabel} style="width:250px;"></td>
 		    	<td>${info.orderLabel}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>页脚电话</td>
-		    	<td>页脚电话（页脚部分共用的联系电话）</td>
-		    	<td><input name="footerTelNum" id="footerTelNum" type="text" value=${info.footerTelNum}></td>
+		    	<td>页脚部分共用的联系电话</td>
+		    	<td><input name="footerTelNum" id="footerTelNum" type="text" value=${info.footerTelNum} style="width:250px;"></td>
 		    	<td>${info.footerTelNum}</td>
 		  	</tr>
-		  	<tr>
+		  	<tr height=35px>
 		    	<td>页脚版权</td>
-		    	<td>页脚版权（页脚部分共用的版权信息）</td>
-		    	<td><input name="footerCopyright" id="footerCopyright" type="text" value=${info.footerCopyright}></td>
+		    	<td>页脚部分共用的版权信息</td>
+		    	<td><input name="footerCopyright" id="footerCopyright" type="text" value=${info.footerCopyright} style="width:250px;"></td>
 		    	<td>${info.footerCopyright}</td>
 		  	</tr>
 		  	<tr>
 		    	<td></td>
 		    	<td></td>
+		    	<td><input type="button" id="button_submit" value="=========保存修改========" style="width:250px;">  </td>
 		    	<td></td>
-		    	<td><input type="button" id="button_submit" value="保存修改" >  </td>
 		  	</tr>
 		  		
 		  	

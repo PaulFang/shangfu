@@ -58,6 +58,7 @@ public class EditController {
 	public String doEditHonor(HttpServletRequest request, Model model) {
 		Language lang = GlobalInterceptor.getAccessorLanguage(request);
 		PageCommonInfo info = pageCommonInfoService.getByLanguage(lang.getLanguage());
+		model.addAttribute("info", info);
 //		model.addAttribute("honor", honor);
 		return "edit_honor";
 	}

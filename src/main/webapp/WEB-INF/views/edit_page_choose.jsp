@@ -45,13 +45,13 @@
 
 <div style="height:100px;"></div>
 
-<div style="margin:0 auto; height:500px; width:700px; ">
+<div style="margin:0 auto; height:365px; width:700px; text-align:center ">
 
-	<a href="<c:url value='/edit/index'/>">编辑本站首页</a><br>
-	<a href="<c:url value='/edit/product'/>">编辑产品展示</a><br>
-	<a href="<c:url value='/edit/honor'/>">编辑荣誉资质</a><br>
-	<a href="<c:url value='/edit/news'/>">编辑新闻资讯</a><br>
-	<a href="<c:url value='/edit/about'/>">编辑关于尚孚</a><br>
+	<a href="<c:url value='/edit/index'/>">编辑本站首页</a><br><br><br>
+	<a href="<c:url value='/edit/product'/>">编辑产品展示</a><br><br><br>
+	<a href="<c:url value='/edit/honor'/>">编辑荣誉资质</a><br><br><br>
+	<a href="<c:url value='/edit/news'/>">编辑新闻资讯</a><br><br><br>
+	<a href="<c:url value='/edit/about'/>">编辑关于尚孚</a><br><br><br>
 	<a href="<c:url value='/edit/contact'/>">编辑联系我们</a><br>
 	
 </table>
