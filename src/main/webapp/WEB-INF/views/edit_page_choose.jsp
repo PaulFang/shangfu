@@ -45,7 +45,7 @@
 
 <div style="height:100px;"></div>
 
-<div style="margin:0 auto; height:365px; width:700px; text-align:center ">
+<div style="margin:0 auto; height:450px; width:700px; text-align:center; font-size:20px">
 
 	<a href="<c:url value='/edit/index'/>">编辑本站首页</a><br><br><br>
 	<a href="<c:url value='/edit/product'/>">编辑产品展示</a><br><br><br>

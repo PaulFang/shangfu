@@ -56,6 +56,10 @@
 		<h3>抱歉，服务器出错，欢迎点击本页面logo 或菜单继续浏览！</h3>
 </div>
 
+<div style="margin:0 auto; height:400px; width:700px; font-size: 30px" align="center">
+		<h3><a href="">抱歉，服务器出错<br><br>欢迎点击本页面logo 或菜单继续浏览</a></h3>
+</div>
+
 
 <div class="footer">
     <div class="main">

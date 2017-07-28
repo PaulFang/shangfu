@@ -50,9 +50,17 @@
 欢迎登录尚孚网站管理后台
 </div>
 
-<div style="height:100px;"></div>
+<div style="height:50px;"></div>
 
-<div style="margin:0 auto; height:500px; width:1000px; ">
+<div style="margin:0 auto; height:500px; width:1000px;" align="center">
+	
+	<a href="<c:url value='/edit/index'/>">编辑本站首页</a>
+	<a href="<c:url value='/edit/product'/>">编辑产品展示</a>
+	<a href="<c:url value='/edit/honor'/>">编辑荣誉资质</a><br><br>
+	<a href="<c:url value='/edit/news'/>">编辑新闻资讯</a>
+	<a href="<c:url value='/edit/about'/>">编辑关于尚孚</a>
+	<a href="<c:url value='/edit/contact'/>">编辑联系我们</a><br><br>
+	
 	
 	<div align="center">
 		请选择要编辑的产品：	
@@ -69,12 +77,12 @@
 	<div id="resultClue"></div>
 	<br><br>
 	
-	<div style="margin:0 auto; height:500px; width:1200px; ">
+	<div style="margin:0 auto; height:500px; width:1500px; ">
 	<form>
 		<table id="productTable" style="width: 1200px; display: none" border="5">
     		  	<tr height=35px>
-    		    	<td width="80">属性</td>
-    		    	<td width="300">属性说明</td>
+    		    	<td width="100">属性</td>
+    		    	<td width="250">属性说明</td>
     		    	<td width="350">修改为</td>
     		    	<td>当前值</td>
     		  	</tr>
@@ -140,32 +148,32 @@
 		    		<td id="curMainPicture"></td>
 		  		</tr>
 		  		<tr>
-		    		<td>产品附加图1</td>
-		    		<td>产品附加图1</td>
+		    		<td>产品附图1</td>
+		    		<td>产品附图1</td>
 		    		<td><input name="prodPicture1" id="prodPicture1" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture1"></td>
 		  		</tr>
 		  		<tr>
-		    		<td>产品附加图2</td>
-		    		<td>产品附加图2</td>
+		    		<td>产品附图2</td>
+		    		<td>产品附图2</td>
 		    		<td><input name="prodPicture2" id="prodPicture2" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture2"></td>
 		  		</tr>
 		  		<tr>
-		    		<td>产品附加图3</td>
-		    		<td>产品附加图3</td>
+		    		<td>产品附图3</td>
+		    		<td>产品附图3</td>
 		    		<td><input name="prodPicture3" id="prodPicture3" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture3"></td>
 		  		</tr>
 		  		<tr>
-		    		<td>产品附加图4</td>
-		    		<td>产品附加图4</td>
+		    		<td>产品附图4</td>
+		    		<td>产品附图4</td>
 		    		<td><input name="prodPicture4" id="prodPicture4" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture4"></td>
 		  		</tr>
 		  		<tr>
-		    		<td>产品附加图5</td>
-		    		<td>产品附加图5</td>
+		    		<td>产品附图5</td>
+		    		<td>产品附图5</td>
 		    		<td><input name="prodPicture5" id="prodPicture5" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture5"></td>
 		  		</tr>
@@ -188,8 +196,8 @@
 		    		<td id="curNeckBanner"></td>
 		  		</tr>
 		  		<tr>
-		    		<td>本产品在产品展示列表页排列次序</td>
-		    		<td>本产品在产品展示列表页排列次序</td>
+		    		<td>产品在展示列表中次序</td>
+		    		<td>产品在展示列表中次序</td>
 		    		<td><input name="dispalyOrder" id="dispalyOrder" type="text" style="width:250px;"></td>
 		    		<td id="curDispalyOrder"></td>
 		  		</tr>

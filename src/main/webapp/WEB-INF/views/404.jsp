@@ -50,10 +50,10 @@
 页面丢失
 </div>
 
-<div style="height:50px;"></div>
+<div style="height:250px;"></div>
 
-<div style="margin:0 auto; height:500px; width:700px; ">
-		<h3>抱歉，未找到您要访问的页面，欢迎点击本页面logo 或菜单继续浏览！</h3>
+<div style="margin:0 auto; height:400px; width:700px; font-size: 30px" align="center">
+		<h3><a href="">抱歉，未找到您要访问的页面<br><br>欢迎点击本页面logo 或菜单继续浏览！</a></h3>
 </div>
 
 

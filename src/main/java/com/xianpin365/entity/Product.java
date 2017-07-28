@@ -43,7 +43,7 @@ public class Product {
 
 	private String neckBanner;
 
-	private Integer dispalyOrder;
+	private Integer displayOrder;
 
 	public Integer getId() {
 		return id;
@@ -182,11 +182,11 @@ public class Product {
 	}
 
 	public Integer getDispalyOrder() {
-		return dispalyOrder;
+		return displayOrder;
 	}
 
 	public void setDispalyOrder(Integer dispalyOrder) {
-		this.dispalyOrder = dispalyOrder;
+		this.displayOrder = dispalyOrder;
 	}
 
 	public String getNeckBanner() {
@@ -203,7 +203,7 @@ public class Product {
 				+ ", catlogName=" + catlogName + ", description=" + description + ", specifications=" + specifications
 				+ ", purchaseLink=" + purchaseLink + ", prodPicture1=" + prodPicture1 + ", prodPicture2=" + prodPicture2
 				+ ", prodPicture3=" + prodPicture3 + ", prodPicture4=" + prodPicture4 + ", prodPicture5=" + prodPicture5
-				+ ", issuedTime=" + issuedTime + ", actived=" + actived + ", dispalyOrder=" + dispalyOrder + "]";
+				+ ", issuedTime=" + issuedTime + ", actived=" + actived + ", dispalyOrder=" + displayOrder + "]";
 	}
 
 	public Product() {

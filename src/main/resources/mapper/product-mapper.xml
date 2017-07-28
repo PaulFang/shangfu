@@ -21,7 +21,7 @@
 		<result column="PROD_PICTURE5" property="prodPicture5"/>
 		<result column="ISSUED_TIME" property="issuedTime"/>
 		<result column="ACTIVED" property="actived"/>
-		<result column="DISPLAY_ORDER" property="dispalyOrder"/>
+		<result column="DISPLAY_ORDER" property="displayOrder"/>
 		<result column="NECK_BANNER" property="neckBanner"/>
 	</resultMap>
 
@@ -91,25 +91,26 @@
     </select>
     
     <update id="updateProduct" parameterType="com.xianpin365.entity.Product">
-        UPDATE Product
+        UPDATE T_PRODUCT_INFO
         <set>
-            <if test="name != null">memberName=#{name},</if>
+            <if test="name != null">name=#{name},</if>
             <if test="language != null">language=#{language},</if>
             <if test="packaging != null">packaging=#{packaging},</if>
-            <if test="seriesName != null">seriesName=#{seriesName}</if>
-            <if test="description != null">description=#{description}</if>
-            <if test="specifications != null">specifications=#{specifications}</if>
-            <if test="purchaseLink != null">purchaseLink=#{purchaseLink}</if>
-            <if test="mainPicture != null">mainPicture=#{mainPicture}</if>
-            <if test="prodPicture1 != null">prodPicture1=#{prodPicture1}</if>
-            <if test="prodPicture2 != null">prodPicture2=#{prodPicture2}</if>
-            <if test="prodPicture3 != null">prodPicture3=#{prodPicture3}</if>
-            <if test="prodPicture4 != null">prodPicture4=#{prodPicture4}</if>
-            <if test="prodPicture5 != null">prodPicture5=#{prodPicture5}</if>
-            <if test="issuedTime != null">issuedTime=#{issuedTime}</if>
-            <if test="actived != null">actived=#{actived}</if>
-            <if test="dispalyOrder != null">dispalyOrder=#{dispalyOrder}</if>
-            <if test="neckBanner != null">neckBanner=#{neckBanner}</if>
+            <if test="seriesName != null">series_Name=#{seriesName},</if>
+            <if test="catlogName != null">catlog_Name=#{catlogName},</if>
+            <if test="description != null">description=#{description},</if>
+            <if test="specifications != null">specifications=#{specifications},</if>
+            <if test="purchaseLink != null">purchase_Link=#{purchaseLink},</if>
+            <if test="mainPicture != null">main_Picture=#{mainPicture},</if>
+            <if test="prodPicture1 != null">prod_Picture1=#{prodPicture1},</if>
+            <if test="prodPicture2 != null">prod_Picture2=#{prodPicture2},</if>
+            <if test="prodPicture3 != null">prod_Picture3=#{prodPicture3},</if>
+            <if test="prodPicture4 != null">prod_Picture4=#{prodPicture4},</if>
+            <if test="prodPicture5 != null">prod_Picture5=#{prodPicture5},</if>
+            <if test="issuedTime != null">issued_Time=#{issuedTime},</if>
+            <if test="actived != null">actived=#{actived},</if>
+            <if test="displayOrder != null">display_Order=#{displayOrder},</if>
+            <if test="neckBanner != null">neck_Banner=#{neckBanner}</if>
         </set>
         WHERE id = #{id}
 	</update>    

@@ -67,7 +67,7 @@ public class EditController {
 	public @ResponseBody String saveProduct(Product product) {
 		
 		System.out.println(product);
-		
+		prodService.updateProduct(product);
 		return "OK";
 	}
 	
