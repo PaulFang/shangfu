@@ -1,5 +1,7 @@
 package com.xianpin365.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.xianpin365.domain.Language;
 import com.xianpin365.entity.News;
 import com.xianpin365.entity.PageCommonInfo;
+import com.xianpin365.entity.Product;
 import com.xianpin365.interceptor.GlobalInterceptor;
 import com.xianpin365.service.IPageCommonInfoService;
+import com.xianpin365.service.IProductService;
 
 /**
  * 
@@ -25,6 +29,10 @@ public class EditController {
 	
 	@Resource
 	private IPageCommonInfoService pageCommonInfoService;
+	
+	@Resource
+	private IProductService prodService;
+	
 	
 	@RequestMapping(value = { "/edit" }, method = RequestMethod.GET)
 	public String doEditRequest() {
@@ -41,10 +49,37 @@ public class EditController {
 		return "add_product";
 	}
 	
+	
+	@RequestMapping(value = { "/edit/product" }, method = RequestMethod.GET)
+	public String doEditProduct(Model model) {
+		List<String> productNames = prodService.getAllProdNames();
+		model.addAttribute("productNames", productNames);
+		return "edit_product";
+	}
+	
+	@RequestMapping(value = { "/edit/toUpdateProduct" }, method = RequestMethod.POST)
+	public @ResponseBody Product getToEditProduct(String name) {
+		Product product = prodService.getByName(name);
+		return product;
+	}
+
+	@RequestMapping(value = { "/edit/saveProduct" }, method = RequestMethod.POST)
+	public @ResponseBody String saveProduct(Product product) {
+		
+		System.out.println(product);
+		
+		return "OK";
+	}
+	
 	@RequestMapping(value = { "/edit/updateproduct" }, method = RequestMethod.GET)
-	public String doUpdateProduct() {
+	public String doUpdateProduct(Model model) {
+		List<String> productNames = prodService.getAllProdNames();
+		model.addAttribute("productNames", productNames);
 		return "update_product";
 	}
+	
+	
+	
 	
 	@RequestMapping(value = { "/edit/contact" }, method = RequestMethod.GET)
 	public String doEditContact(HttpServletRequest request, Model model) {

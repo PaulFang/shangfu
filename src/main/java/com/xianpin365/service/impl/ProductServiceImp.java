@@ -23,6 +23,10 @@ public class ProductServiceImp implements IProductService{
 	public Product getById(int id) {
 		return productDao.getById(id);
 	}
+	
+	public Product getByName(String name){
+		return productDao.getByName(name);
+	}
 
 	@Override
 	public List<Product> getProducts(boolean actived, String language) {
@@ -32,6 +36,16 @@ public class ProductServiceImp implements IProductService{
 	@Override
 	public List<Product> getUnactivedProducts(){
 		return productDao.getByStatus(false);
+	}
+
+	@Override
+	public List<String> getAllProdNames() {
+		return productDao.getAllProdNames();
+	}
+	
+	@Override
+	public void updateProduct(Product product){
+		productDao.updateProduct(product);
 	}
 
 }

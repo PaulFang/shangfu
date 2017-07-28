@@ -10,6 +10,8 @@ public interface IProductDao {
 	
 	Product getById(Integer id);
 	
+	Product getByName(String name);
+	
 	List<Product> getByStatus(boolean actived);
 	
 	int deleteByPrimaryKey(Integer id);
@@ -23,5 +25,9 @@ public interface IProductDao {
 	int updateByPrimaryKeySelective(Product record);
 
 	int updateByPrimaryKey(Product record);
+	
+	List<String> getAllProdNames();
 
+	void updateProduct(Product product);
+	
 }

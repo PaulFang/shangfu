@@ -74,11 +74,45 @@
 		WHERE ID = #{id}
 	</select>
 	
+	<select id="getByName" parameterType="java.lang.String" resultMap="productMap">
+		SELECT *
+		FROM T_PRODUCT_INFO
+		WHERE NAME = #{name}
+	</select>
+	
 	  <!-- 返回一个list的写法 -->
     <select id="getProducts" resultMap="productMap" >
         SELECT * FROM T_PRODUCT_INFO 
         WHERE ACTIVED = #{actived} AND LANGUAGE = #{language} ORDER BY DISPLAY_ORDER
     </select>
+    
+    <select id="getAllProdNames" resultType="string" >
+        SELECT name FROM T_PRODUCT_INFO
+    </select>
+    
+    <update id="updateProduct" parameterType="com.xianpin365.entity.Product">
+        UPDATE Product
+        <set>
+            <if test="name != null">memberName=#{name},</if>
+            <if test="language != null">language=#{language},</if>
+            <if test="packaging != null">packaging=#{packaging},</if>
+            <if test="seriesName != null">seriesName=#{seriesName}</if>
+            <if test="description != null">description=#{description}</if>
+            <if test="specifications != null">specifications=#{specifications}</if>
+            <if test="purchaseLink != null">purchaseLink=#{purchaseLink}</if>
+            <if test="mainPicture != null">mainPicture=#{mainPicture}</if>
+            <if test="prodPicture1 != null">prodPicture1=#{prodPicture1}</if>
+            <if test="prodPicture2 != null">prodPicture2=#{prodPicture2}</if>
+            <if test="prodPicture3 != null">prodPicture3=#{prodPicture3}</if>
+            <if test="prodPicture4 != null">prodPicture4=#{prodPicture4}</if>
+            <if test="prodPicture5 != null">prodPicture5=#{prodPicture5}</if>
+            <if test="issuedTime != null">issuedTime=#{issuedTime}</if>
+            <if test="actived != null">actived=#{actived}</if>
+            <if test="dispalyOrder != null">dispalyOrder=#{dispalyOrder}</if>
+            <if test="neckBanner != null">neckBanner=#{neckBanner}</if>
+        </set>
+        WHERE id = #{id}
+	</update>    
 
 	<!-- 产品页面信息 -->
 	<!-- <select id="getProducts" parameterType="int" resultType="com.xianpin365.entity.Product">

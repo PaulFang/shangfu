@@ -2,6 +2,8 @@ package com.xianpin365.entity;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Product {
 
 	private Integer id;
@@ -34,6 +36,7 @@ public class Product {
 
 	private String prodPicture5;
 
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss.S")
 	private Date issuedTime;
 
 	private boolean actived;
