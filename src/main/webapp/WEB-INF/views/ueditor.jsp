@@ -81,7 +81,7 @@
 <div style="height:100px;"></div>
 
 
-<div class="footer">
+<!-- <div class="footer">
     <div class="main">
         <div class="tel">0713-8533399 17771339998</div>
         <div class="right">
@@ -98,7 +98,7 @@
         </div>
     </div>
 </div>
-<input type="hidden" id="la" value="$_COOKIE['think_language']"/>
+<input type="hidden" id="la" value="$_COOKIE['think_language']"/> -->
 <!-- <script type="text/javascript" src="js/function.js"></script>
 <script type="text/javascript" src="js/public.js"></script> -->
 

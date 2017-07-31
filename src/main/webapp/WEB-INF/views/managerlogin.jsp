@@ -36,7 +36,7 @@ $(document).ready(function(){
         var password = $("#password").val();
         var ctx = "${pageContext.request.contextPath}";
         var info = {user:user,password:password};
-        
+
         /* var token = $("meta[name='_csrf']").attr("content");
     	var header = $("meta[name='_csrf_header']").attr("content");
     	$(document).ajaxSend(function(e, xhr, options) {

@@ -15,5 +15,15 @@
 		FROM T_COMPANY_PROFILE
 		WHERE LANGUAGE = #{language}
 	</select>
+	
+	<update id="updateProfile" parameterType="com.xianpin365.entity.CompanyProfile">
+        UPDATE T_COMPANY_PROFILE
+        <set>
+            <if test="language != null">LANGUAGE=#{language},</if>
+            <if test="neckBanner != null">NECK_BANNER=#{neckBanner},</if>
+            <if test="profileTxt != null">PROFILE_TXT=#{profileTxt},</if>
+        </set>
+        WHERE id = #{id}
+	</update>   
 
 </mapper>

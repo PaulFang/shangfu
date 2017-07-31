@@ -6,4 +6,5 @@ public interface ICompanyProfileDao {
 	
 	CompanyProfile getByLanguage(String language);
 	
+	void updateProfile(CompanyProfile profile);
 }

@@ -25,7 +25,7 @@ public class CompanyProfileController {
 		HttpSession session = request.getSession();
 		Language obj = (Language)session.getAttribute(Consts.VISTOR_LANGUAGE);
 		String language = obj.getLanguage();
-		CompanyProfile profile = service.get(language);
+		CompanyProfile profile = service.getByLanguage(language);
 		model.addAttribute("profile", profile);
 		return request.getRequestURI();
 	}

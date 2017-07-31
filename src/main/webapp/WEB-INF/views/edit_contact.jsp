@@ -52,6 +52,15 @@
 
 <div style="height:100px;"></div>
 
+<div  align="center">
+	<a href="<c:url value='/edit/index'/>">编辑本站首页</a>
+	<a href="<c:url value='/edit/product'/>">编辑产品展示</a>
+	<a href="<c:url value='/edit/honor'/>">编辑荣誉资质</a><br><br>
+	<a href="<c:url value='/edit/news'/>">编辑新闻资讯</a>
+	<a href="<c:url value='/edit/about'/>">编辑关于尚孚</a>
+	<a href="<c:url value='/edit/contact'/>">编辑联系我们</a><br><br>
+</div>
+
 <div style="margin:0 auto; height:500px; width:1000px; ">
 
 	<form>
@@ -145,28 +154,13 @@
 		  	
 		</table>
 	</form>
-	<div id="editResult"></div>
+	
 </div>
 
-
-<div class="footer">
-    <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
-        <div class="right">
-            <ul class="menu-foot">
-                <li><a href="about"   >关于尚孚</a></li>
-                <li><a href="product" >产品展示</a></li>
-                <li><a href="honor"   >荣誉资质</a></li>
-                <li><a href="news"    >新闻资讯</a></li>
-                <li><a href="contact" >联系我们</a></li>
-            </ul>
-            <div class="copyright">
-                <strong>Copyright © 2017 www.xianpin365.com 粤ICP备15001240号 All Rights Reserved</strong>
-            </div>
-        </div>
-    </div>
+<div align="center">
+	<div id="editResult" style="width:500px;height:30px;text-align:center;line-height:30px; "></div>
 </div>
-<input type="hidden" id="la" value="$_COOKIE['think_language']"/>
+
 <script type="text/javascript" src="<c:url value="/js/function.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/public.js" />"></script>
 

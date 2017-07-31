@@ -8,11 +8,27 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/other.css" />"  >
 
 <script type="text/javascript" src="<c:url value="/js/jquery-1.9.1.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/js/preview.js" />"></script>
 
 <meta name="_csrf" content="${_csrf.token}"/>
 <meta name="_csrf_header" content="${_csrf.headerName}"/>
 
 <title>管理员登录</title>
+
+<!-- 鼠标跟踪图片放大 -->
+<style type="text/css">
+*{margin:0;padding:0;}
+a,img{border:0;}
+ul,li{list-style-type:none;}
+/* demo */
+.demo{width:600px;margin:40px auto;}
+.demo h2{font-size:14px;height:62px;color:#3366cc;}
+.demo a{font-size:14px;color:#333;text-decoration:none;}
+.demo a img{border:solid 1px #ddd;margin:0 5px;}
+/* previewShowWindow */
+.previewShowWindow{position:absolute;border:1px solid #dadade;background:#95959d;padding:5px;display:none;color:#fff;text-align:center;z-index:999;}
+</style>
+<!-- 鼠标跟踪图片放大 -->
 
 </head>
 <body>
@@ -52,17 +68,16 @@
 
 <div style="height:50px;"></div>
 
-<div style="margin:0 auto; height:500px; width:1000px;" align="center">
-	
+<div  align="center">
 	<a href="<c:url value='/edit/index'/>">编辑本站首页</a>
 	<a href="<c:url value='/edit/product'/>">编辑产品展示</a>
 	<a href="<c:url value='/edit/honor'/>">编辑荣誉资质</a><br><br>
 	<a href="<c:url value='/edit/news'/>">编辑新闻资讯</a>
 	<a href="<c:url value='/edit/about'/>">编辑关于尚孚</a>
 	<a href="<c:url value='/edit/contact'/>">编辑联系我们</a><br><br>
+</div>	
 	
-	
-	<div align="center">
+<div align="center">
 		请选择要编辑的产品：	
 		<select id="productSelect">
 			<c:forEach items="${productNames}" var="name" >
@@ -71,16 +86,17 @@
 		
 		</select>
 		<input type="button" id="queryProduct" value="确认" >
-	</div>
+</div>
 	
 	
 	<div id="resultClue"></div>
 	<br><br>
 	
-	<div style="margin:0 auto; height:500px; width:1500px; ">
+	<!-- <div style="margin:0 auto; height:500px; width:1500px; "> -->
+	<div align="center">
 	<form>
-		<table id="productTable" style="width: 1200px; display: none" border="5">
-    		  	<tr height=35px>
+		<table id="productTable" style="width: 1200px; display: none" border="5" bordercolor="#FF9966">
+    		  	<tr style="height:35px;">
     		    	<td width="100">属性</td>
     		    	<td width="250">属性说明</td>
     		    	<td width="350">修改为</td>
@@ -93,109 +109,112 @@
     		    	<td id="curId"></td>
     		  	</tr>
 
-    		  	<tr>
+    		  	<tr style="height:35px;">
 		    		<td>语言版本</td>
 		    		<td>语言版本</td>
 		    		<td><input name="prodlanguage" id="prodlanguage" type="text" disabled=true style="width:250px;"></td>
 		    		<td id="curProdlanguage"></td>
 		  		</tr>
-    		  	<tr>
+    		  	<tr style="height:35px;">
 		    		<td>产品名称</td>
 		    		<td>产品名称</td>
 		    		<td><input name="name" id="name" type="text" style="width:250px;"></td>
 		    		<td id="curName"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>包装方式</td>
 		    		<td>包装方式</td>
 		    		<td><input name="packaging" id="packaging" type="text" style="width:250px;"></td>
 		    		<td id="curPackaging"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品系列</td>
 		    		<td>产品系列</td>
 		    		<td><input name="seriesName" id="seriesName" type="text" style="width:250px;"></td>
 		    		<td id="curSeriesName"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品目录</td>
 		    		<td>产品目录</td>
 		    		<td><input name="catlogName" id="catlogName" type="text" style="width:250px;"></td>
 		    		<td id="curCatlogName"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品描述</td>
 		    		<td>产品描述</td>
-		    		<td><input name="description" id="description" type="text" style="width:250px;"></td>
+		    		<!-- <td><input name="description" id="description" type="text" style="width:250px;"></td> -->
+		    		
+		    		<td><textarea name="description" id="description" cols=10 rows=5 style="width:250px;"></textarea></td>
+		    		
 		    		<td id="curDescription"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品规格</td>
 		    		<td>产品规格</td>
 		    		<td><input name="specifications" id="specifications" type="text" style="width:250px;"></td>
 		    		<td id="curSpecifications"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>购买链接</td>
 		    		<td>购买链接</td>
 		    		<td><input name="purchaseLink" id="purchaseLink" type="text" style="width:250px;"></td>
 		    		<td id="curPurchaseLink"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品主图</td>
 		    		<td>产品主图</td>
-		    		<td><input name="mainPicture" id="mainPicture" type="text" style="width:250px;"></td>
+		    		<td><input name="mainPicture" id="mainPicture" type="text" style="width:250px;"/></td>
 		    		<td id="curMainPicture"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品附图1</td>
 		    		<td>产品附图1</td>
-		    		<td><input name="prodPicture1" id="prodPicture1" type="text" style="width:250px;"></td>
-		    		<td id="curProdPicture1"></td>
+		    		<td><input name="prodPicture1" id="prodPicture1" type="text" style="width:250px;"/></td>
+		    		<td><a id="curProdPicture1" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品附图2</td>
 		    		<td>产品附图2</td>
-		    		<td><input name="prodPicture2" id="prodPicture2" type="text" style="width:250px;"></td>
+		    		<td><input name="prodPicture2" id="prodPicture2" type="text" style="width:250px;"/></td>
 		    		<td id="curProdPicture2"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品附图3</td>
 		    		<td>产品附图3</td>
 		    		<td><input name="prodPicture3" id="prodPicture3" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture3"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品附图4</td>
 		    		<td>产品附图4</td>
 		    		<td><input name="prodPicture4" id="prodPicture4" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture4"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品附图5</td>
 		    		<td>产品附图5</td>
 		    		<td><input name="prodPicture5" id="prodPicture5" type="text" style="width:250px;"></td>
 		    		<td id="curProdPicture5"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品发布时间 </td>
 		    		<td>产品发布时间</td>
 		    		<td><input name="issuedTime" id="issuedTime" type="text" style="width:250px;"></td>
 		    		<td id="curIssuedTime"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>是否激活发布</td>
-		    		<td>是否激活发布</td>
+		    		<td>true:发布，false:不发布</td>
 		    		<td><input name="actived" id="actived" type="text" style="width:250px;"></td>
 		    		<td id="curActived"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品页颈部标语图片</td>
 		    		<td>产品页颈部标语图片</td>
 		    		<td><input name="neckBanner" id="neckBanner" type="text" style="width:250px;"></td>
 		    		<td id="curNeckBanner"></td>
 		  		</tr>
-		  		<tr>
+		  		<tr style="height:35px;">
 		    		<td>产品在展示列表中次序</td>
 		    		<td>产品在展示列表中次序</td>
 		    		<td><input name="dispalyOrder" id="dispalyOrder" type="text" style="width:250px;"></td>
@@ -209,11 +228,15 @@
 		  	</tr>
     		  	
     	</table>
-    </form>	  	
-	</div>
+    </form>
+    <br><br>
+    </div>
+    
+    <div align="center">
+    	<div id="saveResult" style="width:500px;height:30px;text-align:center;line-height:30px; "></div>
+    </div>
 
-
-<div class="footer">
+<!-- <div class="footer">
     <div class="main">
         <div class="tel">0713-8533399 17771339998</div>
         <div class="right">
@@ -229,7 +252,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>  -->
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
 <script type="text/javascript" src="<c:url value="/js/function.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/public.js" />"></script>
@@ -241,6 +264,15 @@ $(document).ready(function(){
     $("#queryProduct").click(function(){
 
     	alert("请确认你已保存修改，未保存的修改信息，在切换产品后将丢失！");
+    	
+    	$("#saveResult").text("");
+    	$("#saveResult").css("background-color","");
+    	
+    	$("#resultClue").text("");
+    	$("#editResult").css("background-color","");
+    	
+    	$("#saveUpdate").attr("disabled",false);
+    	enabledAllInput();
     	
     	var value = $("#productSelect").children('option:selected').val();
     	var info = {name:value};
@@ -288,9 +320,14 @@ $(document).ready(function(){
             	
             	$("#mainPicture").val(data.mainPicture);
             	$("#curMainPicture").text(data.mainPicture);
-
+            	
+            	
             	$("#prodPicture1").val(data.prodPicture1);
-            	$("#curProdPicture1").text(data.prodPicture1);
+            	
+            	var location = (window.location+'').split('/'); 
+            	var imgPath = location[0]+'//'+location[2] + data.prodPicture1; 
+            	$("#curProdPicture1").attr('href', imgPath);
+            	$("#curProdPicture1").attr('path', imgPath);
             	
             	$("#prodPicture2").val(data.prodPicture2);
             	$("#curProdPicture2").text(data.prodPicture2);
@@ -328,7 +365,6 @@ $(document).ready(function(){
     
     //
     $("#saveUpdate").click(function(){
-		alert("--saveUpdate clicked---");
     	var id = $("#id").val();
     	var language = $("#prodlanguage").val();
     	var name = $("#name").val();
@@ -376,8 +412,6 @@ $(document).ready(function(){
     		xhr.setRequestHeader(header, token);
     	});
         
-    	alert("--saveUpdate clicked  2---");
-    	
         $.ajax({  
             type:"POST",  
             url:"${pageContext.request.contextPath}/edit/saveProduct",  
@@ -385,7 +419,19 @@ $(document).ready(function(){
 			
             // return Product object
             success:function(data){
-            	alert(data);
+            	
+            	disableAllInput();
+            	$("#saveUpdate").attr('disabled',true); 
+            	$("#saveResult").text("");
+            	$("#saveResult").text("恭喜！你的修改已经保存成功，你可选择产品继续更新并保存");
+            	$("#saveResult").css("background-color","#00FF00");
+            	
+            },
+            
+            error:function(e) {  
+            	$("#editResult").text("");
+            	$("#editResult").text("修改失败： " + e);
+            	$("#editResult").css("background-color","#FF0000");
             }
             
         });
@@ -407,6 +453,51 @@ $(document).ready(function(){
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
         return fmt;  
     };  
+    
+    function disableAllInput(){
+    	$("#id").attr("disabled","disabled");
+    	$("#prodlanguage").attr("disabled","disabled");
+    	$("#name").attr("disabled","disabled");
+    	$("#packaging").attr("disabled","disabled");
+    	$("#seriesName").attr("disabled","disabled");
+    	$("#catlogName").attr("disabled","disabled");
+    	$("#description").attr("disabled","disabled");
+    	$("#specifications").attr("disabled","disabled");
+    	$("#purchaseLink").attr("disabled","disabled");
+    	$("#mainPicture").attr("disabled","disabled");
+    	$("#prodPicture1").attr("disabled","disabled");
+    	$("#prodPicture2").attr("disabled","disabled");
+    	$("#prodPicture3").attr("disabled","disabled");
+    	$("#prodPicture4").attr("disabled","disabled");
+    	$("#prodPicture5").attr("disabled","disabled");
+    	$("#issuedTime").attr("disabled","disabled");
+    	$("#actived").attr("disabled","disabled");
+    	$("#neckBanner").attr("disabled","disabled");
+    	$("#dispalyOrder").attr("disabled","disabled");   
+    	
+    }
+    
+    function enabledAllInput(){
+    	$("#id").removeAttr("disabled");
+    	$("#prodlanguage").removeAttr("disabled");
+    	$("#name").removeAttr("disabled");
+    	$("#packaging").removeAttr("disabled");
+    	$("#seriesName").removeAttr("disabled");
+    	$("#catlogName").removeAttr("disabled");
+    	$("#description").removeAttr("disabled");
+    	$("#specifications").removeAttr("disabled");
+    	$("#purchaseLink").removeAttr("disabled");
+    	$("#mainPicture").removeAttr("disabled");
+    	$("#prodPicture1").removeAttr("disabled");
+    	$("#prodPicture2").removeAttr("disabled");
+    	$("#prodPicture3").removeAttr("disabled");
+    	$("#prodPicture4").removeAttr("disabled");
+    	$("#prodPicture5").removeAttr("disabled");
+    	$("#issuedTime").removeAttr("disabled");
+    	$("#actived").removeAttr("disabled");
+    	$("#neckBanner").removeAttr("disabled");
+    	$("#dispalyOrder").removeAttr("disabled");   
+    }
     
     
 });  

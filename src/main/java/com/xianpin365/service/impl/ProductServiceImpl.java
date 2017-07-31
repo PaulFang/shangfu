@@ -11,7 +11,7 @@ import com.xianpin365.entity.Product;
 import com.xianpin365.service.IProductService;
 
 @Service("productService")
-public class ProductServiceImp implements IProductService{
+public class ProductServiceImpl implements IProductService{
 
 	@Resource
 	private IProductDao productDao;

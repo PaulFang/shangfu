@@ -4,6 +4,8 @@ import com.xianpin365.entity.CompanyProfile;
 
 public interface ICompanyProfileService {
 
-	CompanyProfile get(String language);
-
+	CompanyProfile getByLanguage(String language);
+	
+	void updateProfile(CompanyProfile profile);
+	
 }

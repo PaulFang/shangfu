@@ -15,12 +15,13 @@ public class CompanyProfileServiceImpl implements ICompanyProfileService {
 	private ICompanyProfileDao companyProfileDao;
 
 	@Override
-	public CompanyProfile get(String language) {
-
-		CompanyProfile profile = new CompanyProfile();
-		profile.setLanguage("");
-		profile.setProfileTxt("test.......");
+	public CompanyProfile getByLanguage(String language) {
 		return companyProfileDao.getByLanguage(language);
+	}
+
+	@Override
+	public void updateProfile(CompanyProfile profile) {
+		companyProfileDao.updateProfile(profile);
 	}
 
 }

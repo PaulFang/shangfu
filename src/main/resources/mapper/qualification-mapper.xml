@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- http://www.cnblogs.com/dongying/p/4048828.html -->
+<mapper namespace="com.xianpin365.dao.IQualificationDao">
+
+	<resultMap id="qualificationMap" type="com.xianpin365.entity.Qualification">
+		<id column="ID" property="id" />
+		<result column="ACTIVED" property="actived" />
+		<result column="LANGUAGE" property="language" />
+		<result column="REL" property="rel" />
+		<result column="TITILE" property="title" />
+		<result column="SRC" property="src"/>
+		<result column="REMARK" property="remark"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID,LANGUAGE,NAME,SERIES_NAME,CATLOG_NAME,DESCRIPTION,SPECIFICATIONS,PURCHASE_LINK,PROD_PICTURE1,
+		PROD_PICTURE2,PROD_PICTURE3,PROD_PICTURE4,PROD_PICTURE5,ISSUED_TIME,ACTIVED,DISPLAY_ORDER
+	</sql>
+	
+	<select id="getNames" resultType="string" >
+        SELECT title FROM T_QUALIFICATION
+    </select>
+    
+    <select id="getByName" parameterType="java.lang.String" resultMap="qualificationMap">
+		SELECT *
+		FROM T_QUALIFICATION
+		WHERE TITLE = #{name}
+	</select>
+    
+</mapper>
