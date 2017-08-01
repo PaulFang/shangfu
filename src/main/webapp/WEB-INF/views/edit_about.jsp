@@ -264,7 +264,6 @@ function enabledDataFileds(profile){
 	$("#curNeckBanner").attr('path', imgPath);
 	
 	var imgPath = $("#curNeckBanner").attr('href');
-	alert(imgPath);
 	
 	$("#profileTxt").val(profile.profileTxt);
 	$('#profileTxt').attr("disabled",false);

@@ -10,7 +10,7 @@ this.imagePreview=function(d,c){
 	offY=25;
 	c=c==undefined?"a.preview":c;
 	$(c).hover(function(e){
-		$("body").append("<div id='preview' class='previewShowWindow'><img id='pi' src='images/loadingAnimation.gif' alt='Now Loading' /></div>");
+		$("body").append("<div id='preview' class='previewShowWindow'><img id='pi' src='images/loadingAnimation.gif' alt='努力加载中' /></div>");
 		var m=$(this).attr("path");
 		$("#pi").attr("src",m);
 		var o=$("#preview").width();

@@ -176,25 +176,25 @@ ul,li{list-style-type:none;}
 		    		<td>产品附图2</td>
 		    		<td>产品附图2</td>
 		    		<td><input name="prodPicture2" id="prodPicture2" type="text" style="width:250px;"/></td>
-		    		<td id="curProdPicture2"></td>
+		    		<td><a id="curProdPicture2" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图3</td>
 		    		<td>产品附图3</td>
 		    		<td><input name="prodPicture3" id="prodPicture3" type="text" style="width:250px;"></td>
-		    		<td id="curProdPicture3"></td>
+		    		<td><a id="curProdPicture3" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图4</td>
 		    		<td>产品附图4</td>
 		    		<td><input name="prodPicture4" id="prodPicture4" type="text" style="width:250px;"></td>
-		    		<td id="curProdPicture4"></td>
+		    		<td><a id="curProdPicture4" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图5</td>
 		    		<td>产品附图5</td>
 		    		<td><input name="prodPicture5" id="prodPicture5" type="text" style="width:250px;"></td>
-		    		<td id="curProdPicture5"></td>
+		    		<td><a id="curProdPicture5" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品发布时间 </td>
@@ -261,6 +261,13 @@ ul,li{list-style-type:none;}
 
 $(document).ready(function(){
 	
+	$(function(){
+		if($('a.preview').length){
+			var img = preloadIm();
+			imagePreview(img);
+		}
+	});
+	
     $("#queryProduct").click(function(){
 
     	alert("请确认你已保存修改，未保存的修改信息，在切换产品后将丢失！");
@@ -318,28 +325,39 @@ $(document).ready(function(){
             	$("#purchaseLink").val(data.purchaseLink);
             	$("#curPurchaseLink").text(data.purchaseLink);
             	
+            	var location = (window.location+'').split('/'); 
+            	var ctx = location[0]+'//'+location[2];
+            	
             	$("#mainPicture").val(data.mainPicture);
-            	$("#curMainPicture").text(data.mainPicture);
+            	var mainImgPath = ctx + data.mainPicture; 
+            	$("#curMainPicture").attr('href', mainImgPath);
+            	$("#curMainPicture").attr('path', mainImgPath);
             	
             	
             	$("#prodPicture1").val(data.prodPicture1);
-            	
-            	var location = (window.location+'').split('/'); 
-            	var imgPath = location[0]+'//'+location[2] + data.prodPicture1; 
-            	$("#curProdPicture1").attr('href', imgPath);
-            	$("#curProdPicture1").attr('path', imgPath);
+            	var img1Path = ctx + data.prodPicture1; 
+            	$("#curProdPicture1").attr('href', img1Path);
+            	$("#curProdPicture1").attr('path', img1Path);
             	
             	$("#prodPicture2").val(data.prodPicture2);
-            	$("#curProdPicture2").text(data.prodPicture2);
+            	var img2Path = ctx + data.prodPicture2; 
+            	$("#curProdPicture2").attr('href', img2Path);
+            	$("#curProdPicture2").attr('path', img2Path);
             	
             	$("#prodPicture3").val(data.prodPicture3);
-            	$("#curProdPicture3").text(data.prodPicture3);
+            	var img3Path = ctx + data.prodPicture3; 
+            	$("#curProdPicture3").attr('href', img3Path);
+            	$("#curProdPicture3").attr('path', img3Path);
             	
             	$("#prodPicture4").val(data.prodPicture4);
-            	$("#curProdPicture4").text(data.prodPicture4);
+            	var img4Path = ctx + data.prodPicture4; 
+            	$("#curProdPicture4").attr('href', img4Path);
+            	$("#curProdPicture4").attr('path', img4Path);
             	
             	$("#prodPicture5").val(data.prodPicture5);
-            	$("#curProdPicture5").text(data.prodPicture5);
+            	var img5Path = ctx + data.prodPicture5; 
+            	$("#curProdPicture5").attr('href', img5Path);
+            	$("#curProdPicture5").attr('path', img5Path);
             	
             	$("#issuedTime").val((new Date(data.issuedTime)).Format("yyyy-MM-dd hh:mm:ss.S"));
             	$("#curIssuedTime").text((new Date(data.issuedTime)).Format("yyyy-MM-dd hh:mm:ss.S"));
