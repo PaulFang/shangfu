@@ -26,4 +26,14 @@ public class QualificationServiceImpl implements IQualificationService {
 		return qualificationDao.getNames();
 	}
 
+	@Override
+	public void save(Qualification qualification) {
+		qualificationDao.updateQualification(qualification);
+	}
+
+	@Override
+	public List<Qualification> getQualifications(boolean actived, String language) {
+		return qualificationDao.getQualifications(actived, language);
+	}
+
 }

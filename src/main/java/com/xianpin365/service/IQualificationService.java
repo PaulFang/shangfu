@@ -9,4 +9,8 @@ public interface IQualificationService {
 	Qualification getByName(String name);
 
 	List<String> getNames();
+	
+	void save(Qualification qualification);
+	
+	List<Qualification> getQualifications(boolean actived, String language);
 }

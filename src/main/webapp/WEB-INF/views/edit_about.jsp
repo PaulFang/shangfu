@@ -252,7 +252,7 @@ function enabledDataFileds(profile){
 	$("#curId").val(profile.id);
 	
 	$("#languageVer").val(profile.language);
-	$('#languageVer').attr("disabled",false);
+	$('#languageVer').attr("disabled",true);
 	$("#curLanguage").text(profile.language);
 	
 	$("#neckBanner").val(profile.neckBanner);

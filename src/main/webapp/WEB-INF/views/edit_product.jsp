@@ -162,37 +162,37 @@ ul,li{list-style-type:none;}
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品主图</td>
-		    		<td>产品主图</td>
+		    		<td>800 x 720 px</td>
 		    		<td><input name="mainPicture" id="mainPicture" type="text" style="width:250px;"/></td>
-		    		<td id="curMainPicture"></td>
+		    		<td><a id="curMainPicture" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图1</td>
-		    		<td>产品附图1</td>
+		    		<td>800 x 720 px</td>
 		    		<td><input name="prodPicture1" id="prodPicture1" type="text" style="width:250px;"/></td>
 		    		<td><a id="curProdPicture1" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图2</td>
-		    		<td>产品附图2</td>
+		    		<td>800 x 720 px</td>
 		    		<td><input name="prodPicture2" id="prodPicture2" type="text" style="width:250px;"/></td>
 		    		<td><a id="curProdPicture2" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图3</td>
-		    		<td>产品附图3</td>
+		    		<td>800 x 720 px</td>
 		    		<td><input name="prodPicture3" id="prodPicture3" type="text" style="width:250px;"></td>
 		    		<td><a id="curProdPicture3" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图4</td>
-		    		<td>产品附图4</td>
+		    		<td>800 x 720 px</td>
 		    		<td><input name="prodPicture4" id="prodPicture4" type="text" style="width:250px;"></td>
 		    		<td><a id="curProdPicture4" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品附图5</td>
-		    		<td>产品附图5</td>
+		    		<td>800 x 720 px</td>
 		    		<td><input name="prodPicture5" id="prodPicture5" type="text" style="width:250px;"></td>
 		    		<td><a id="curProdPicture5" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
@@ -212,7 +212,7 @@ ul,li{list-style-type:none;}
 		    		<td>产品页颈部标语图片</td>
 		    		<td>产品页颈部标语图片</td>
 		    		<td><input name="neckBanner" id="neckBanner" type="text" style="width:250px;"></td>
-		    		<td id="curNeckBanner"></td>
+		    		<td><a id="curNeckBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  		</tr>
 		  		<tr style="height:35px;">
 		    		<td>产品在展示列表中次序</td>
@@ -236,23 +236,6 @@ ul,li{list-style-type:none;}
     	<div id="saveResult" style="width:500px;height:30px;text-align:center;line-height:30px; "></div>
     </div>
 
-<!-- <div class="footer">
-    <div class="main">
-        <div class="tel">0713-8533399 17771339998</div>
-        <div class="right">
-            <ul class="menu-foot">
-                <li><a href="about"   >关于尚孚</a></li>
-                <li><a href="product" >产品展示</a></li>
-                <li><a href="honor"   >荣誉资质</a></li>
-                <li><a href="news"    >新闻资讯</a></li>
-                <li><a href="contact" >联系我们</a></li>
-            </ul>
-            <div class="copyright">
-                <strong>Copyright © 2017 www.xianpin365.com 粤ICP备15001240号 All Rights Reserved</strong>
-            </div>
-        </div>
-    </div>
-</div>  -->
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
 <script type="text/javascript" src="<c:url value="/js/function.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/public.js" />"></script>
@@ -366,7 +349,9 @@ $(document).ready(function(){
             	$("#curActived").text(data.actived);
             	
             	$("#neckBanner").val(data.neckBanner);
-            	$("#curNeckBanner").text(data.neckBanner);
+            	var img6Path = ctx + data.neckBanner; 
+            	$("#curNeckBanner").attr('href', img6Path);
+            	$("#curNeckBanner").attr('path', img6Path);
             	
             	$("#dispalyOrder").val(data.dispalyOrder);            	
             	$("#curDispalyOrder").text(data.dispalyOrder);            	

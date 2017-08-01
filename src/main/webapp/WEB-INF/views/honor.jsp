@@ -67,34 +67,16 @@
         
         <ul class="honorList">
             
-            <li class="first">
-                <a href="honor_img/9001.png" rel="honor"  title="9001认证"><img src="honor_img/9001.png"><span></span><em></em></a>
-            </li>
-            <li >
-                <a href="honor_img/yyzz.jpg" rel="honor"  title="营业执照"><img src="honor_img/yyzz.jpg"><span></span><em></em></a>
-            </li>
-            <li >
-                <a href="honor_img/yjycz.jpg" rel="honor"  title="有机油茶籽认证"><img src="honor_img/yjycz.jpg"><span></span><em></em></a>
-            </li>
-            <li class="first">
-                <a href="honor_img/22000.png" rel="honor"  title="22000"><img src="honor_img/22000.png"><span></span><em></em></a>
-            </li>
-            <li >
-                <a href="honor_img/scxkz.jpg" rel="honor"  title="生产许可证"><img src="honor_img/scxkz.jpg"><span></span><em></em></a>
-            </li>
-            <li >
-                <a href="honor_img/yczy.jpg" rel="honor"  title="有机茶油认证"><img src="honor_img/yczy.jpg"><span></span><em></em></a>
-            </li>
             
-            <li class="first">
-                <a href="honor_img/jj.jpg" rel="honor"  title="金奖"><img src="honor_img/jj.jpg"><span></span><em></em></a>
-            </li>
-            <li >
-                <a href="honor_img/jjzs.jpg" rel="honor"  title="证书"><img src="honor_img/jjzs.jpg"><span></span><em></em></a>
-            </li>
-            <li >
-                <a href="honor_img/yxqy.jpg" rel="honor"  title="优秀企业"><img src="honor_img/yxqy.jpg"><span></span><em></em></a>
-            </li>
+            
+            <c:forEach items="${qualifications}" var="qualification" varStatus="status">  
+        		<li <c:if test="${status.index==0 || status.index%3==0}">class="first"</c:if>  >
+        			<a href="${qualification.src}" rel="${qualification.rel}" title="${qualification.title}" >
+        				<img src="${qualification.src}"><span></span><em></em>
+        			</a>
+        		</li>
+        	</c:forEach>
+          
     </div>
 </div>
 <div class="footer">

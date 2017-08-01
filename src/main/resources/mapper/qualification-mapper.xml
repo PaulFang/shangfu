@@ -27,5 +27,25 @@
 		FROM T_QUALIFICATION
 		WHERE TITLE = #{name}
 	</select>
-    
+	
+	<select id="getQualifications" resultMap="qualificationMap">
+		SELECT *
+		FROM T_QUALIFICATION
+		WHERE ACTIVED = #{actived} 
+		AND LANGUAGE = #{language}
+	</select>
+	
+	<update id="updateQualification" parameterType="com.xianpin365.entity.Qualification">
+        UPDATE T_QUALIFICATION
+        <set>
+        	<if test="actived != null">actived=#{actived},</if>
+        	<if test="language != null">language=#{language},</if>
+        	<if test="rel != null">rel=#{rel},</if>
+        	<if test="title != null">title=#{title},</if>
+        	<if test="src != null">src=#{src},</if>
+        	<if test="remark != null">remark=#{remark},</if>
+        </set>
+        WHERE id = #{id}
+	</update>
+	
 </mapper>

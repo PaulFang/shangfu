@@ -88,8 +88,6 @@ public class EditController {
 
 	@RequestMapping(value = { "/edit/saveProduct" }, method = RequestMethod.POST)
 	public @ResponseBody String saveProduct(Product product) {
-		
-		System.out.println(product);
 		prodService.updateProduct(product);
 		return "OK";
 	}
@@ -123,6 +121,12 @@ public class EditController {
 	public @ResponseBody Qualification saveContact(String qualificationName) {
 		Qualification qualification = qualificationService.getByName(qualificationName);
 		return qualification;
+	}
+	
+	@RequestMapping(value = { "/edit/saveQualification" }, method = RequestMethod.POST)
+	public @ResponseBody String saveQualification(Qualification qualification) {
+		qualificationService.save(qualification);
+		return "OK";
 	}
 	
 	@RequestMapping(value = { "/edit/contact/save" }, method = RequestMethod.POST)
