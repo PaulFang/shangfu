@@ -1,5 +1,6 @@
 package com.xianpin365.interceptor;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,12 +30,15 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 	private final static Map<Language, PageCommonInfo> LANG_PAGE_COMMON_INFO_MAP = new HashMap<Language, PageCommonInfo>();
 	
 	@Override
-	public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object controller) {
+	public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object controller) throws IOException {
 		setVistorAction(req);
-		if(checkEditPermission(req)){
-			return true;
+		
+		// 无编辑权限时跳转到登录页面
+		boolean permit = checkEditPermission(req);
+		if(!permit){
+			resp.sendRedirect(req.getContextPath() + "/managerlogin");
 		}
-		return false;
+		return checkEditPermission(req);
 	}
 
 	@Override

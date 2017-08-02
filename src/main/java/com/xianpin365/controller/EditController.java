@@ -97,10 +97,16 @@ public class EditController {
 	
 	@RequestMapping(value = { "/edit/contact" }, method = RequestMethod.GET)
 	public String doEditContact(HttpServletRequest request, Model model) {
-		Language lang = GlobalInterceptor.getAccessorLanguage(request);
-		PageCommonInfo info = pageCommonInfoService.getByLanguage(lang.getLanguage());
-		model.addAttribute("info", info);
+//		Language lang = GlobalInterceptor.getAccessorLanguage(request);
+//		PageCommonInfo info = pageCommonInfoService.getByLanguage(lang.getLanguage());
+//		model.addAttribute("info", info);
 		return "edit_contact";
+	}
+	
+	@RequestMapping(value = { "/edit/toUpdateContact" }, method = RequestMethod.POST)
+	public @ResponseBody PageCommonInfo doToUpdateContact(String language) {
+		PageCommonInfo info = pageCommonInfoService.getByLanguage(language);
+		return info;
 	}
 	
 	@RequestMapping(value = { "/edit/honor" }, method = RequestMethod.GET)

@@ -53,7 +53,8 @@
 <div style="height:250px;"></div>
 
 <div style="margin:0 auto; height:400px; width:700px; font-size: 30px" align="center">
-		<h3><a href="">抱歉，未找到您要访问的页面<br><br>欢迎点击本页面logo 或菜单继续浏览！</a></h3>
+		<h3><a href="/index">抱歉，未找到您要访问的页面<br><br>欢迎点击本页面logo 或菜单继续浏览！</a></h3><br>
+		<h3><span id="show"></h3>
 </div>
 
 
@@ -77,6 +78,22 @@
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
 <script type="text/javascript" src="<c:url value="/js/function.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/public.js" />"></script>
+
+<script>
+$(document).ready(function(){
+	var t = 4;
+	setInterval(function(){
+		if(t==0){
+			location="http://xianpin365.com";
+		}
+		$("#show").html("" + t + " 秒后将自动跳转到首页"); // 显示倒计时 
+		t--; // 计数器递减 
+	}, 1000);
+});
+
+
+
+</script>
 
 </body>
 </html>
