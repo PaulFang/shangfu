@@ -48,4 +48,9 @@ public class ProductServiceImpl implements IProductService{
 		productDao.updateProduct(product);
 	}
 
+	@Override
+	public List<Product> getAll() {
+		return productDao.getAll();
+	}
+
 }

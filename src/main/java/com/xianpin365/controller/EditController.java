@@ -69,16 +69,14 @@ public class EditController {
 	
 	@RequestMapping(value = { "/edit/product" }, method = RequestMethod.GET)
 	public String doEditProduct(Model model) {
-		List<String> productNames = prodService.getAllProdNames();
-		model.addAttribute("productNames", productNames);
+		List<Product> products = prodService.getAll();
+		model.addAttribute("products", products);
 		return "edit_product";
 	}
 	
 	@RequestMapping(value = { "/edit/toUpdateProduct" }, method = RequestMethod.POST)
-	public @ResponseBody Product getToEditProduct(String name) {
-		System.out.println("name : " + name);
-		Product product = prodService.getByName(name);
-		System.out.println("product : " + product);
+	public @ResponseBody Product getToEditProduct(String id) {
+		Product product = prodService.getById(Integer.parseInt(id));
 		return product;
 	}
 
@@ -97,10 +95,13 @@ public class EditController {
 	
 	@RequestMapping(value = { "/edit/contact" }, method = RequestMethod.GET)
 	public String doEditContact(HttpServletRequest request, Model model) {
-//		Language lang = GlobalInterceptor.getAccessorLanguage(request);
-//		PageCommonInfo info = pageCommonInfoService.getByLanguage(lang.getLanguage());
-//		model.addAttribute("info", info);
 		return "edit_contact";
+	}
+	
+	@RequestMapping(value = { "/edit/contact/save" }, method = RequestMethod.GET)
+	public String saveContact(PageCommonInfo info) {
+		pageCommonInfoService.update(info);
+		return "OK";
 	}
 	
 	@RequestMapping(value = { "/edit/toUpdateContact" }, method = RequestMethod.POST)

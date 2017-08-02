@@ -110,64 +110,54 @@ ul,li{list-style-type:none;}
 		    	<td><input name="langugae" id="languageVer" type="text" style="width:250px;"/>
 		    	<td id="curLanguage">${info.language}</td>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>产品预览</td>
 		    	<td>产品预览标签</td>
 		    	<td><input name="menuItem0" id="menuItem0" type="text" style="width:250px;"/>
 		    	<td id="curMenuItem0"/>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>关于尚孚</td>
 		    	<td>关于尚孚标签</td>
 		    	<td><input name="menuItem1" id="menuItem1" type="text" style="width:250px;"/>
 		    	<td id="curMenuItem1"/>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>产品展示</td>
 		    	<td>产品展示标签</td>
 		    	<td><input name="menuItem2" id="menuItem2" type="text" style="width:250px;"/>
 		    	<td id="curMenuItem2"/>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>荣誉资质</td>
 		    	<td>荣誉资质标签</td>
 		    	<td><input name="menuItem3" id="menuItem3" type="text" style="width:250px;"/>
 		    	<td id="curMenuItem3"/>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>新闻资讯</td>
 		    	<td>新闻资讯标签</td>
 		    	<td><input name="menuItem4" id="menuItem4" type="text" style="width:250px;"/>
 		    	<td id="curMenuItem4"/>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>联系我们</td>
 		    	<td>联系我们标签</td>
 		    	<td><input name="menuItem5" id="menuItem5" type="text" style="width:250px;"/>
 		    	<td id="curMenuItem5"/>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>资源语言</td>
 		    	<td>此项不可修改</td>
 		    	<td><input name="aboutBanner" id="aboutBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curAboutBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
-		  	
 		  	<tr height=35px>
 		    	<td>资源语言</td>
 		    	<td>此项不可修改</td>
 		    	<td><input name="productBanner" id="productBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curProductBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
-		  	
-		  	
 		  	<tr height=35px>
 		    	<td>资源语言</td>
 		    	<td>此项不可修改</td>
@@ -236,7 +226,7 @@ ul,li{list-style-type:none;}
 		    	<td>公司微信</td>
 		    	<td>index/contact中的微信图片(大小 302x171 px)</td>
 		    	<td><input name="wechat" id="wechat" type="text" style="width:250px;"/>
-		    	<td id="curWechat"/>
+		    	<td><a id="curWechat" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
 		  	<tr height=35px>
 		    	<td>购买标签</td>
@@ -309,7 +299,7 @@ ul,li{list-style-type:none;}
 		  	<tr>
 		    	<td></td>
 		    	<td></td>
-		    	<td><input type="button" id="button_submit" value="=========保存修改========" style="width:250px;">  </td>
+		    	<td><input type="button" id="saveUpdate" value="=========保存修改========" style="width:250px;">  </td>
 		    	<td></td>
 		  	</tr>
 		  		
@@ -372,7 +362,7 @@ $(document).ready(function(){
             	$("#saveResult").text("");
             	$("#saveResult").css("background-color","");
             	
-            	$("#profileTable").show();
+            	$("#contactTable").show();
             },  
             error:function(e) {  
             	$("#editResult").text("");
@@ -383,18 +373,45 @@ $(document).ready(function(){
 		
 	});
 	
-	
-	
     $("#saveUpdate").click(function(){  
         var id = $("#id").val();  
         var language = $("#languageVer").val();
         var neckBanner = $("#neckBanner").val();
         var profileTxt =    $("#profileTxt").val();
         
-        var profile = {id:id, 
-        			language : language, 
-        			neckBanner : neckBanner,
-        			profileTxt : profileTxt};
+        var data = {
+	        id : $("#id").val(),
+	    	language : $("#languageVer").val(), 
+	    	menuItem0 : $("#menuItem0").val(), 
+	    	menuItem1 : $("#menuItem1").val(),
+	    	menuItem2 : $("#menuItem2").val(), 
+	    	menuItem3 : $("#menuItem3").val(),
+	    	menuItem4 : $("#menuItem4").val(),
+	    	menuItem5 : $("#menuItem5").val(),
+	    	aboutBanner : $("#aboutBanner").val(),
+	    	productBanner : $("#productBanner").val(),
+	    	honorBanner : $("#honorBanner").val(),
+	    	newsBanner : $("#newsBanner").val(),
+	    	contactBanner : $("#contactBanner").val(),
+	    	menuSlogan : $("#menuSlogan").val(),
+	    	companyName : $("#companyName").val(),
+	    	telNum : $("#telNum").val(),
+	    	homePage : $("#homePage").val(),
+	    	qq : $("#qq").val(),
+	    	eMail : $("#eMail").val(),
+	    	addr : $("#addr").val(),
+	    	orderLabel : $("#orderLabel").val(),
+	    	wechat : $("#wechat").val(),
+	    	homeLabel : $("#homeLabel").val(),
+	    	timeLabel : $("#timeLabel").val(),
+	        fromLabel : $("#fromLabel").val(),
+	        companyLabel : $("#companyLabel").val(),
+	        seriesLabel : $("#seriesLabel").val(),
+	        packagingLabel : $("#packagingLabel").val(),
+	        specificationsLabel : $("#specificationsLabel").val(),
+	        footerTelNum : $("#footerTelNum").val(),
+	        footerCopyright : $("#footerCopyright").val()
+        };
         
         var token = $("meta[name='_csrf']").attr("content");
     	var header = $("meta[name='_csrf_header']").attr("content");
@@ -404,22 +421,17 @@ $(document).ready(function(){
         
         $.ajax({  
             type:"POST",  
-            url:"${pageContext.request.contextPath}/edit/about/save",  
-            data:profile,
+            url:"${pageContext.request.contextPath}/edit/contact/save",  
+            data:data,
 
             success:function(data){
 
-            	$("#id").attr('disabled',true);
-            	$("#languageVer").attr('disabled',true);
-            	$("#neckBanner").attr('disabled',true);
-            	$('#profileTxt').attr("disabled",true);
-            	$("#saveUpdate").attr('disabled',true);
+            	disabledDataFileds();
             	
             	$("#saveResult").text("");
             	$("#saveResult").text("恭喜，你的修改保存成功，你可以内容继续更新");
             	$("#saveResult").css("background-color","#00FF00");
-            	
-            	//$("body").css("background-color","#00FF00"); 
+				$("#saveUpdate").attr("disabled",true);         	
             	
             },  
             error:function(e) {  
@@ -442,119 +454,181 @@ function enabledDataFileds(info){
 
 	
 	$("#menuItem0").val(info.menuItem0);
+	$('#menuItem0').attr("disabled",false);
 	$("#curMenuItem0").text(info.menuItem0);
 
 	$("#menuItem1").val(info.menuItem1);
+	$('#menuItem1').attr("disabled",false);
 	$("#curMenuItem1").text(info.menuItem1);
 
 	$("#menuItem2").val(info.menuItem2);
+	$('#menuItem2').attr("disabled",false);
 	$("#curMenuItem2").text(info.menuItem2);
 
 	$("#menuItem3").val(info.menuItem3);
+	$('#menuItem3').attr("disabled",false);
 	$("#curMenuItem3").text(info.menuItem3);
 
 	$("#menuItem4").val(info.menuItem4);
+	$('#menuItem4').attr("disabled",false);
 	$("#curMenuItem4").text(info.menuItem4);
 
 	$("#menuItem5").val(info.menuItem5);
+	$('#menuItem5').attr("disabled",false);
 	$("#curMenuItem5").text(info.menuItem5);
 
 	var location = (window.location+'').split('/'); 
 	var ctx = location[0]+'//'+location[2] + "/";
 
 	$("#aboutBanner").val(info.aboutBanner);
+	$('#aboutBanner').attr("disabled",false);
 	var aboutBannerImgPath = ctx + info.aboutBanner; 
 	$("#curAboutBanner").attr('href', aboutBannerImgPath);
 	$("#curAboutBanner").attr('path', aboutBannerImgPath);
 
 
 	$("#productBanner").val(info.productBanner);
+	$('#productBanner').attr("disabled",false);
 	var productBannerImgPath = ctx + info.productBanner; 
 	$("#curProductBanner").attr('href', productBannerImgPath);
 	$("#curProductBanner").attr('path', productBannerImgPath);
 
 	$("#honorBanner").val(info.honorBanner);
+	$('#honorBanner').attr("disabled",false);
 	var honorBannerImgPath = ctx + info.honorBanner; 
 	$("#curHonorBanner").attr('href', honorBannerImgPath);
 	$("#curHonorBanner").attr('path', honorBannerImgPath);
 
 	$("#newsBanner").val(info.newsBanner);
+	$('#newsBanner').attr("disabled",false);
 	var newsBannerImgPath = ctx + info.newsBanner; 
 	$("#curNewsBanner").attr('href', newsBannerImgPath);
 	$("#curNewsBanner").attr('path', newsBannerImgPath);
 
 	$("#contactBanner").val(info.contactBanner);
+	$('#contactBanner').attr("disabled",false);
 	var contactBannerImgPath = ctx + info.contactBanner; 
 	$("#curContactBanner").attr('href', contactBannerImgPath);
 	$("#curContactBanner").attr('path', contactBannerImgPath);
 
 	$("#menuSlogan").val(info.menuSlogan);
+	$('#menuItem0').attr("disabled",false);
 	var menuBannerImgPath = ctx + info.menuSlogan; 
 	$("#curMenuSlogan").attr('href', menuBannerImgPath);
 	$("#curMenuSlogan").attr('path', menuBannerImgPath);
 
 	$("#companyName").val(info.companyName);
+	$('#companyName').attr("disabled",false);
 	$("#curCompanyName").text(info.companyName);
 
 	$("#telNum").val(info.telNum);
-	$("#curTelNum").text(info.telNum);
-	
-	$("#telNum").val(info.telNum);
+	$('#telNum').attr("disabled",false);
 	$("#curTelNum").text(info.telNum);
 	
 	$("#homePage").val(info.homePage);
+	$('#homePage').attr("disabled",false);
 	$("#curHomePage").text(info.homePage);
 	
 	$("#qq").val(info.qq);
+	$('#qq').attr("disabled",false);
 	$("#curQq").text(info.qq);
 	
 	$("#eMail").val(info.eMail);
+	$('#eMail').attr("disabled",false);
 	$("#curEMail").text(info.eMail);
 	
 	$("#addr").val(info.addr);
+	$('#addr').attr("disabled",false);
 	$("#curAddr").text(info.addr);
 	
 	$("#orderLabel").val(info.orderLabel);
+	$('#orderLabel').attr("disabled",false);
 	$("#curOrderLabel").text(info.orderLabel);
 	
 	$("#wechat").val(info.wechat);
-	$("#curWechat").text(info.wechat);
+	$('#wechat').attr("disabled",false);
+	var wechatImgPath = ctx + info.wechat; 
+	$("#curWechat").attr('href', wechatImgPath);
+	$("#curWechat").attr('path', wechatImgPath);
 	
 	$("#homeLabel").val(info.homeLabel);
+	$('#homeLabel').attr("disabled",false);
 	$("#curHomeLabel").text(info.homeLabel);
 	
 	$("#timeLabel").val(info.timeLabel);
+	$('#timeLabel').attr("disabled",false);
 	$("#curTimeLabel").text(info.timeLabel);
 	
 	$("#fromLabel").val(info.fromLabel);
+	$('#fromLabel').attr("disabled",false);
 	$("#curFromLabel").text(info.fromLabel);
 	
 	$("#companyLabel").val(info.companyLabel);
+	$('#companyLabel').attr("disabled",false);
 	$("#curCompanyLabel").text(info.companyLabel);
 	
 	$("#seriesLabel").val(info.seriesLabel);
+	$('#seriesLabel').attr("disabled",false);
 	$("#curSeriesLabel").text(info.seriesLabel);
 	
 	$("#packagingLabel").val(info.packagingLabel);
+	$('#packagingLabel').attr("disabled",false);
 	$("#curPackagingLabel").text(info.packagingLabel);
 	
 	$("#specificationsLabel").val(info.specificationsLabel);
+	$('#specificationsLabel').attr("disabled",false);
 	$("#curSpecificationsLabel").text(info.specificationsLabel);
 	
 	$("#footerTelNum").val(info.footerTelNum);
+	$('#footerTelNum').attr("disabled",false);
 	$("#curFooterTelNum").text(info.footerTelNum);
 	
 	$("#footerCopyright").val(info.footerCopyright);
+	$('#footerCopyright').attr("disabled",false);
 	$("#curFooterCopyright").text(info.footerCopyright);	
 
-	$("#contactTable").show();
-	
 	/* var imgPath = $("#curNeckBanner").attr('href');
 	
 	$("#profileTxt").val(profile.profileTxt);
 	$('#profileTxt').attr("disabled",false);
 	$("#curProfileTxt").text(profile.profileTxt); */
 	
+	$("#saveUpdate").attr('disabled',false);
+}
+
+function disabledDataFileds(){
+	
+	$('#languageVer').attr("disabled",true);
+	$("#menuItem0").attr("disabled",true);
+	$("#menuItem1").attr("disabled",true);
+	$("#menuItem2").attr("disabled",true);
+	$("#menuItem3").attr("disabled",true);
+	$("#menuItem4").attr("disabled",true);
+	$("#menuItem5").attr("disabled",true);
+	$("#aboutBanner").attr("disabled",true);
+	$("#productBanner").attr("disabled",true);
+	$("#honorBanner").attr("disabled",true);
+	$("#newsBanner").attr("disabled",true);
+	$("#contactBanner").attr("disabled",true);
+	$("#menuSlogan").attr("disabled",true);
+	$("#companyName").attr("disabled",true);
+	$("#telNum").attr("disabled",true);
+	$("#telNum").attr("disabled",true);
+	$("#homePage").attr("disabled",true);
+	$("#qq").attr("disabled",true);
+	$("#eMail").attr("disabled",true);
+	$("#addr").attr("disabled",true);
+	$("#orderLabel").attr("disabled",true);
+	$("#wechat").attr("disabled",true);
+	$("#homeLabel").attr("disabled",true);
+	$("#timeLabel").attr("disabled",true);
+	$("#fromLabel").attr("disabled",true);
+	$("#companyLabel").attr("disabled",true);
+	$("#seriesLabel").attr("disabled",true);
+	$("#packagingLabel").attr("disabled",true);
+	$("#specificationsLabel").attr("disabled",true);
+	$("#footerTelNum").attr("disabled",true);
+	$("#footerCopyright").attr("disabled",true);
 	$("#saveUpdate").attr('disabled',false);
 }
 

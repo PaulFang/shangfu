@@ -80,6 +80,11 @@
 		WHERE NAME = #{name}
 	</select>
 	
+	<select id="getAll" resultMap="productMap">
+		SELECT *
+		FROM T_PRODUCT_INFO
+	</select>
+	
 	  <!-- 返回一个list的写法 -->
     <select id="getProducts" resultMap="productMap" >
         SELECT * FROM T_PRODUCT_INFO 

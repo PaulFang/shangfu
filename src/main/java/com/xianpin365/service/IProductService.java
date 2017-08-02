@@ -18,6 +18,8 @@ public interface IProductService {
 	// 返回未激活的产品并按 displayOrder大小升序排列
 	List<Product> getUnactivedProducts();
 	
+	List<Product> getAll();
+	
 	List<String> getAllProdNames();
 	
 	void updateProduct(Product product);

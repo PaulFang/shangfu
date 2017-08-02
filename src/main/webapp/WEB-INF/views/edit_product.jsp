@@ -80,8 +80,8 @@ ul,li{list-style-type:none;}
 <div align="center">
 		请选择要编辑的产品：	
 		<select id="productSelect">
-			<c:forEach items="${productNames}" var="name" >
-				<option value ="${name}">${name}</option>
+			<c:forEach items="${products}" var="product" >
+				<option value ="${product.id}">${product.name}</option>
 			</c:forEach>
 		
 		</select>
@@ -265,7 +265,7 @@ $(document).ready(function(){
     	enabledAllInput();
     	
     	var value = $("#productSelect").children('option:selected').val();
-    	var info = {name:value};
+    	var info = {id:value};
         var token = $("meta[name='_csrf']").attr("content");
     	var header = $("meta[name='_csrf_header']").attr("content");
     	

@@ -48,5 +48,42 @@
 		FROM T_PAGE_COMMON_INFO
 		WHERE LANGUAGE = #{language}
 	</select>
+	
+	<update id="update" parameterType="com.xianpin365.entity.PageCommonInfo">
+        UPDATE T_PAGE_COMMON_INFO
+        <set>
+            <if test="language != null">language=#{language},</if>
+            <if test="menuItem0 != null">MENU_ITEM_0=#{menuItem0},</if>
+            <if test="menuItem1 != null">MENU_ITEM_1=#{menuItem1},</if>
+            <if test="menuItem2 != null">MENU_ITEM_2=#{menuItem2},</if>
+            <if test="menuItem3 != null">MENU_ITEM_3=#{menuItem3},</if>
+            <if test="menuItem4 != null">MENU_ITEM_4=#{menuItem4},</if>
+            <if test="menuItem5 != null">MENU_ITEM_5=#{menuItem5},</if>
+            <if test="aboutBanner != null">ABOUT_BANNER=#{aboutBanner},</if>
+            <if test="productBanner != null">PRODUCT_BANNER=#{productBanner},</if>
+            <if test="honorBanner != null">HONOR_BANNER=#{honorBanner},</if>
+            <if test="newsBanner != null">NEWS_BANNER=#{newsBanner},</if>
+            <if test="contactBanner != null">CONTACT_BANNER=#{contactBanner},</if>
+            <if test="menuSlogan != null">MENU_SLOGAN=#{menuSlogan},</if>
+            <if test="companyName != null">TEL_NUM=#{companyName},</if>
+            <if test="homePage != null">HOME_PAGE=#{homePage},</if>
+            <if test="qq != null">QQ=#{qq},</if>
+            <if test="eMail != null">EMAIL=#{eMail},</if>
+            <if test="addr != null">ADDR=#{addr},</if>
+            <if test="wechat != null">WECHAT=#{wechat},</if>
+            <if test="footerTelNum != null">FEETER_TEL_NO=#{footerTelNum}</if>
+            <if test="footerCopyright != null">FEETER_COPYRIGHT=#{footerCopyright}</if>
+            <if test="orderLabel != null">ORDER_LABEL=#{orderLabel},</if>
+            <if test="homeLabel != null">HOME_LABEL=#{homeLabel},</if>
+            <if test="timeLabel != null">TIME_LABEL=#{timeLabel},</if>
+            <if test="fromLabel != null">FROM_LABEL=#{fromLabel}</if>			
+			<if test="companyLabel != null">COMPANY_LABEL=#{companyLabel}</if>
+			<if test="seriesLabel != null">SERIES_LABEL=#{seriesLabel}</if>
+			<if test="packagingLabel != null">PACKAGING_LABEL=#{packagingLabel}</if>
+			<if test="specificationsLabel != null">SPECIFICATIONS_LABEL=#{specificationsLabel}</if>
+        </set>
+        WHERE id = #{id}
+	</update>    
+	
 
 </mapper>

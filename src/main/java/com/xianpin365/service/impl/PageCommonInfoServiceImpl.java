@@ -19,4 +19,9 @@ public class PageCommonInfoServiceImpl implements IPageCommonInfoService {
 		return pageCommonInfoDao.getByLanguage(language);
 	}
 
+	@Override
+	public void update(PageCommonInfo info) {
+		pageCommonInfoDao.update(info);
+	}
+
 }

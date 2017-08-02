@@ -6,4 +6,5 @@ public interface IPageCommonInfoDao {
 
 	PageCommonInfo getByLanguage(String language);
 
+	void update(PageCommonInfo info);
 }

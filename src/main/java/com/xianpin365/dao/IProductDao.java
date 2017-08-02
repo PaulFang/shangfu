@@ -22,6 +22,8 @@ public interface IProductDao {
 	
 	List<Product> getProducts(@Param("actived") boolean actived, @Param("language") String language);
 	
+	List<Product> getAll();
+	
 	int updateByPrimaryKeySelective(Product record);
 
 	int updateByPrimaryKey(Product record);
