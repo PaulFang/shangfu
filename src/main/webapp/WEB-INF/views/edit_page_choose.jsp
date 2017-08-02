@@ -78,8 +78,8 @@
     </div>
 </div>
 <input type="hidden" id="la" value="$_COOKIE['think_language']"/>
-<script type="text/javascript" src="js/function.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="../js/function.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
 
 </body>
 </html>

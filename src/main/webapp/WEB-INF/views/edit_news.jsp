@@ -204,7 +204,6 @@ $(document).ready(function(){
     		xhr.setRequestHeader(header, token);
     	});
         
-        /* alert(info);   */
         $.ajax({  
             type:"POST",  
             url:"${pageContext.request.contextPath}/edit/contact/save",  

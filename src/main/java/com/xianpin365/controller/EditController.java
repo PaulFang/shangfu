@@ -44,12 +44,6 @@ public class EditController {
 	@Resource
 	private IQualificationService qualificationService;
 	
-	
-	@RequestMapping(value = { "/edit" }, method = RequestMethod.GET)
-	public String doEditRequest() {
-		return "login";
-	}
-	
 	@RequestMapping(value = { "/edit/about" })
 	public String doEditAbout() {
 		return "edit_about";
@@ -82,7 +76,9 @@ public class EditController {
 	
 	@RequestMapping(value = { "/edit/toUpdateProduct" }, method = RequestMethod.POST)
 	public @ResponseBody Product getToEditProduct(String name) {
+		System.out.println("name : " + name);
 		Product product = prodService.getByName(name);
+		System.out.println("product : " + product);
 		return product;
 	}
 

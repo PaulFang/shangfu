@@ -27,17 +27,21 @@ public class ViewMappingController {
 	@Resource
 	private IProductService productService;
 
-	@RequestMapping(value = { "/index", "/aboutAAA", "/managerlogin","/controller"
+	@RequestMapping(value = { "/index", "/managerlogin","/controller"
 			 })
 	public String doDirectRequest(HttpServletResponse response, HttpServletRequest request) {
 		String reqUri = request.getRequestURI();
 		return reqUri;
 	}
 	
-	@RequestMapping(value = { "/login" }, method = RequestMethod.POST)
-	public @ResponseBody String login() {
-		return "OK";
-//		return "edit_page_choose";
+	@RequestMapping(value = { "/trylogin" }, method = RequestMethod.POST)
+	public @ResponseBody String login(HttpServletRequest request, String user, String password) {
+		if("".equals(user) &&
+			"".equals(password)){
+			request.getSession().setAttribute("admin", true);
+			return "OK";
+		}
+		return null;
 	}
 	
 	@RequestMapping(value = { "/ueditor" }, method = RequestMethod.GET)

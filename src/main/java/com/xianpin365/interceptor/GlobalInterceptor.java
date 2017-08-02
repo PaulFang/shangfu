@@ -69,6 +69,9 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 
 	public static Language getAccessorLanguage(HttpServletRequest request){
 		String lang = request.getHeader("Accept-Language");
+		if(lang==null){
+			return Language.ZH_CN;
+		}
 		int commaIndex = lang.indexOf(",");
 		Language language = null;
 		if(commaIndex > -1){
@@ -98,9 +101,12 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 			session.setAttribute(Consts.VISTOR_LANGUAGE, language);
 		}
 		
-		if(url.contains("managerlogin")){
+	/*	if(url.contains("managerlogin") &&
+				"admin".equals(req.getParameter("user")) &&
+				"admin123!@#".equals(req.getParameter("password"))
+				){
 			session.setAttribute("admin", true);
-		}
+		}*/
 		
 		if(obj==null){
 			VistorAction action = new VistorAction();
