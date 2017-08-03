@@ -12,6 +12,8 @@ public interface INewsDao {
 	
 	List<News> getByStatus(@Param("actived") boolean actived, @Param("language") String language);
 	
+	List<News> getAll();
+	
 	int deleteByPrimaryKey(Integer id);
 
 	int insert(News record);

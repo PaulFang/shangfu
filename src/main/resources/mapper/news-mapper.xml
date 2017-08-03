@@ -42,6 +42,11 @@
 		WHERE ID = #{id}
 	</select>
 	
+	<select id="getAll" resultMap="newsMap">
+		SELECT *
+		FROM T_NEWS_INFO
+	</select>
+	
 	<select id="getByStatus" resultMap="newsMap">
 		SELECT *
 		FROM T_NEWS_INFO

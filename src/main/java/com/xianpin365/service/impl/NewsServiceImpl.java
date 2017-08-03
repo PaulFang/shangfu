@@ -15,7 +15,7 @@ public class NewsServiceImpl implements INewsService {
 
 	@Resource
 	private INewsDao newsDao;
-	
+
 	@Override
 	public void insertNews(News record) {
 	}
@@ -28,6 +28,11 @@ public class NewsServiceImpl implements INewsService {
 	@Override
 	public List<News> getActivedNews(String language) {
 		return newsDao.getByStatus(true, language);
+	}
+
+	@Override
+	public List<News> getAll() {
+		return newsDao.getAll();
 	}
 
 }

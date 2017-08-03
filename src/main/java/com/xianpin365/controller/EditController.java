@@ -19,6 +19,7 @@ import com.xianpin365.entity.Product;
 import com.xianpin365.entity.Qualification;
 import com.xianpin365.interceptor.GlobalInterceptor;
 import com.xianpin365.service.ICompanyProfileService;
+import com.xianpin365.service.INewsService;
 import com.xianpin365.service.IPageCommonInfoService;
 import com.xianpin365.service.IProductService;
 import com.xianpin365.service.IQualificationService;
@@ -36,6 +37,9 @@ public class EditController {
 	
 	@Resource
 	private IProductService prodService;
+	
+	@Resource
+	private INewsService newsService;
 	
 	@Resource
 	private ICompanyProfileService companyProfileService;
@@ -133,9 +137,18 @@ public class EditController {
 	}
 	
 	@RequestMapping(value = { "/edit/news" })
-	public @ResponseBody String doEditNews() {
+	public String doEditNews(Model model) {
+		List<News> newsList = newsService.getAll();
+		model.addAttribute("newsList", newsList);
 		return "edit_news";
 	}
+	
+	@RequestMapping(value = { "/edit/news/toUpdateNews" })
+	public @ResponseBody News getToUpdateNews(String id) {
+		News news = newsService.getById(Integer.valueOf(id));
+		return news;
+	}
+	
 	
 	@RequestMapping(value = { "/edit/news/save" }, method = RequestMethod.POST)
 	public @ResponseBody String saveNews(HttpServletRequest request, News news) {

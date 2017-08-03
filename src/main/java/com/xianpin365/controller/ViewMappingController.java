@@ -36,8 +36,8 @@ public class ViewMappingController {
 	
 	@RequestMapping(value = { "/trylogin" }, method = RequestMethod.POST)
 	public @ResponseBody String login(HttpServletRequest request, String user, String password) {
-		if("".equals(user) &&
-			"".equals(password)){
+		if("admin".equals(user) &&
+			"admin123!@#".equals(password)){
 			request.getSession().setAttribute("admin", true);
 			return "OK";
 		}

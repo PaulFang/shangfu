@@ -142,10 +142,7 @@ ul,li{list-style-type:none;}
 		  		<tr style="height:35px;">
 		    		<td>产品描述</td>
 		    		<td>产品描述</td>
-		    		<!-- <td><input name="description" id="description" type="text" style="width:250px;"></td> -->
-		    		
 		    		<td><textarea name="description" id="description" cols=10 rows=5 style="width:250px;"></textarea></td>
-		    		
 		    		<td id="curDescription"></td>
 		  		</tr>
 		  		<tr style="height:35px;">

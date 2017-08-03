@@ -59,12 +59,22 @@
 	<a href="<c:url value='/edit/news'/>">编辑新闻资讯</a>
 	<a href="<c:url value='/edit/about'/>">编辑关于尚孚</a>
 	<a href="<c:url value='/edit/contact'/>">编辑联系我们</a><br><br><br>
-</div>
+</div><br><br>
+
+<div align="center">
+		请选择要编辑的产品：	
+		<select id="newsSelect">
+			<c:forEach items="${newsList}" var="news" >
+				<option value ="${news.id}">${news.title}</option>
+			</c:forEach>
+		</select>
+		<input type="button" id="queryNews" value="确认" >
+</div><br><br>
 
 <div style="margin:0 auto; height:500px; width:700px; ">
 
 	<form>
-		<table style="width: 1000px; " border="1">
+		<table id="newsTable" style="width: 1000px; display:none" border="1">
 		  	<tr height=25px>
 		    	<td width="80">属性</td>
 		    	<td width="250">属性说明</td>
@@ -74,81 +84,71 @@
 		  	<tr style="display:none">
 		    	<td>ID</td>
 		    	<td>ID</td>
-		    	<td><input name="id" id="id" type="hidden" value=${info.id}></td>
-		    	<td>${info.id}</td>
+		    	<td><input name="id" id="id" type="text" style="width:250px;"/>
+		    	<td id="curId"/>
 		  	</tr>
-		  	<tr>
+		  	
+		  	<tr height=35px>
 		    	<td>资源语言</td>
-		    	<td>语言版本(不可修改)</td>
-		    	<td><input name="langugae" id="langugae" type="text" disabled=true value=${info.language}></td>
-		    	<td>${info.language}</td>
+		    	<td>此项不可修改</td>
+		    	<td><input name="langugaeVer" id="languageVer" type="text" style="width:250px;"/>
+		    	<td id="curLanguage"/>
 		  	</tr>
 		  	
 		  	<tr>
-		    	<td>公司名称</td>
+		    	<td>是否激活发布</td>
 		    	<td>公司名称（index/cotact中的公司名称）</td>
-		    	<td><input name="companyName" id="companyName" type="text" value=${info.companyName}></td>
-		    	<td>${info.companyName}</td>
+		    	<td><input name="actived" id="actived" type="text" style="width:250px;"></td>
+		    	<td id="curActived"/>
 		  	</tr>
 		  	<tr>
 		    	<td>公司电话</td>
 		    	<td>公司电话（index/cotact中的联系电话）</td>
-		    	<td width="300"><input name="telNum" id="telNum" type="text" value="${info.telNum}"></td>
-		    	<td>${info.telNum}</td>
+		    	<td><input name="title" id="title" type="text" style="width:250px;"></td>
+		    	<td id="title"/>
 		  	</tr>
 		  	<tr>
 		    	<td>公司主页</td>
 		    	<td>公司主页（index/cotact中的公司网站）</td>
-		    	<td><input name="homePage" id="homePage" type="text" value=${info.homePage}></td>
-		    	<td>${info.homePage}</td>
+		    	<td><input name="previewPic" id="previewPic" type="text" style="width:250px;"></td>
+		    	<td id="curPreviewPic"/>
 		  	</tr>
 		  	<tr>
-		    	<td>公司QQ</td>
-		    	<td>公司QQ（index/cotact中的公司QQ）</td>
-		    	<td><input name="qq" id="qq" type="text" value=${info.qq}></td>
-		    	<td>${info.qq}</td>
+		    	<td>新闻发布时间</td>
+		    	<td>新闻发布时间</td>
+		    	<td><input name="issuedTime" id="issuedTime" type="text" style="width:250px;"></td>
+		    	<td id="curIssuedTime"/>
 		  	</tr>
 		  	<tr>
 		    	<td>公司邮箱</td>
 		    	<td>公司邮箱（index/cotact中的公司Email）</td>
-		    	<td><input name="eMail" id="eMail" type="text" value=${info.eMail}></td>
-		    	<td>${info.eMail}</td>
+		    	<td><input name="from" id="from" type="text" style="width:250px;"></td>
+		    	<td id="curFrom"/>
 		  	</tr>
 		  	<tr>
 		    	<td>公司地址</td>
 		    	<td>公司地址（index/cotact中的公司地址）</td>
-		    	<td><input name="addr" id="addr" type="text" value=${info.addr}></td>
-		    	<td>${info.addr}</td>
+		    	<td><input name="pvCnt" id="pvCnt" type="text" style="width:250px;"></td>
+		    	<td id="curPvCnt"/>
 		  	</tr>
 		  	<tr>
 		    	<td>公司微信</td>
 		    	<td>公司微信（index/cotact中的微信图片）</td>
-		    	<td><input name="wechat" id="wechat" type="text" value=${info.wechat}></td>
-		    	<td>${info.wechat}</td>
+		    	<td><input name="content" id="content" type="text" style="width:250px;"></td>
+		    	<td id="curContent"/>
 		  	</tr>
 		  	<tr>
 		    	<td>购买标签</td>
 		    	<td>购买标签（产品页中的点击购买标签）</td>
-		    	<td><input name="orderLabel" id="orderLabel" type="text" value=${info.orderLabel}></td>
-		    	<td>${info.orderLabel}</td>
+		    	<td><input name="keywords" id="keywords" type="text" style="width:250px;"></td>
+		    	<td id="curKeywords"/>
 		  	</tr>
+		  	
 		  	<tr>
-		    	<td>页脚电话</td>
-		    	<td>页脚电话（页脚部分共用的联系电话）</td>
-		    	<td><input name="footerTelNum" id="footerTelNum" type="text" value=${info.footerTelNum}></td>
-		    	<td>${info.footerTelNum}</td>
-		  	</tr>
-		  	<tr>
-		    	<td>页脚版权</td>
-		    	<td>页脚版权（页脚部分共用的版权信息）</td>
-		    	<td><input name="footerCopyright" id="footerCopyright" type="text" value=${info.footerCopyright}></td>
-		    	<td>${info.footerCopyright}</td>
-		  	</tr>
-		  	<tr>
-		    	<td></td>
 		    	<td></td>
 		    	<td></td>
 		    	<td><input type="button" id="button_submit" value="保存修改" >  </td>
+		    	<td></td>
 		  	</tr>
 		  		
 		  	
@@ -181,22 +181,9 @@
 
 <script type="text/javascript">  
 $(document).ready(function(){  
-    $("#button_submit").click(function(){  
-        var id = 		  $("#id").val();  
-        var companyName = $("#companyName").val();
-        var telNum = 	  $("#telNum").val();
-        var homePage =    $("#homePage").val();
-        var qq = 		  $("#qq").val();
-        var eMail = 	  $("#eMail").val();
-        var addr = 		  $("#addr").val();
-        var wechat = 	  $("#wechat").val();
-        var orderLabel =  $("#orderLabel").val();
-        var footerTelNum = $("#footerTelNum").val();
-        var footerCopyright = $("#footerCopyright").val();
-        
-        var info = {id:id,companyName:companyName,homePage:homePage,
-        		qq:qq, eMail:eMail, addr:addr, wechat:wechat, orderLabel:orderLabel,
-        		footerTelNum:footerTelNum, footerCopyright:footerCopyright};
+    $("#queryNews").click(function(){  
+        var id = $("#newsSelect").children('option:selected').val();  
+        var info = {id:id};
         
         var token = $("meta[name='_csrf']").attr("content");
     	var header = $("meta[name='_csrf_header']").attr("content");
@@ -206,7 +193,7 @@ $(document).ready(function(){
         
         $.ajax({  
             type:"POST",  
-            url:"${pageContext.request.contextPath}/edit/contact/save",  
+            url:"${pageContext.request.contextPath}/edit/news/toUpdateNews",  
             data:info,
 
             success:function(data){
@@ -214,6 +201,9 @@ $(document).ready(function(){
             	$("#editResult").text("修改成功，你可以刷新页面继续修改内容并保存");
             	$("#editResult").css("background-color","#00FF00");
             	$("input").attr('disabled',"true");
+            	
+            	enabledDataFileds(info);
+            	
             },  
             error:function(e) {  
             	$("#editResult").text("");
@@ -223,6 +213,80 @@ $(document).ready(function(){
         });  
     });  
 });  
+
+function enabledDataFileds(info){
+	
+	$("#id").val(info.id);
+	$("#curId").val(info.id);
+	
+	$("#languageVer").val(info.language);
+	$('#languageVer').attr("disabled",true);
+	$("#curLanguage").text(info.language);
+	
+	$("#actived").val(info.actived);
+	$('#actived').attr("disabled",true);
+	$("#curActived").text(info.actived);
+	
+	$("#title").val(info.title);
+	$('#title').attr("disabled",true);
+	$("#curTitle").text(info.title);
+	
+	$("#previewPic").val(info.previewPic);
+	$('#previewPic').attr("disabled",true);
+	$("#curPreviewPic").text(info.previewPic);
+	
+	$("#contentAbstract").val(info.contentAbstract);
+	$('#contentAbstract').attr("disabled",true);
+	$("#curContentAbstract").text(info.contentAbstract);
+	
+	$("#issuedTime").val(info.issuedTime);
+	$('#issuedTime').attr("disabled",true);
+	$("#curIssuedTime").text(info.issuedTime);
+	
+	$("#from").val(info.from);
+	$('#from').attr("disabled",true);
+	$("#curFrom").text(info.from);
+	
+	$("#pvCount").val(info.pvCount);
+	$('#pvCount').attr("disabled",true);
+	$("#curPvCount").text(info.pvCount);
+	
+	$("#content").val(info.content);
+	$('#content').attr("disabled",true);
+	$("#curContent").text(info.content);
+
+	$("#keywords").val(info.keywords);
+	$('#keywords').attr("disabled",true);
+	$("#curKeywords").text(info.keywords);
+	
+	$("#nextNewsId").val(info.nextNewsId);
+	$('#nextNewsId').attr("disabled",true);
+	$("#curNextNewsId").text(info.nextNewsId);
+	
+	$("#nextNewsId").val(info.nextNewsId);
+	$('#nextNewsId').attr("disabled",true);
+	$("#curNextNewsId").text(info.nextNewsId);
+	
+	$("#nextNewsTitle").val(info.nextNewsTitle);
+	$('#nextNewsTitle').attr("disabled",true);
+	$("#curNextNewsTitle").text(info.nextNewsTitle);
+	
+	$("#lastNewsId").val(info.lastNewsId);
+	$('#lastNewsId').attr("disabled",true);
+	$("#curLastNewsId").text(info.lastNewsId);
+	
+	$("#lastNewsTitle").val(info.lastNewsTitle);
+	$('#lastNewsTitle').attr("disabled",true);
+	$("#curLastNewsTitle").text(info.lastNewsTitle);
+	
+	$("#neckBanner").val(info.neckBanner);
+	$('#neckBanner').attr("disabled",true);
+	$("#curNeckBanner").text(info.neckBanner);
+	
+	$("#newsTable").show();
+	
+}
+
 </script>
 
 </body>

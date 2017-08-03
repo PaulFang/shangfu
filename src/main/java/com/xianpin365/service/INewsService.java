@@ -12,4 +12,5 @@ public interface INewsService {
 	
 	List<News> getActivedNews(String language);
 	
+	List<News> getAll();
 }

@@ -106,8 +106,8 @@ public class GlobalInterceptor extends HandlerInterceptorAdapter {
 		}
 		
 	/*	if(url.contains("managerlogin") &&
-				"admin".equals(req.getParameter("user")) &&
-				"admin123!@#".equals(req.getParameter("password"))
+				"".equals(req.getParameter("user")) &&
+				"".equals(req.getParameter("password"))
 				){
 			session.setAttribute("admin", true);
 		}*/
