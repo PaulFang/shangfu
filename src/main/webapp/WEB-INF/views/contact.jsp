@@ -159,7 +159,7 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"麻城市尚孚生态农业科技有限公司",content:"尚孚庄园&nbsp;&nbsp;茶油世家<br>电话：0713-8533399",point:"114.78679|31.192418",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    var markerArr = [{title:"麻城市尚孚生态农业科技有限公司<br>ShangFu Ecological Agriculture Tech. Co., Ltd.",content:"尚孚庄园&nbsp;&nbsp;茶油世家<br>电话(Tel)：0713-8533399",point:"114.78679|31.192418",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
 		 ];
     //创建marker
     function addMarker(){

@@ -71,7 +71,7 @@
 		<input type="button" id="queryNews" value="确认" >
 </div><br><br>
 
-<div style="margin:0 auto; height:500px; width:700px; ">
+<div style="margin:0 auto; height:1000px; width:700px; ">
 
 	<form>
 		<table id="newsTable" style="width: 1000px; display:none" border="1">
@@ -97,19 +97,19 @@
 		  	
 		  	<tr>
 		    	<td>是否激活发布</td>
-		    	<td>公司名称（index/cotact中的公司名称）</td>
+		    	<td>是否激活发布</td>
 		    	<td><input name="actived" id="actived" type="text" style="width:250px;"></td>
 		    	<td id="curActived"/>
 		  	</tr>
 		  	<tr>
-		    	<td>公司电话</td>
-		    	<td>公司电话（index/cotact中的联系电话）</td>
+		    	<td>新闻标题</td>
+		    	<td>新闻标题</td>
 		    	<td><input name="title" id="title" type="text" style="width:250px;"></td>
-		    	<td id="title"/>
+		    	<td id="curTitle"/>
 		  	</tr>
 		  	<tr>
-		    	<td>公司主页</td>
-		    	<td>公司主页（index/cotact中的公司网站）</td>
+		    	<td>预览图片</td>
+		    	<td>预览图片</td>
 		    	<td><input name="previewPic" id="previewPic" type="text" style="width:250px;"></td>
 		    	<td id="curPreviewPic"/>
 		  	</tr>
@@ -120,26 +120,26 @@
 		    	<td id="curIssuedTime"/>
 		  	</tr>
 		  	<tr>
-		    	<td>公司邮箱</td>
-		    	<td>公司邮箱（index/cotact中的公司Email）</td>
+		    	<td>新闻来源标签</td>
+		    	<td>新闻来源标签</td>
 		    	<td><input name="from" id="from" type="text" style="width:250px;"></td>
 		    	<td id="curFrom"/>
 		  	</tr>
 		  	<tr>
-		    	<td>公司地址</td>
-		    	<td>公司地址（index/cotact中的公司地址）</td>
+		    	<td>新闻浏览量</td>
+		    	<td>新闻浏览量</td>
 		    	<td><input name="pvCnt" id="pvCnt" type="text" style="width:250px;"></td>
 		    	<td id="curPvCnt"/>
 		  	</tr>
 		  	<tr>
-		    	<td>公司微信</td>
-		    	<td>公司微信（index/cotact中的微信图片）</td>
-		    	<td><input name="content" id="content" type="text" style="width:250px;"></td>
+		    	<td>新闻内容</td>
+		    	<td>新闻内容</td>
+		    	<td><textarea name="content" id="content" cols=30 rows=30 style="width:250px;"></textarea></td>
 		    	<td id="curContent"/>
 		  	</tr>
 		  	<tr>
-		    	<td>购买标签</td>
-		    	<td>购买标签（产品页中的点击购买标签）</td>
+		    	<td>关键字</td>
+		    	<td>关键字</td>
 		    	<td><input name="keywords" id="keywords" type="text" style="width:250px;"></td>
 		    	<td id="curKeywords"/>
 		  	</tr>
@@ -154,7 +154,10 @@
 		  	
 		</table>
 	</form>
+<div align="center">
 	<div id="editResult"></div>
+</div>	
+	
 </div>
 
 
@@ -202,7 +205,7 @@ $(document).ready(function(){
             	$("#editResult").css("background-color","#00FF00");
             	$("input").attr('disabled',"true");
             	
-            	enabledDataFileds(info);
+            	enabledDataFileds(data);
             	
             },  
             error:function(e) {  
@@ -220,67 +223,67 @@ function enabledDataFileds(info){
 	$("#curId").val(info.id);
 	
 	$("#languageVer").val(info.language);
-	$('#languageVer').attr("disabled",true);
+	$('#languageVer').attr("disabled",false);
 	$("#curLanguage").text(info.language);
 	
 	$("#actived").val(info.actived);
-	$('#actived').attr("disabled",true);
+	$('#actived').attr("disabled",false);
 	$("#curActived").text(info.actived);
 	
 	$("#title").val(info.title);
-	$('#title').attr("disabled",true);
+	$('#title').attr("disabled",false);
 	$("#curTitle").text(info.title);
 	
 	$("#previewPic").val(info.previewPic);
-	$('#previewPic').attr("disabled",true);
+	$('#previewPic').attr("disabled",false);
 	$("#curPreviewPic").text(info.previewPic);
 	
 	$("#contentAbstract").val(info.contentAbstract);
-	$('#contentAbstract').attr("disabled",true);
+	$('#contentAbstract').attr("disabled",false);
 	$("#curContentAbstract").text(info.contentAbstract);
 	
 	$("#issuedTime").val(info.issuedTime);
-	$('#issuedTime').attr("disabled",true);
+	$('#issuedTime').attr("disabled",false);
 	$("#curIssuedTime").text(info.issuedTime);
 	
 	$("#from").val(info.from);
-	$('#from').attr("disabled",true);
+	$('#from').attr("disabled",false);
 	$("#curFrom").text(info.from);
 	
-	$("#pvCount").val(info.pvCount);
-	$('#pvCount').attr("disabled",true);
-	$("#curPvCount").text(info.pvCount);
+	$("#pvCnt").val(info.pvCnt);
+	$('#pvCnt').attr("disabled",false);
+	$("#curPvCnt").text(info.pvCnt);
 	
 	$("#content").val(info.content);
-	$('#content').attr("disabled",true);
+	$('#content').attr("disabled",false);
 	$("#curContent").text(info.content);
 
 	$("#keywords").val(info.keywords);
-	$('#keywords').attr("disabled",true);
+	$('#keywords').attr("disabled",false);
 	$("#curKeywords").text(info.keywords);
 	
 	$("#nextNewsId").val(info.nextNewsId);
-	$('#nextNewsId').attr("disabled",true);
+	$('#nextNewsId').attr("disabled",false);
 	$("#curNextNewsId").text(info.nextNewsId);
 	
 	$("#nextNewsId").val(info.nextNewsId);
-	$('#nextNewsId').attr("disabled",true);
+	$('#nextNewsId').attr("disabled",false);
 	$("#curNextNewsId").text(info.nextNewsId);
 	
 	$("#nextNewsTitle").val(info.nextNewsTitle);
-	$('#nextNewsTitle').attr("disabled",true);
+	$('#nextNewsTitle').attr("disabled",false);
 	$("#curNextNewsTitle").text(info.nextNewsTitle);
 	
 	$("#lastNewsId").val(info.lastNewsId);
-	$('#lastNewsId').attr("disabled",true);
+	$('#lastNewsId').attr("disabled",false);
 	$("#curLastNewsId").text(info.lastNewsId);
 	
 	$("#lastNewsTitle").val(info.lastNewsTitle);
-	$('#lastNewsTitle').attr("disabled",true);
+	$('#lastNewsTitle').attr("disabled",false);
 	$("#curLastNewsTitle").text(info.lastNewsTitle);
 	
 	$("#neckBanner").val(info.neckBanner);
-	$('#neckBanner').attr("disabled",true);
+	$('#neckBanner').attr("disabled",false);
 	$("#curNeckBanner").text(info.neckBanner);
 	
 	$("#newsTable").show();
