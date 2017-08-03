@@ -98,8 +98,8 @@ public class EditController {
 		return "edit_contact";
 	}
 	
-	@RequestMapping(value = { "/edit/contact/save" }, method = RequestMethod.GET)
-	public String saveContact(PageCommonInfo info) {
+	@RequestMapping(value = { "/edit/contact/save" }, method = RequestMethod.POST)
+	public @ResponseBody String saveContact(PageCommonInfo info) {
 		pageCommonInfoService.update(info);
 		return "OK";
 	}
@@ -130,12 +130,6 @@ public class EditController {
 	public @ResponseBody String saveQualification(Qualification qualification) {
 		qualificationService.save(qualification);
 		return "OK";
-	}
-	
-	@RequestMapping(value = { "/edit/contact/save" }, method = RequestMethod.POST)
-	public @ResponseBody String saveContact(HttpServletRequest request, PageCommonInfo info) {
-		System.out.println(info);
-		return "Saved Successfully";
 	}
 	
 	@RequestMapping(value = { "/edit/news" })

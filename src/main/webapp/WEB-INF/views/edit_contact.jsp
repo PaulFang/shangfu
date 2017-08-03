@@ -88,7 +88,7 @@ ul,li{list-style-type:none;}
 <br><br><br>
 
 
-<div style="margin:0 auto; height:500px; width:1000px; ">
+<div style="margin:0 auto; height:1110px; width:1000px; ">
 
 	<form>
 		<table id="contactTable" style="width: 1000px; display: none" border="5">
@@ -147,41 +147,41 @@ ul,li{list-style-type:none;}
 		    	<td id="curMenuItem5"/>
 		  	</tr>
 		  	<tr height=35px>
-		    	<td>资源语言</td>
-		    	<td>此项不可修改</td>
+		    	<td>关于尚孚Banner</td>
+		    	<td>1920 x 340 px</td>
 		    	<td><input name="aboutBanner" id="aboutBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curAboutBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
 		  	<tr height=35px>
-		    	<td>资源语言</td>
-		    	<td>此项不可修改</td>
+		    	<td>产品展示Banner</td>
+		    	<td>1920 x 340 px</td>
 		    	<td><input name="productBanner" id="productBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curProductBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
 		  	<tr height=35px>
-		    	<td>资源语言</td>
-		    	<td>此项不可修改</td>
+		    	<td>荣誉资质Banner</td>
+		    	<td>1920 x 340 px</td>
 		    	<td><input name="honorBanner" id="honorBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curHonorBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
 
 			<tr height=35px>
-		    	<td>资源语言</td>
-		    	<td>此项不可修改</td>
+		    	<td>新闻资讯Banner</td>
+		    	<td>1920 x 340 px</td>
 		    	<td><input name="newsBanner" id="newsBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curNewsBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
 		  	
 		  	<tr height=35px>
-		    	<td>资源语言</td>
-		    	<td>此项不可修改</td>
+		    	<td>联系我们Banner</td>
+		    	<td>1920 x 340 px</td>
 		    	<td><input name="contactBanner" id="contactBanner" type="text" style="width:250px;"/>
 		    	<td><a id="curContactBanner" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
 		  	
 		  	<tr height=35px>
-		    	<td>资源语言</td>
-		    	<td>此项不可修改</td>
+		    	<td>菜单右侧Slogan</td>
+		    	<td>280 x 59 px (须背景透明)</td>
 		    	<td><input name="menuSlogan" id="menuSlogan" type="text" style="width:250px;"/>
 		    	<td><a id="curMenuSlogan" path="" class="preview" href="">光标移过来查看当前使用的图片</a></td>
 		  	</tr>
@@ -373,12 +373,8 @@ $(document).ready(function(){
 		
 	});
 	
-    $("#saveUpdate").click(function(){  
-        var id = $("#id").val();  
-        var language = $("#languageVer").val();
-        var neckBanner = $("#neckBanner").val();
-        var profileTxt =    $("#profileTxt").val();
-        
+    $("#saveUpdate").click(function(){
+    	
         var data = {
 	        id : $("#id").val(),
 	    	language : $("#languageVer").val(), 
@@ -429,7 +425,7 @@ $(document).ready(function(){
             	disabledDataFileds();
             	
             	$("#saveResult").text("");
-            	$("#saveResult").text("恭喜，你的修改保存成功，你可以内容继续更新");
+            	$("#saveResult").text("恭喜，你的修改保存成功，你可以选择内容继续更新");
             	$("#saveResult").css("background-color","#00FF00");
 				$("#saveUpdate").attr("disabled",true);         	
             	

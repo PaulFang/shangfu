@@ -71,15 +71,15 @@
             <if test="eMail != null">EMAIL=#{eMail},</if>
             <if test="addr != null">ADDR=#{addr},</if>
             <if test="wechat != null">WECHAT=#{wechat},</if>
-            <if test="footerTelNum != null">FEETER_TEL_NO=#{footerTelNum}</if>
-            <if test="footerCopyright != null">FEETER_COPYRIGHT=#{footerCopyright}</if>
+            <if test="footerTelNum != null">FEETER_TEL_NO=#{footerTelNum},</if>
+            <if test="footerCopyright != null">FEETER_COPYRIGHT=#{footerCopyright},</if>
             <if test="orderLabel != null">ORDER_LABEL=#{orderLabel},</if>
             <if test="homeLabel != null">HOME_LABEL=#{homeLabel},</if>
             <if test="timeLabel != null">TIME_LABEL=#{timeLabel},</if>
-            <if test="fromLabel != null">FROM_LABEL=#{fromLabel}</if>			
-			<if test="companyLabel != null">COMPANY_LABEL=#{companyLabel}</if>
-			<if test="seriesLabel != null">SERIES_LABEL=#{seriesLabel}</if>
-			<if test="packagingLabel != null">PACKAGING_LABEL=#{packagingLabel}</if>
+            <if test="fromLabel != null">FROM_LABEL=#{fromLabel},</if>			
+			<if test="companyLabel != null">COMPANY_LABEL=#{companyLabel},</if>
+			<if test="seriesLabel != null">SERIES_LABEL=#{seriesLabel},</if>
+			<if test="packagingLabel != null">PACKAGING_LABEL=#{packagingLabel},</if>
 			<if test="specificationsLabel != null">SPECIFICATIONS_LABEL=#{specificationsLabel}</if>
         </set>
         WHERE id = #{id}
