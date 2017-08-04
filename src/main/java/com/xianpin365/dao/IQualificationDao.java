@@ -12,6 +12,10 @@ public interface IQualificationDao {
 	
 	List<String> getNames();
 	
+	Qualification getById(int id);
+	
+	List<Qualification> getAll();
+	
 	void updateQualification(Qualification q);
 	
 	List<Qualification> getQualifications(@Param("actived") boolean actived, @Param("language") String language);

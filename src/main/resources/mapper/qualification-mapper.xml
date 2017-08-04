@@ -28,11 +28,23 @@
 		WHERE TITLE = #{name}
 	</select>
 	
+	<select id="getById" parameterType="java.lang.Integer" resultMap="qualificationMap">
+		SELECT *
+		FROM T_QUALIFICATION
+		WHERE ID = #{id}
+	</select>
+	
+	
 	<select id="getQualifications" resultMap="qualificationMap">
 		SELECT *
 		FROM T_QUALIFICATION
 		WHERE ACTIVED = #{actived} 
 		AND LANGUAGE = #{language}
+	</select>
+	
+	<select id="getAll" resultMap="qualificationMap">
+		SELECT *
+		FROM T_QUALIFICATION
 	</select>
 	
 	<update id="updateQualification" parameterType="com.xianpin365.entity.Qualification">

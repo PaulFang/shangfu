@@ -78,15 +78,17 @@ ul,li{list-style-type:none;}
 </div>
 
 <div align="center">
-	请选择要编辑的荣誉资质：	
+		请选择要编辑的荣誉资质：	
 		<select id="qualificationSelect">
-			<c:forEach items="${qualificationNames}" var="name" >
-				<option value ="${name}">${name}</option>
+			<c:forEach items="${qualifications}" var="qualification" >
+				<option value ="${qualification.id}">${qualification.title}</option>
 			</c:forEach>
 		
 		</select>
 		<input type="button" id="queryQualification" value="确认" >
 </div>
+
+
 <br><br><br>
 
 <div align="center">
@@ -173,8 +175,6 @@ $(document).ready(function(){
 	
     $("#queryQualification").click(function(){  
     	
-    	
-    	
     	$("#actived").attr('disabled',false); 
     	$("#rel").attr('disabled',false); 
     	$("#title").attr('disabled',false); 
@@ -182,7 +182,7 @@ $(document).ready(function(){
     	$("#remark").attr('disabled',false);
     	
     	var value = $("#qualificationSelect").children('option:selected').val();
-        var info = {qualificationName:value};
+        var info = {id:value};
         
         $("#saveResult").text("");
     	$("#saveResult").css("background-color","");

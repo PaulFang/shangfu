@@ -118,15 +118,15 @@ public class EditController {
 	public String doEditHonor(HttpServletRequest request, Model model) {
 		Language lang = GlobalInterceptor.getAccessorLanguage(request);
 		PageCommonInfo info = pageCommonInfoService.getByLanguage(lang.getLanguage());
-		List<String> names = qualificationService.getNames();
+		List<Qualification> qualifications = qualificationService.getAll();
 		model.addAttribute("info", info);
-		model.addAttribute("qualificationNames", names);
+		model.addAttribute("qualifications", qualifications);
 		return "edit_honor";
 	}
 	
 	@RequestMapping(value = { "/edit/qualification/query" }, method = RequestMethod.POST)
-	public @ResponseBody Qualification saveContact(String qualificationName) {
-		Qualification qualification = qualificationService.getByName(qualificationName);
+	public @ResponseBody Qualification saveContact(String id) {
+		Qualification qualification = qualificationService.getById(Integer.valueOf(id));
 		return qualification;
 	}
 	

@@ -7,8 +7,12 @@ import com.xianpin365.entity.Qualification;
 public interface IQualificationService {
 
 	Qualification getByName(String name);
+	
+	Qualification getById(int id);
 
 	List<String> getNames();
+	
+	List<Qualification> getAll();
 	
 	void save(Qualification qualification);
 	
