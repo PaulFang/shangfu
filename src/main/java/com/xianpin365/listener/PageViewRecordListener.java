@@ -4,17 +4,19 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 import com.xianpin365.constant.Consts;
+import com.xianpin365.domain.IPInfo;
 import com.xianpin365.domain.VistorAction;
+import com.xianpin365.util.JsonUtil;
 
 public class PageViewRecordListener implements HttpSessionListener {
+	
+	public static final String URL_IP_QUERY = "http://ip.taobao.com//service/getIpInfo.php";
 	
     public void sessionCreated(HttpSessionEvent event) {
     	event.getSession().setMaxInactiveInterval(3000);
@@ -29,17 +31,21 @@ public class PageViewRecordListener implements HttpSessionListener {
     	Object obj = session.getAttribute(Consts.VISTOR_ACTION_TRACE_KEY);
         if(obj!=null && (obj instanceof VistorAction)){
         	VistorAction action = (VistorAction)obj;
+        	String json = queryIpInfo(URL_IP_QUERY, action.getVistorHost());
+        	Object item = JsonUtil.getObject(json, IPInfo.class);
+        	IPInfo info = (item==null) ? null : (IPInfo)item;
+        	
         	System.out.println("========================================================================================================================");
         	System.out.println("====================" + action.getFormattedString());
         	
-        	System.out.println("vistor ip info : " + sendGet("http://ip.taobao.com//service/getIpInfo.php", "ip="+ action.getVistorHost()));
+        	System.out.println("vistor ip info : " + queryIpInfo(URL_IP_QUERY, "ip="+ action.getVistorHost()));
         	System.out.println("========================================================================================================================");
         
         }
     }
 
     // http://ip.taobao.com//service/getIpInfo.php?ip=123.123.123.123
-    public static String sendGet(String url, String param) {
+    public static String queryIpInfo(String url, String param) {
         String result = "";
         BufferedReader in = null;
         try {
